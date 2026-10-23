@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headroom Patterns</title>
+<meta name="description" content="Stage 4 of the Headroom design system: adding a transaction, creating a budget, onboarding, sensitive data and offline/error patterns, storyboarded with real components.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shell.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="headroom.css">
+<style>
+/*__CSSVARS__*/
+
+.pat{padding-top:var(--space-1600)}
+.pat > h2{font-size:40px;line-height:44px;letter-spacing:-.02em;font-weight:800}
+.pgoal{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--space-600);margin-top:var(--space-400)}
+.pgoal p{font-size:18px;line-height:27px}
+.pgoal .m{font-size:14px;line-height:21px;color:var(--color-text-secondary);padding:var(--space-300) var(--space-400);border-radius:var(--radius-md);background:var(--color-surface-default);box-shadow:inset 0 0 0 1px var(--color-border-subtle)}
+.pgoal .m b{display:block;color:var(--color-text-primary);font-size:13px;margin-bottom:2px}
+.entry{display:flex;flex-wrap:wrap;gap:var(--space-200);margin-top:var(--space-400)}
+.entry span{display:inline-flex;gap:6px;align-items:flex-start;font-size:14px;line-height:20px;padding:var(--space-200) var(--space-300);border-radius:var(--radius-md);background:var(--color-action-secondary);color:var(--color-action-on-secondary);max-width:360px}
+.entry svg{width:16px;height:16px;margin-top:2px}
+.board{display:flex;gap:var(--space-500);overflow-x:auto;padding:var(--space-600) var(--space-100) var(--space-400);margin:var(--space-200) calc(-1 * var(--space-100)) 0;scroll-snap-type:x proximity}
+.step{flex:none;width:260px;display:flex;flex-direction:column;gap:var(--space-300);scroll-snap-align:start}
+.step .n{display:flex;gap:var(--space-200);align-items:baseline}
+.step .n b{width:24px;height:24px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:13px;background:var(--color-text-primary);color:var(--color-surface-canvas)}
+.step .n span{font-weight:700;font-size:16px;line-height:22px}
+.step p{font-size:14px;line-height:20px;color:var(--color-text-secondary)}
+.frame{width:260px;height:520px;border-radius:30px;overflow:hidden;position:relative;background:var(--color-surface-canvas);box-shadow:0 0 0 1px var(--color-border-subtle),var(--elevation-2);flex:none}
+.scr{width:360px;height:720px;transform:scale(.7222);transform-origin:0 0;position:relative;overflow:hidden;background:var(--color-surface-canvas);font-size:16px}
+.sbar{height:40px;display:flex;justify-content:space-between;align-items:center;padding:0 24px;font-size:14px;font-weight:700}
+.sbar span:last-child{display:flex;gap:4px}.sbar svg{width:16px;height:16px}
+.scr .hr-appbar{width:100%;border-radius:0;box-shadow:none;background:transparent}
+.scr .body{padding:0 16px;display:flex;flex-direction:column;gap:12px}
+.scr .hr-nav{position:absolute;bottom:0;left:0;right:0;width:100%}
+.scr .gcard{width:100%}
+.scr .gg{height:220px}
+.fab{position:absolute;right:16px;bottom:96px;height:56px;padding:0 20px;border-radius:18px;background:var(--color-action-primary);color:var(--color-action-on-primary);display:flex;align-items:center;gap:8px;font-weight:700;box-shadow:var(--elevation-2)}
+.fab.ring{box-shadow:0 0 0 4px var(--color-surface-canvas),0 0 0 7px var(--color-border-focus)}
+.scr .hr-sheet{padding-bottom:20px}
+.scr .hr-snack{position:absolute;left:16px;right:16px;bottom:96px;width:auto}
+.scr .hr-list{width:100%}
+.scr .hr-banner{margin:0}
+.keysm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.keysm span{height:52px;border-radius:var(--radius-md);background:var(--color-surface-sunken);display:grid;place-items:center;font:600 24px/1 "Anek Latin",system-ui,sans-serif}
+.keysm svg{width:22px;height:22px}
+.cm{position:absolute;left:24px;right:24px;padding:12px 14px;border-radius:var(--radius-md);background:var(--color-surface-inverse);color:var(--color-text-inverse);font-size:15px;line-height:21px;box-shadow:var(--elevation-3);z-index:5}
+.cm b{display:block}
+.cm button{all:unset;margin-top:8px;font-weight:700;color:var(--color-action-on-inverse)}
+.cm::after{content:"";position:absolute;left:40px;bottom:-6px;width:12px;height:12px;background:inherit;transform:rotate(45deg)}
+.mk{font-variant-numeric:normal;letter-spacing:.06em}
+.newrow{background:var(--color-finance-headroom)}
+.ph-h{font-size:28px;line-height:34px;font-weight:700;letter-spacing:-.015em;padding:8px 16px 4px}
+.ph-p{padding:0 16px;color:var(--color-text-secondary);font-size:15px;line-height:22px}
+.dots{display:flex;gap:6px;padding:8px 16px}.dots i{width:24px;height:4px;border-radius:2px;background:var(--color-border-subtle)}.dots i.on{background:var(--color-action-primary)}
+.bottom{position:absolute;left:16px;right:16px;bottom:24px;display:flex;flex-direction:column;gap:8px}
+.otp{display:flex;gap:8px}.otp span{flex:1;height:56px;border-radius:var(--radius-md);background:var(--color-surface-sunken);box-shadow:inset 0 0 0 1px var(--color-border-default);display:grid;place-items:center;font-size:24px;font-weight:700}
+.otp span.f{box-shadow:inset 0 0 0 2px var(--color-border-focus)}
+.ex-tag{position:absolute;top:8px;left:8px;z-index:3;font-size:12px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:var(--color-surface-raised);color:var(--color-text-secondary)}
+.seemore{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.seemore li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:21px}
+.seemore svg{color:var(--color-status-success);width:18px;height:18px;flex:none;margin-top:2px}
+.seemore li.no svg{color:var(--color-status-danger)}
+.cols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-600);margin-top:var(--space-600)}
+.cols2 h3{font-size:18px;line-height:24px;font-weight:700;margin-bottom:var(--space-300)}
+.cols2 ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:var(--space-200);font-size:15px;line-height:22px;color:var(--color-text-secondary)}
+.etable{width:100%;border-collapse:collapse;font-size:14px;line-height:20px}
+.etable td,.etable th{text-align:left;vertical-align:top;padding:var(--space-200) var(--space-400) var(--space-200) 0;border-bottom:1px solid var(--color-border-subtle)}
+.etable th{font-size:12px;color:var(--color-text-secondary);font-weight:600}
+.etable td:first-child{font-weight:600;width:34%}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-400);margin-top:var(--space-600)}
+.tier{border-radius:var(--radius-lg);padding:var(--space-500);background:var(--color-surface-default);box-shadow:inset 0 0 0 1px var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-200)}
+.tier .lvl{display:flex;gap:4px}.tier .lvl i{width:28px;height:6px;border-radius:3px;background:var(--color-border-subtle)}.tier .lvl i.on{background:var(--color-text-primary)}
+.tier h4{font-size:18px;line-height:24px;font-weight:700}
+.tier small{font-size:13px;line-height:18px;color:var(--color-text-secondary)}
+.tier p{font-size:15px;line-height:22px}
+.levels{display:flex;flex-direction:column;margin-top:var(--space-600);border-top:1px solid var(--color-border-subtle)}
+.levels > div{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.4fr);gap:var(--space-500);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);font-size:15px;line-height:22px;align-items:baseline}
+.levels b{font-weight:700}.levels span:nth-child(2){color:var(--color-text-secondary)}
+.built{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--space-500)}
+.built span{font-size:12px;font-weight:600;padding:3px 10px;border-radius:var(--radius-full);background:var(--color-surface-sunken);color:var(--color-text-secondary)}
+details.more{margin-top:var(--space-500);border-radius:var(--radius-md);box-shadow:inset 0 0 0 1px var(--color-border-subtle);background:var(--color-surface-default)}
+details.more summary{cursor:pointer;padding:var(--space-300) var(--space-400);font-weight:600;list-style:none;display:flex;gap:8px;align-items:center}
+details.more summary::-webkit-details-marker{display:none}
+details.more[open] summary svg{transform:rotate(90deg)}
+details.more > div{padding:0 var(--space-400) var(--space-500)}
+.threads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-400);margin-top:var(--space-800)}
+.threads div{padding-top:var(--space-300);border-top:2px solid var(--color-text-primary);font-size:15px;line-height:22px;color:var(--color-text-secondary)}
+.threads b{display:block;color:var(--color-text-primary);font-size:17px;margin-bottom:4px}
+.dec{display:flex;flex-direction:column;border-top:2px solid var(--color-text-primary);margin-top:var(--space-600)}
+.dec > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--space-800);padding:var(--space-600) 0;border-bottom:1px solid var(--color-border-subtle)}
+.dec h3{font-size:22px;line-height:28px}
+.dec p{color:var(--color-text-secondary);font-size:16px;line-height:24px}
+footer{margin-top:var(--space-1600);padding-top:var(--space-600);border-top:1px solid var(--color-border-subtle);font-size:13px;color:var(--color-text-secondary);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-300)}
+@media (max-width:1199px){main{padding:0 var(--space-800) var(--space-1600)}}
+@media (max-width:839px){
+  main{padding:0 var(--space-400) var(--space-1200)}
+  .intro h1{font-size:40px;line-height:44px}
+  .pat > h2{font-size:30px;line-height:34px}
+  .pgoal,.cols2,.tiers,.threads,.dec > div{grid-template-columns:minmax(0,1fr)}
+  .levels > div{grid-template-columns:minmax(0,1fr);gap:var(--space-100)}
+}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" data-page="patterns.html"></aside>
+<main>
+<div class="wrap">
+  <header class="intro">
+    <h1>Patterns</h1>
+    <p>Five flows that prove the system holds together. Every frame below is a real screen built from the component library, scaled down. Scroll each storyboard sideways; toggle dark mode and every frame follows.</p>
+    <div class="threads">
+      <div><b>Clarity before alarm</b>Show the consequence before it happens, as information, not a block.</div>
+      <div><b>Undo over “Are you sure?”</b>Speed for everyday actions, protection that matches how hard it is to reverse.</div>
+      <div><b>Never lose input</b>Drafts, offline queues and optimistic saves: a dropped network costs nothing.</div>
+    </div>
+  </header>
+  <div id="pats"></div>
+  <section class="pat" id="decisions" aria-labelledby="h-dec" data-toc-group="Review"><h2 id="h-dec">Decisions to defend</h2><div class="dec" id="dec"></div></section>
+  <footer><span>Headroom design system · Stage 4 patterns · all data synthetic</span><span>Generated from tools/patterns_spec.py</span><span>Icons by <a href="https://www.notboringicons.com" target="_blank" rel="noopener">Not Boring Icons</a></span></footer>
+</div>
+</main>
+</div>
+
+<script src="icons.js"></script>
+<script>
+const T = /*__TOKENS__*/null;
+const $ = s => document.querySelector(s);
+const I = (n, a = '') => `<i data-lucide="${n}" ${a}></i>`;
+const inr = n => new Intl.NumberFormat('en-IN').format(n);
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+const root = document.documentElement;
+
+/* ---------- screen kit (composes headroom.css components) ---------- */
+const sbar = () => `<div class="sbar"><span>9:41</span><span>${I('signal')}${I('wifi')}${I('battery-full')}</span></div>`;
+const sbarOff = () => `<div class="sbar"><span>9:41</span><span>${I('signal-low')}${I('wifi-off')}${I('battery-full')}</span></div>`;
+const scr = (html, label) => `<div class="frame" role="img" aria-label="${label}"><div class="scr">${html}</div></div>`;
+const bar = (title, o = {}) => `<div class="hr-appbar"><div class="ab-row">${o.back ? `<button class="hr-ibtn" aria-label="Back">${I(o.close ? 'x' : 'chevron-left')}</button>` : '<span style="width:8px"></span>'}<h4>${o.large ? '' : title}</h4>${(o.actions || []).map(a => `<button class="hr-ibtn" aria-label="${a}">${I(a)}</button>`).join('')}</div>${o.large ? `<div class="ab-large" style="padding-top:0">${title}</div>` : ''}</div>`;
+const nav = (on = 'Home') => `<nav class="hr-nav">${[['house', 'Home'], ['arrow-left-right', 'Activity'], ['gauge', 'Budgets'], ['target', 'Goals']].map(([i, n]) => `<a ${n === on ? 'aria-current="page"' : ''}><span>${I(i)}</span>${n}</a>`).join('')}</nav>`;
+function gauge(pct, o = {}) {
+  const LIM = 52000, spent = pct === .645 ? 33550 : Math.round(LIM * pct), room = LIM - spent, s = pct > 1 ? 'over' : pct >= .8 ? 'near' : 'ok';
+  const fill = s === 'over' ? 'var(--color-finance-over-fill)' : s === 'near' ? 'var(--color-finance-near-fill)' : 'var(--color-finance-spent)';
+  const m = v => o.hidden ? '<span class="mk">•••••</span>' : inr(v);
+  return `<div class="gcard"><div class="gtop"><span>October · 13 days left</span>${o.eye === false ? '' : `<button class="hr-ibtn" aria-pressed="${!!o.hidden}" aria-label="Hide balances">${I(o.hidden ? 'eye-off' : 'eye')}</button>`}</div>
+    <div class="gg"><div class="line dash"></div><span class="lim">Limit ₹${m(LIM)}</span><div class="room"><p>Headroom</p><b><span class="rs">₹</span>${o.peek ? inr(room) : m(room)}</b></div>
+    <div class="fill" style="height:${Math.min(pct, 1.16) * 84}%;background:${fill}"></div><div class="spent">Spent so far<b>₹${m(spent)}</b></div></div>
+    ${o.stale ? `<p class="help" style="display:flex;gap:6px;align-items:center">${I('history', 'style="width:14px;height:14px"')}Updated 2h ago · pull to refresh</p>` : `<p class="gstat ok">${I('circle-check')}On track · about ₹${o.hidden ? '•••' : inr(Math.round(room / 13))} a day</p>`}</div>`;
+}
+const row = (icon, t, sub, amt, cls = '', extra = '', rc = '') => `<div class="hr-row two ${rc}"><span class="tile">${I(icon)}</span><span><b>${t}</b><small>${sub}</small></span><span class="tr"><span class="a ${cls}">${amt}</span>${extra}</span></div>`;
+const tag = (i, t, st = '') => `<span class="hr-tag" style="${st}">${I(i)}${t}</span>`;
+const keypad = () => `<div class="keysm">${['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0'].map(k => `<span>${k}</span>`).join('')}<span>${I('delete')}</span></div>`;
+const bud = (n, s, l, mini) => { const p = s / l, st = p > 1 ? 'over' : p >= .8 ? 'near' : 'ok', f = st === 'over' ? 'var(--color-finance-over-fill)' : st === 'near' ? 'var(--color-finance-near-fill)' : 'var(--color-finance-spent)';
+  return `<div class="bud" style="width:100%"><div class="bud-h"><span>${n}</span><span>₹${inr(s)} of ₹${inr(l)}</span></div><div class="track ${mini ? 'mini' : ''}" style="width:${st === 'over' ? 88 : 100}%"><div class="f" style="width:${Math.min(p, 1.3) * 100}%;background:${f}"></div><div class="lim" style="left:calc(100% - 1px)"></div></div></div>`; };
+
+/* ---------- storyboards: [frame html, step index into spec steps] ---------- */
+const BOARDS = {
+ 'add-transaction': [
+  [scr(sbar() + bar('', { actions: ['eye', 'bell'] }) + `<div class="body">${gauge(.645)}</div><div class="fab ring">${I('plus')}Add</div>` + nav('Home'), 'Home screen with the Add button highlighted'), 'Entry: the Add button', 'Floats above the nav on Home and Activity, within thumb reach. Notifications and the widget open the same sheet.'],
+  [scr(sbar() + `<div class="scrim"></div><div class="hr-sheet"><div class="handle"></div><div class="hr-seg" style="width:100%"><button aria-pressed="true">Expense</button><button>Income</button></div><div class="hr-amount" style="padding:8px 0"><span class="v num zero"><span class="rs">₹</span>0<span class="caret"></span></span><span class="ctx">HDFC Savings · Today</span></div>${keypad()}<button class="hr-btn lg block">Add expense</button></div>`, 'Add expense sheet with keypad'), 0],
+  [scr(sbar() + `<div class="scrim"></div><div class="hr-sheet"><div class="handle"></div><div class="hr-amount" style="padding:4px 0"><span class="v num"><span class="rs">₹</span>386<span class="caret"></span></span><span class="ctx" style="color:var(--color-text-primary)">₹1,414 left in Food after this</span></div><div class="chips" style="justify-content:center"><button class="hr-chip" aria-pressed="true">${I('check')}Food</button><button class="hr-chip">${I('shopping-basket')}Groceries</button><button class="hr-chip">${I('ellipsis')}More</button></div>${keypad()}<button class="hr-btn lg block">Add ₹386 expense</button><button class="hr-btn ghost block" style="height:36px">More details</button></div>`, 'Amount typed with suggested categories'), 1],
+  [scr(sbar() + bar('Activity', { large: true, actions: ['search'] }) + `<div class="body" style="padding:0"><div class="hr-list" style="border-radius:0;box-shadow:none"><div class="dhead"><span>Today</span><span class="num">−₹386</span></div>${row('utensils', 'Food and dining', 'Just now · HDFC Savings', '−₹386', '', '', 'newrow')}<div class="dhead"><span>Yesterday</span><span class="num">−₹500</span></div>${row('bus', 'Namma Metro', 'Transport · 8:40 am', '−₹500')}${row('coffee', 'Blue Tokai', 'Food and dining · 9:05 am', '−₹280')}</div></div><div class="hr-snack"><span>Expense added</span><button>Undo</button></div>` + nav('Activity'), 'Activity list with the new row and an Undo snackbar'), 3],
+ ],
+ 'create-budget': [
+  [scr(sbar() + bar('New budget', { back: true, close: true }) + `<div class="dots"><i class="on"></i><i></i><i></i><i></i></div><div class="ph-h">Monthly limit</div><p class="ph-p">You spent about ₹48,200 a month over the last 3 months.</p><div class="body" style="margin-top:12px"><div class="hr-field" style="width:100%"><label>Limit for October</label><div class="hr-input amount is-focus"><span class="pre">₹</span><input value="52,000" aria-label="Limit"></div><span class="help">Suggested from your spending · edit freely</span></div><div class="hcomp" style="max-width:none;grid-template-columns:minmax(0,1fr)"><div class="hbar"><div class="fill" style="width:41%"></div><div class="vline"></div></div><p class="gstat ok">${I('circle-check')}₹30,700 of headroom so far this month</p></div></div><div class="bottom"><button class="hr-btn lg block">Continue</button></div>`, 'Set monthly limit with live preview'), 0],
+  [scr(sbar() + bar('New budget', { back: true }) + `<div class="dots"><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="ph-h">Split it up</div><p class="ph-p">Pre-filled from your last 3 months.</p><div class="body" style="margin-top:8px"><div class="hr-list">${[['house', 'Rent', '22,000'], ['utensils', 'Food and dining', '10,000'], ['bus', 'Transport', '4,000'], ['shopping-bag', 'Shopping', '6,000'], ['zap', 'Bills', '3,800']].map(([i, n, v]) => `<div class="hr-row"><span class="tile">${I(i)}</span><span><b>${n}</b></span><span class="tr"><span class="a" style="font-size:16px">₹${v}</span></span></div>`).join('')}</div><div class="hr-alert info" style="width:100%">${I('info')}<div><p>₹6,200 not assigned. That's fine, it stays as headroom.</p></div></div></div>`, 'Category limits pre-filled'), 1],
+  [scr(sbar() + bar('New budget', { back: true }) + `<div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="ph-h">When does your month start?</div><div class="body" style="margin-top:8px"><label class="rcard" style="width:100%;box-shadow:inset 0 0 0 2px var(--color-action-primary);background:var(--color-action-secondary)"><span class="tile brand">${I('briefcase')}</span><span><b>On payday (1st)</b><small>Headroom resets when salary lands</small></span></label><label class="rcard" style="width:100%"><span class="tile">${I('calendar')}</span><span><b>Calendar month</b><small>1st to the last day</small></span></label><div style="font-weight:700;margin-top:8px">Alerts</div><label class="hr-switch" style="width:100%">At 80% of a limit<input type="checkbox" role="switch" checked></label><label class="hr-switch" style="width:100%">When a limit is crossed<input type="checkbox" role="switch" checked></label><p class="help">“₹1,800 left for food. That's about ₹138 a day.”</p></div>`, 'Month start and alerts'), 2],
+  [scr(sbar() + bar('Budgets', { large: true, actions: ['eye'] }) + `<div class="body">${gauge(.645, { eye: false })}<div class="hr-card" style="width:100%">${bud('Food and dining', 8200, 10000, true)}${bud('Transport', 2150, 4000, true)}${bud('Shopping', 6740, 6000, true)}</div></div><div class="hr-snack"><span>Budget started</span></div>` + nav('Budgets'), 'Budgets screen live'), 3],
+ ],
+ 'onboarding': [
+  [scr(sbar() + `<div style="position:relative;margin:16px;border-radius:var(--radius-lg)"><span class="ex-tag">Example</span>${gauge(.5, { eye: false })}</div><div class="ph-h">See how much room you have left this month</div><p class="ph-p">Headroom shows money left, not just money spent.</p><div class="bottom"><button class="hr-btn lg block">Get started</button><button class="hr-btn ghost block">I have an account</button></div>`, 'Welcome with example gauge'), 0],
+  [scr(sbar() + bar('', { back: true }) + `<div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div><div class="ph-h">Enter the code we sent</div><p class="ph-p">Sent to +91 98••• ••210</p><div class="body" style="margin-top:16px"><div class="otp"><span>4</span><span>8</span><span>2</span><span class="f"></span><span></span><span></span></div><p class="help">Resend in 0:24</p></div><div class="bottom"><button class="hr-btn lg block">Verify</button></div>`, 'OTP sign in'), 1],
+  [scr(sbar() + bar('', { back: true }) + `<div class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><div style="display:grid;place-items:center;margin:32px 0 8px"><span class="tile brand" style="width:80px;height:80px;border-radius:24px">${I('scan-face', 'style="width:40px;height:40px"')}</span></div><div class="ph-h" style="text-align:center">Lock Headroom with Face ID</div><p class="ph-p" style="text-align:center">Your balances stay private if someone else picks up your phone.</p><div class="bottom"><button class="hr-btn lg block">Turn on Face ID</button><button class="hr-btn ghost block">Not now</button></div>`, 'App lock'), 2],
+  [scr(sbar() + bar('', { back: true }) + `<div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="ph-h">Import your transactions</div><p class="ph-p">Through India's Account Aggregator network. You choose the accounts and for how long.</p><div class="body" style="margin-top:16px"><ul class="seemore"><li>${I('check')}We can read your transactions</li><li>${I('check')}Revoke access any time in Settings</li><li class="no">${I('x')}We can never move your money</li><li class="no">${I('x')}We never see your bank password</li></ul></div><div class="bottom"><button class="hr-btn lg block">Connect a bank</button><button class="hr-btn outline block">Add expenses myself</button></div>`, 'Connect bank explanation'), 4],
+  [scr(sbar() + bar('', { actions: ['eye', 'bell'] }) + `<div class="body">${gauge(.41)}</div><div class="cm" style="top:300px"><b>This is your headroom</b>Money left under your limit. It goes down as you spend and resets on the 1st.<br><button>Got it</button></div>` + nav('Home'), 'Home with coach mark'), 6],
+ ],
+ 'sensitive-data': [
+  [scr(sbar() + bar('', { actions: ['eye-off', 'bell'] }) + `<div class="body">${gauge(.645, { hidden: true })}<div class="hr-list">${row('utensils', 'Swiggy', 'Food · Today', '<span class="mk">₹ •••••</span>')}${row('briefcase', 'Acme Ltd', 'Salary · 1 Oct', '<span class="mk">₹ •••••</span>', 'in')}</div></div>` + nav('Home'), 'Balances hidden'), 0],
+  [scr(sbar() + bar('', { actions: ['eye-off', 'bell'] }) + `<div class="body">${gauge(.645, { hidden: true, peek: true })}</div><div class="cm" style="top:140px;left:24px;right:auto;width:220px">Revealed for 3 seconds</div>` + nav('Home'), 'Press and hold to peek'), 1],
+  [scr(sbar() + bar('Activity', { large: true }) + `<div class="body" style="padding:0"><div class="hr-list" style="border-radius:0;box-shadow:none"><div class="dhead"><span>Today</span><span class="num">−₹280</span></div>${row('coffee', 'Blue Tokai', 'Food and dining · 9:05 am', '−₹280')}${row('bus', 'Namma Metro', 'Transport · 8:40 am', '−₹500')}</div></div><div class="hr-snack"><span>Transaction deleted</span><button>Undo</button></div>` + nav('Activity'), 'Reversible delete with Undo'), 'Reversible: do it, offer Undo', 'Deleting a transaction happens immediately. Undo stays for 8 seconds, and Recently deleted keeps it for 30 days.'],
+  [scr(sbar() + `<div class="scrim"></div><div class="hr-dialog" role="alertdialog"><span class="ico">${I('trash-2')}</span><h4>Delete the Goa trip goal?</h4><p>Your ₹38,000 stays in your account. Only the goal and its history are deleted. This can't be undone.</p><div class="acts"><button class="hr-btn danger block">Delete goal</button><button class="hr-btn outline block is-focus">Keep goal</button></div></div>`, 'Irreversible scoped confirmation'), 'Scoped: name the consequence', 'The dialog title is a question, the body says exactly what is lost and what is kept, and Cancel has focus.'],
+  [scr(sbar() + bar('Delete account', { back: true }) + `<div class="body" style="margin-top:8px"><div class="hr-alert danger" style="width:100%">${I('triangle-alert')}<div><b>This erases everything</b><p>Transactions, budgets, goals and bank connections. You'll have 7 days to change your mind.</p></div></div><div class="hr-field" style="width:100%"><label>Type the last 4 digits of your phone number</label><div class="hr-input is-focus"><input value="02" aria-label="Last 4 digits"></div></div></div><div class="bottom"><button class="hr-btn lg block danger">Delete my account</button><button class="hr-btn ghost block">Cancel</button></div>`, 'Account deletion with type-to-confirm'), 'Account-wide: re-authenticate', 'Re-authentication, type-to-confirm with the last 4 digits of your phone number, then a 7-day grace period with one-tap restore.'],
+ ],
+ 'offline-errors': [
+  [scr(sbarOff() + bar('', { actions: ['eye', 'bell'] }) + `<div class="hr-banner" role="status">${I('wifi-off')}<span>You're offline. Changes will sync when you're back.</span></div><div class="body" style="margin-top:12px">${gauge(.645, { stale: true })}</div>` + nav('Home'), 'Offline banner with cached data'), 0],
+  [scr(sbarOff() + bar('Activity', { large: true }) + `<div class="hr-banner" role="status">${I('wifi-off')}<span>You're offline</span></div><div class="body" style="padding:0"><div class="hr-list" style="border-radius:0;box-shadow:none"><div class="dhead"><span>Today</span><span class="num">−₹666</span></div>${row('utensils', 'Food and dining', 'Just now', '−₹386', '', tag('cloud-off', 'Not synced'))}${row('coffee', 'Blue Tokai', '9:05 am', '−₹280', '', tag('cloud-off', 'Not synced'))}${row('bus', 'Namma Metro', 'Yesterday', '−₹500')}</div></div>` + nav('Activity'), 'Queued offline entries'), 'Queued, not lost', 'Adds and edits made offline appear immediately with a Not synced tag, and clear silently once sync succeeds.'],
+  [scr(sbar() + bar('Budgets', { large: true }) + `<div class="body"><div class="hr-banner warning" style="border-radius:var(--radius-md)">${I('link-2-off')}<span>HDFC connection expired</span><button class="hr-btn sm tonal">Reconnect</button></div><div class="hr-card" style="width:100%">${bud('Food and dining', 8200, 10000, true)}${bud('Transport', 2150, 4000, true)}</div><div class="hr-card" style="width:100%"><div class="ch">Goals</div><div class="hr-alert danger" style="width:auto">${I('cloud-off')}<div><p>Couldn't load goals.</p><a href="#" onclick="return false">Retry loading goals</a></div></div></div></div>` + nav('Budgets'), 'Section-level error, rest works'), 3],
+  [scr(sbar() + bar('Insights', { back: true }) + `<div class="hr-empty" style="margin:40px 16px;width:auto;box-shadow:none;background:transparent"><span class="big" style="background:var(--color-status-danger-bg);color:var(--color-status-danger)">${I('cloud-off')}</span><h4>Insights couldn't load</h4><p>This needs a connection the first time. Your transactions and budgets still work.</p><button class="hr-btn">Try again</button><span class="help">Code 503 · for support</span></div>`, 'Screen-level error'), 'Screen-level error, rarely', 'Only when nothing can be shown from cache. It says what still works, offers Try again, and keeps the code small for support.'],
+ ],
+};
+
+/* ---------- render ---------- */
+const pats = $('#pats');
+T.patterns.forEach(p => {
+  const frames = (BOARDS[p.id] || []).map(([html, s, d], k) => {
+    const [title, desc] = typeof s === 'number' ? p.steps[s] : [s, d];
+    return `<div class="step">${html}<div class="n"><b>${k + 1}</b><span>${title}</span></div><p>${esc(desc)}</p></div>`;
+  }).join('');
+  const tiers = p.tiers ? `<div class="tiers">${p.tiers.map(([t, ex, tr], i) => `<div class="tier"><div class="lvl">${[0, 1, 2].map(j => `<i class="${j <= i ? 'on' : ''}"></i>`).join('')}</div><h4>${t}</h4><small>${esc(ex)}</small><p>${esc(tr)}</p></div>`).join('')}</div>` : '';
+  const levels = p.levels ? `<h3 style="font-size:22px;line-height:28px;font-weight:700;margin-top:var(--space-800)">Error hierarchy</h3><p class="muted" style="margin-top:4px">Show each failure at the smallest scope that explains it.</p><div class="levels">${p.levels.map(([a, b, c]) => `<div><b>${a}</b><span>${esc(b)}</span><span>${esc(c)}</span></div>`).join('')}</div>` : '';
+  pats.insertAdjacentHTML('beforeend', `<section class="pat" id="${p.id}" aria-labelledby="h-${p.id}"><h2 id="h-${p.id}">${p.name}</h2>
+    <div class="pgoal"><p>${esc(p.goal)}</p><div class="m"><b>How we'll know it works</b>${esc(p.measure)}</div></div>
+    <div class="entry">${p.entry.map(e => `<span>${I('log-in')}${esc(e)}</span>`).join('')}</div>
+    <div class="board" tabindex="0" aria-label="${p.name} storyboard">${frames}</div>
+    ${tiers}${levels}
+    <div class="cols2"><div><h3>Rules</h3><ul>${p.rules.map(r => `<li>${esc(r)}</li>`).join('')}</ul></div><div><h3>Accessibility</h3><ul>${p.a11y.map(r => `<li>${esc(r)}</li>`).join('')}</ul></div></div>
+    <details class="more"><summary>${I('chevron-right', 'style="width:18px;height:18px"')}Edge cases (${p.edges.length})</summary><div><table class="etable"><thead><tr><th>Case</th><th>Behaviour</th></tr></thead><tbody>${p.edges.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div></details>
+    <div class="built">${p.components.map(c => `<span>${c}</span>`).join('')}</div></section>`);
+});
+$('#dec').innerHTML = T.patternDecisions.map(([a, b]) => `<div><h3>${a}</h3><p>${esc(b)}</p></div>`).join('');
+if (window.lucide) lucide.createIcons();
+</script>
+<script src="nav.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Headroom DS Builder",
+  "id": "headroom-ds-builder-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ],
+    "devAllowedDomains": [
+      "http://localhost:8766"
+    ],
+    "reasoning": "Development only: sends board previews to a receiver on this computer for review."
+  }
+}

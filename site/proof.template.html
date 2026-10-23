@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headroom Proof Screens</title>
+<meta name="description" content="Stage 5 of the Headroom design system: Home, Transactions, Budget detail and Add expense built only from the system, with a live token audit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shell.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="headroom.css">
+<style>
+/*__CSSVARS__*/
+
+.scoreboard{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-400);margin-top:var(--space-800)}
+.scoreboard div{padding-top:var(--space-300);border-top:2px solid var(--color-text-primary)}
+.scoreboard b{display:block;font-size:40px;line-height:44px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
+.scoreboard span{font-size:14px;line-height:20px;color:var(--color-text-secondary)}
+.scr-sec{padding-top:var(--space-1600)}
+.scr-sec > h2{font-size:40px;line-height:44px;letter-spacing:-.02em;font-weight:800}
+.scr-sec > p{font-size:18px;line-height:27px;color:var(--color-text-secondary);margin-top:var(--space-200);max-width:60ch}
+.lay{display:grid;grid-template-columns:390px minmax(0,1fr);gap:var(--space-1000);margin-top:var(--space-800);align-items:start}
+.phone{width:100%;max-width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;background:var(--color-surface-canvas);box-shadow:0 0 0 10px var(--color-text-primary),var(--elevation-3);margin:10px}
+.pscroll{height:100%;overflow-y:auto;overflow-x:hidden;position:relative;scrollbar-width:none}
+.pscroll::-webkit-scrollbar{display:none}
+.sbar{height:48px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 28px 6px;font-size:15px;font-weight:700}
+.sbar span:last-child{display:flex;gap:5px}.sbar svg{width:17px;height:17px}
+.phone .hr-appbar{width:100%;border-radius:0;box-shadow:none;background:transparent}
+.phone .body{padding:0 16px 24px;display:flex;flex-direction:column;gap:16px}
+.phone .gcard,.phone .hr-list,.phone .hr-card,.phone .hr-search{width:100%}
+.phone .gg{height:300px}
+.phone .hr-nav{position:sticky;bottom:0;width:100%;z-index:3;height:84px}
+.fabwrap{position:sticky;bottom:100px;height:0;display:flex;justify-content:flex-end;padding-right:16px;z-index:3}
+.fab{transform:translateY(-100%);height:56px;padding:0 20px;border-radius:var(--radius-lg);background:var(--color-action-primary);color:var(--color-action-on-primary);display:flex;align-items:center;gap:8px;font-weight:700;font-size:16px;box-shadow:var(--elevation-2)}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
+.sec-h h3{font-size:18px;line-height:24px;font-weight:600}
+.sec-h a{font-size:14px;font-weight:600;color:var(--color-text-link);text-decoration:none}
+.home-h{display:flex;align-items:center;padding:0 4px 0 16px}
+.home-h h1{flex:1;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-.015em}
+.chiprow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:-8px -16px 0;padding:0 16px}
+.chiprow .hr-chip{flex:none}
+.phone .scrim{position:absolute;inset:0;z-index:4}
+.phone .hr-sheet{z-index:5;padding-bottom:28px}
+.keys2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.keys2 span{height:56px;border-radius:var(--radius-md);background:var(--color-surface-sunken);display:grid;place-items:center;font-size:28px;line-height:32px;font-weight:600}
+.keys2 svg{width:24px;height:24px}
+.big-left{display:flex;flex-direction:column;gap:4px;padding:4px 0}
+.big-left small{font-size:14px;line-height:18px;font-weight:600;color:var(--color-text-secondary)}
+.big-left b{font-size:48px;line-height:52px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums slashed-zero}
+.big-left span.of{font-size:15px;line-height:22px;color:var(--color-text-secondary)}
+.chart.flat{max-width:none;box-shadow:none;padding:0;background:transparent}
+.pin{position:absolute;z-index:2;width:24px;height:24px;border-radius:50%;background:var(--color-text-primary);color:var(--color-surface-canvas);font-size:13px;font-weight:800;display:grid;place-items:center;box-shadow:0 0 0 2px var(--color-surface-canvas);pointer-events:none;transform:translate(-100%,-35%)}
+.hr-nav .pin,.fabwrap .pin{z-index:5}
+.pin.gap{background:var(--color-status-warning-bg);color:var(--color-status-warning);box-shadow:0 0 0 2px var(--color-status-warning)}
+[data-gap]{outline:2px dashed var(--color-status-warning);outline-offset:3px}
+.legend2{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--color-border-subtle)}
+.legend2 li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:var(--space-300);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle)}
+.legend2 .n{width:24px;height:24px;border-radius:50%;background:var(--color-text-primary);color:var(--color-surface-canvas);font-size:13px;font-weight:800;display:grid;place-items:center}
+.legend2 .n.gap{background:var(--color-status-warning-bg);color:var(--color-status-warning);box-shadow:inset 0 0 0 2px var(--color-status-warning)}
+.legend2 b{font-weight:700;font-size:16px}
+.legend2 p{font-size:14px;line-height:20px;color:var(--color-text-secondary);margin-top:2px}
+.legend2 .tk{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.legend2 .tk code{font-size:12px;padding:1px 8px;border-radius:var(--radius-full);background:var(--color-surface-sunken)}
+.audit{margin-top:var(--space-600);border-radius:var(--radius-lg);padding:var(--space-500);background:var(--color-surface-default);box-shadow:inset 0 0 0 1px var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-300)}
+.audit h4{font-size:16px;line-height:22px;font-weight:700;display:flex;gap:8px;align-items:center}
+.audit .row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:var(--space-300);font-size:14px;line-height:20px}
+.audit .row > span:first-child{color:var(--color-text-secondary);font-weight:600}
+.audit .ok{color:var(--color-status-success);font-weight:700}
+.audit .bad{color:var(--color-status-danger);font-weight:700}
+.audit .chips2{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.audit .chips2 code{font-size:11.5px;padding:1px 8px;border-radius:var(--radius-full);background:var(--color-surface-sunken);display:inline-flex;align-items:center;gap:5px;font-size:12px}
+.audit .chips2 code i{width:10px;height:10px;border-radius:3px;box-shadow:inset 0 0 0 1px var(--color-border-subtle)}
+.gapgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-500);margin-top:var(--space-600)}
+.gapc{border-radius:var(--radius-lg);padding:var(--space-500);background:var(--color-surface-default);box-shadow:inset 0 0 0 1px var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-300)}
+.gapc h3{font-size:22px;line-height:28px;font-weight:700;display:flex;gap:8px;align-items:center}
+.gapc .tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:var(--color-status-warning-bg);color:var(--color-status-warning)}
+.gapc p{font-size:15px;line-height:22px;color:var(--color-text-secondary)}
+.gapc ol{margin:0;padding-left:20px;font-size:14px;line-height:21px;display:flex;flex-direction:column;gap:2px}
+.gapc .spec{padding:var(--space-400);border-radius:var(--radius-md);background:var(--color-surface-canvas)}
+.gapc b.k{font-size:13px;color:var(--color-text-primary)}
+.dec{display:flex;flex-direction:column;border-top:2px solid var(--color-text-primary);margin-top:var(--space-600)}
+.dec > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--space-800);padding:var(--space-600) 0;border-bottom:1px solid var(--color-border-subtle)}
+.dec h3{font-size:22px;line-height:28px}
+.dec p{color:var(--color-text-secondary);font-size:16px;line-height:24px}
+footer{margin-top:var(--space-1600);padding-top:var(--space-600);border-top:1px solid var(--color-border-subtle);font-size:13px;color:var(--color-text-secondary);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-300)}
+@media (max-width:1199px){main{padding:0 var(--space-800) var(--space-1600)}.lay{grid-template-columns:minmax(0,1fr)}.lay .phone{justify-self:center}}
+@media (max-width:839px){
+  main{padding:0 var(--space-400) var(--space-1200)}
+  .intro h1{font-size:40px;line-height:44px}
+  .scr-sec > h2{font-size:30px;line-height:34px}
+  .scoreboard{grid-template-columns:1fr 1fr}
+  .gapgrid,.dec > div{grid-template-columns:minmax(0,1fr)}
+  .phone{margin:10px auto;width:calc(100% - 20px)}
+}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" data-page="proof.html"></aside>
+<main>
+<div class="wrap">
+  <header class="intro">
+    <h1>Proof screens</h1>
+    <p>Home, Transactions, Budget detail and Add expense, built only from the system. Each screen runs a live audit: every colour and font size it renders is read back and matched to a token. Scroll inside the phones, and switch the theme to re-run the audit in dark mode.</p>
+    <div class="scoreboard" id="score"></div>
+  </header>
+  <div id="screens"></div>
+  <section class="scr-sec" id="gaps" aria-labelledby="h-gaps" data-toc-group="Review"><h2 id="h-gaps">Gaps the screens found</h2><p>Places where the screens needed something the library didn't have. Each is specified like a Stage 2 component and built from existing tokens only. They're outlined in amber on the screens above.</p><div class="gapgrid" id="gapgrid"></div></section>
+  <section class="scr-sec" id="decisions" aria-labelledby="h-dec"><h2 id="h-dec">Decisions to defend</h2><div class="dec" id="dec"></div></section>
+  <footer><span>Headroom design system · Stage 5 proof · all data synthetic</span><span>Generated from tools/proof_spec.py</span><span>Icons by <a href="https://www.notboringicons.com" target="_blank" rel="noopener">Not Boring Icons</a></span></footer>
+</div>
+</main>
+</div>
+
+<script src="icons.js"></script>
+<script>
+const T = /*__TOKENS__*/null;
+const $ = (s, r = document) => r.querySelector(s);
+const I = (n, a = '') => `<i data-lucide="${n}" ${a}></i>`;
+const inr = n => new Intl.NumberFormat('en-IN').format(n);
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const root = document.documentElement;
+
+/* ---------- screen kit ---------- */
+const sbar = () => `<div class="sbar"><span>9:41</span><span>${I('signal')}${I('wifi')}${I('battery-full')}</span></div>`;
+const nav = on => `<nav class="hr-nav" data-pin="${on === 'Activity' ? 7 : 10}">${[['house', 'Home'], ['arrow-left-right', 'Activity'], ['gauge', 'Budgets'], ['target', 'Goals']].map(([i, n]) => `<a ${n === on ? 'aria-current="page"' : ''}><span>${I(i)}</span>${n}</a>`).join('')}</nav>`;
+const row = (icon, t, sub, amt, cls = '', extra = '') => `<div class="hr-row two"><span class="tile">${I(icon)}</span><span><b>${t}</b><small>${sub}</small></span><span class="tr"><span class="a ${cls}">${amt}</span>${extra}</span></div>`;
+const tag = (i, t, cls = '') => `<span class="hr-tag ${cls}">${I(i)}${t}</span>`;
+const mini = (n, s, l) => { const p = s / l, st = p > 1 ? 'over' : p >= .8 ? 'near' : 'ok'; const f = st === 'over' ? 'var(--color-finance-over-fill)' : st === 'near' ? 'var(--color-finance-near-fill)' : 'var(--color-finance-spent)';
+  const msg = st === 'over' ? `${I('chevrons-up')}₹${inr(s - l)} over` : st === 'near' ? `${I('triangle-alert')}₹${inr(l - s)} left` : `${I('circle-check')}₹${inr(l - s)} left`;
+  return `<div class="bud" style="width:100%"><div class="bud-h"><span>${n}</span><span>₹${inr(s)} of ₹${inr(l)}</span></div><div class="track" style="width:${st === 'over' ? 88 : 100}%"><div class="f" style="width:${Math.min(p, 1.3) * 100}%;background:${f}"></div><div class="lim" style="left:calc(100% - 1px)"></div></div><p class="bud-s ${st}">${msg}</p></div>`; };
+
+const HOME = `<div class="pscroll">${sbar()}
+ <div class="home-h" data-pin="1"><h1>October</h1><button class="hr-ibtn" aria-pressed="false" aria-label="Hide balances" data-pin="2">${I('eye')}</button><button class="hr-ibtn" aria-label="Notifications">${I('bell')}</button></div>
+ <div class="body">
+  <div class="gcard" data-pin="3"><div class="gtop"><span>13 days left</span></div><div class="gg"><div class="line dash"></div><span class="lim">Limit ₹52,000</span><div class="room"><p>Headroom</p><b><span class="rs">₹</span>18,450</b></div><div class="fill" style="height:54%;background:var(--color-finance-spent)"></div><div class="spent">Spent so far<b>₹33,550</b></div></div><p class="gstat ok">${I('circle-check')}On track · about ₹1,419 a day</p></div>
+  <div class="hr-sync" data-pin="4" data-gap>${I('history')}Updated 5 min ago<button class="hr-ibtn" aria-label="Refresh">${I('refresh-cw')}</button></div>
+  <div class="hr-insight" data-pin="5" data-gap><span class="tile brand">${I('utensils')}</span><div><h5>₹2,100 less on food than this time in September</h5><div class="cmp"><div>October<i style="width:62%;background:var(--color-chart-1)"></i><b>₹8,200</b></div><div>September<i style="width:84%;background:var(--color-finance-spent)"></i><b>₹10,300</b></div></div></div></div>
+  <div class="sec-h"><h3>Budgets</h3><a href="#">See all</a></div>
+  <div class="hr-card" data-pin="6">${mini('Shopping', 6740, 6000)}${mini('Food and dining', 8200, 10000)}${mini('Transport', 2150, 4000)}</div>
+  <div class="sec-h"><h3>Coming up</h3><a href="#">All bills</a></div>
+  <div class="hr-list" data-pin="7" data-gap><div class="hr-bill"><span class="date"><b>1</b><small>Nov</small></span><span><b>Rent</b><small>Every month</small></span><span class="tr"><b>₹22,000</b>${tag('clock', 'In 13 days')}</span></div><div class="hr-bill"><span class="date"><b>21</b><small>Oct</small></span><span><b>Netflix</b><small>Every month</small></span><span class="tr"><b>₹649</b>${tag('clock', 'In 3 days', 'due')}</span></div></div>
+  <div class="sec-h"><h3>Recent</h3><a href="#">See all</a></div>
+  <div class="hr-list" data-pin="8">${row('utensils', 'Swiggy', 'Food and dining · 1:42 pm', '−₹386')}${row('bus', 'Namma Metro', 'Transport · Yesterday', '−₹500')}${row('briefcase', 'Acme Ltd', 'Salary · 1 Oct', '+₹84,500', 'in')}</div>
+ </div>
+ <div class="fabwrap"><div class="fab" data-pin="9">${I('plus')}Add</div></div>${nav('Home')}</div>`;
+
+const ACTIVITY = `<div class="pscroll">${sbar()}
+ <div data-pin="1"><div class="home-h"><h1>Activity</h1><button class="hr-ibtn" aria-label="Select">${I('list-checks')}</button></div><div class="body" style="padding-bottom:12px"><div class="hr-search" role="search">${I('search')}<input placeholder="Search merchants, notes, amounts" aria-label="Search transactions"></div></div></div>
+ <div class="body">
+  <div class="chiprow" data-pin="2"><button class="hr-chip" aria-pressed="true">${I('check')}October</button><button class="hr-chip"><span class="cdot" style="background:var(--color-chart-1)"></span>Food</button><button class="hr-chip"><span class="cdot" style="background:var(--color-chart-2)"></span>Rent</button><button class="hr-chip"><span class="cdot" style="background:var(--color-chart-3)"></span>Shopping</button><button class="hr-chip">${I('sliders-horizontal')}Filters</button></div>
+  <div class="hr-summary" data-pin="3" data-gap><div><small>Spent</small><b><span class="rs">₹</span>33,550</b></div><div><small>Income</small><b style="color:var(--color-finance-income)">+<span class="rs">₹</span>84,500</b></div><p class="cap" style="margin:0">All categories · 1–18 Oct</p></div>
+  <div class="hr-list">
+   <div class="dhead" data-pin="4"><span>Today</span><span class="num">−₹666</span></div>${row('utensils', 'Swiggy', 'Food and dining · 1:42 pm', '−₹386')}${row('coffee', 'Blue Tokai', 'Food and dining · 9:05 am', '−₹280', '', tag('cloud-off', 'Not synced'))}
+   <div class="dhead"><span>Friday, 16 Oct</span><span class="num">−₹2,399</span></div><div data-pin="5">${row('shopping-bag', 'Myntra', 'Shopping · 8:10 pm', '−₹1,899', 'pend', tag('clock', 'Pending'))}</div>${row('bus', 'Namma Metro', 'Transport · 8:40 am', '−₹500')}
+   <div class="dhead"><span>Thursday, 15 Oct</span><span class="num">+₹499</span></div>${row('piggy-bank', 'Goa trip', 'Moved to goal', '₹5,000', 'sv', tag('target', 'Saved'))}${row('rotate-ccw', 'Amazon', 'Refund · Shopping', '+₹499', 'in')}
+   <div class="dhead"><span>1 Oct</span><span class="num">+₹62,500</span></div>${row('briefcase', 'Acme Ltd', 'Salary · Received', '+₹84,500', 'in')}<div data-pin="6">${row('house', 'Rent', 'Housing · Paid', '−₹22,000', '', tag('repeat', 'Recurring'))}</div>
+  </div>
+ </div>${nav('Activity')}</div>`;
+
+function lineChart() {
+  const W = 340, H = 140, lim = 10000, max = 12000, days = 31, today = 18;
+  const pts = [0, 420, 900, 1250, 1900, 2300, 2880, 3400, 3700, 4300, 4800, 5100, 5650, 6100, 6700, 7100, 7500, 7900, 8200];
+  const x = d => 30 + d / days * (W - 34), y = v => 8 + H - v / max * H;
+  const proj = 8200 + 8200 / 18 * (days - today);
+  const ticks = [0, 5000, 10000].map(v => `<line x1="30" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="var(--color-border-subtle)"/><text x="24" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="var(--color-text-secondary)">${v / 1000}k</text>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H + 30}" width="100%" aria-hidden="true">${ticks}<line x1="30" x2="${W}" y1="${y(lim)}" y2="${y(lim)}" stroke="var(--color-finance-clearance-line)" stroke-width="2" stroke-dasharray="6 4"/><path d="${pts.map((v, i) => `${i ? 'L' : 'M'}${x(i)} ${y(v)}`).join(' ')}" fill="none" stroke="var(--color-finance-spent)" stroke-width="3" stroke-linejoin="round"/><path d="M${x(today)} ${y(8200)} L${x(days)} ${y(proj)}" stroke="var(--color-text-secondary)" stroke-width="2" stroke-dasharray="2 4" fill="none"/><line x1="${x(today)}" x2="${x(today)}" y1="8" y2="${H + 8}" stroke="var(--color-action-primary)" stroke-width="2"/><circle cx="${x(today)}" cy="${y(8200)}" r="5" fill="var(--color-action-primary)" stroke="var(--color-surface-canvas)" stroke-width="2"/><text x="${x(today)}" y="${H + 26}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-action-primary)">Today</text><text x="30" y="${H + 26}" font-size="12" fill="var(--color-text-secondary)">1 Oct</text><text x="${W}" y="${H + 26}" text-anchor="end" font-size="12" fill="var(--color-text-secondary)">31 Oct</text></svg>`;
+}
+function barChart() {
+  const d = [['Jul', 9100], ['Aug', 10900], ['Sep', 10300], ['Oct', 8200]], lim = 10000, max = 12000, H = 120, W = 340, bw = 48;
+  const y = v => 8 + H - v / max * H;
+  return `<svg viewBox="0 0 ${W} ${H + 44}" width="100%" aria-hidden="true">${[0, 5000, 10000].map(v => `<line x1="30" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="var(--color-border-subtle)"/><text x="24" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="var(--color-text-secondary)">${v / 1000}k</text>`).join('')}${d.map((r, i) => { const cx = 50 + i * 74, over = r[1] > lim, cur = i === 3; return `<rect x="${cx}" y="${y(r[1])}" width="${bw}" height="${H + 8 - y(r[1])}" rx="4" fill="${cur ? 'var(--color-action-primary)' : 'var(--color-finance-spent)'}"/>${over ? `<rect x="${cx}" y="${y(r[1])}" width="${bw}" height="${y(lim) - y(r[1])}" rx="4" fill="var(--color-finance-over-fill)"/>` : ''}<text x="${cx + bw / 2}" y="${H + 26}" text-anchor="middle" font-size="12" fill="var(--color-text-secondary)">${r[0]}</text><text x="${cx + bw / 2}" y="${H + 42}" text-anchor="middle" font-size="12" font-weight="600" fill="${over ? 'var(--color-finance-over-budget)' : 'var(--color-text-primary)'}">₹${(r[1] / 1000).toFixed(1)}k</text>`; }).join('')}<line x1="30" x2="${W}" y1="${y(lim)}" y2="${y(lim)}" stroke="var(--color-finance-clearance-line)" stroke-width="2" stroke-dasharray="6 4"/></svg>`;
+}
+const BUDGET = `<div class="pscroll">${sbar()}
+ <div class="hr-appbar" data-pin="1"><div class="ab-row"><button class="hr-ibtn" aria-label="Back to Budgets">${I('chevron-left')}</button><h4>Food and dining</h4><button class="hr-ibtn" aria-label="Edit budget">${I('pencil')}</button></div></div>
+ <div class="body">
+  <div data-pin="2"><div class="big-left"><small>Left this month</small><b><span class="rs">₹</span>1,800</b><span class="of">of ₹10,000 · 13 days to go</span></div>
+   <div class="bud" style="width:100%;margin-top:8px"><div class="track"><div class="f" style="width:82%;background:var(--color-finance-near-fill)"></div><div class="pace" style="left:58%"></div><div class="lim" style="left:calc(100% - 1px)"></div></div><p class="bud-s near">${I('triangle-alert')}Close to limit · ₹8,200 spent</p></div></div>
+  <div class="hr-alert warning" style="width:100%" data-pin="3">${I('triangle-alert')}<div><p>₹1,800 left for 13 days, about ₹138 a day. You usually spend ₹410 a day on food.</p><a href="#" onclick="return false">Move money from Fun</a></div></div>
+  <div class="chart flat" data-pin="4"><h5>On pace to go ₹3,400 over</h5>${lineChart()}</div>
+  <div class="hr-tabs" style="width:100%" data-pin="5"><button aria-selected="true">Overview</button><button aria-selected="false">Transactions</button><button aria-selected="false">History</button></div>
+  <div class="chart flat" data-pin="6"><h5>August went ₹900 over</h5>${barChart()}</div>
+  <div class="hr-list">${row('utensils', 'Swiggy', 'Today · 1:42 pm', '−₹386')}${row('coffee', 'Blue Tokai', 'Today · 9:05 am', '−₹280')}${row('shopping-basket', 'Zepto', 'Wednesday', '−₹1,240')}</div>
+  <button class="hr-btn tonal block" data-pin="7">${I('sliders-horizontal')}Adjust limit</button>
+ </div></div>`;
+
+const ADD = `<div class="pscroll" style="overflow:hidden">${sbar()}
+ <div class="home-h"><h1>October</h1><button class="hr-ibtn" aria-label="Hide balances">${I('eye')}</button></div>
+ <div class="body"><div class="gcard"><div class="gg" style="height:240px"><div class="line dash"></div><div class="fill" style="height:54%;background:var(--color-finance-spent)"></div></div></div></div>
+ <div class="scrim" data-pin="1"></div>
+ <div class="hr-sheet"><div class="handle"></div>
+  <div class="hr-seg" style="width:100%" data-pin="2"><button aria-pressed="true">${I('arrow-up-right')}Expense</button><button aria-pressed="false">${I('arrow-down-left')}Income</button></div>
+  <div class="hr-amount" style="padding:4px 0"><span class="v num" data-pin="3"><span class="rs">₹</span>386<span class="caret"></span></span><span class="ctx" data-pin="4" style="color:var(--color-text-primary)">₹1,414 left in Food after this</span></div>
+  <div class="chips" style="justify-content:center" data-pin="5"><button class="hr-chip" aria-pressed="true">${I('check')}Food</button><button class="hr-chip">${I('shopping-basket')}Groceries</button><button class="hr-chip">${I('ellipsis')}More</button></div>
+  <div class="keys2" data-pin="6">${['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0'].map(k => `<span>${k}</span>`).join('')}<span>${I('delete')}</span></div>
+  <button class="hr-btn lg block" data-pin="7">Add ₹386 expense</button><button class="hr-btn ghost block" style="height:40px">More details</button>
+ </div></div>`;
+const HTML = { home: HOME, activity: ACTIVITY, budget: BUDGET, add: ADD };
+
+/* ---------- render ---------- */
+const screens = $('#screens');
+T.proof.screens.forEach(s => {
+  const legend = s.pins.map(([c, note, toks], i) => { const gap = c.includes('(GAP)'); return `<li><span class="n ${gap ? 'gap' : ''}">${i + 1}</span><div><b>${c.replace(' (GAP)', '')}${gap ? ' · new' : ''}</b><p>${esc(note)}</p><div class="tk">${toks.map(t => `<code>${t}</code>`).join('')}</div></div></li>`; }).join('');
+  screens.insertAdjacentHTML('beforeend', `<section class="scr-sec" id="${s.id}" aria-labelledby="h-${s.id}"><h2 id="h-${s.id}">${s.name}</h2><p>${esc(s.job)}</p>
+   <div class="lay"><div class="phone" data-screen="${s.id}" role="img" aria-label="${s.name} screen">${HTML[s.id]}</div><div><ol class="legend2">${legend}</ol><div class="audit" data-audit="${s.id}"></div></div></div></section>`);
+});
+$('#gapgrid').innerHTML = T.proof.gaps.map(g => `<div class="gapc"><h3>${g.name}<span class="tag">New</span></h3><p>${esc(g.why)}</p><div class="spec"><b class="k">Anatomy</b><ol>${g.anatomy.map(a => `<li>${esc(a)}</li>`).join('')}</ol></div><p><b class="k">States:</b> ${esc(g.states)}</p><p><b class="k">Rule:</b> ${esc(g.rules)}</p><p style="font-size:13px"><b class="k">Used on:</b> ${g.screen}</p></div>`).join('');
+$('#dec').innerHTML = T.proof.decisions.map(([a, b]) => `<div><h3>${a}</h3><p>${esc(b)}</p></div>`).join('');
+if (window.lucide) lucide.createIcons();
+
+/* pins */
+function placePins() {
+  document.querySelectorAll('.pin').forEach(p => p.remove());
+  document.querySelectorAll('[data-screen]').forEach(ph => {
+    const sc = ph.querySelector('.pscroll'), spec = T.proof.screens.find(s => s.id === ph.dataset.screen);
+    ph.querySelectorAll('[data-pin]').forEach(el => {
+      const n = +el.dataset.pin, c = spec.pins[n - 1]; if (!c) return;
+      const r = el.getBoundingClientRect(), b = sc.getBoundingClientRect();
+      const pin = document.createElement('span'); pin.className = 'pin' + (c[0].includes('(GAP)') ? ' gap' : ''); pin.textContent = n; pin.setAttribute('aria-hidden', 'true');
+      const sticky = el.closest('.hr-nav,.fabwrap');
+      pin.style.left = (Math.min(r.right, b.right - 4) - b.left - 4) + 'px'; pin.style.top = (r.top - b.top + sc.scrollTop + 2) + 'px';
+      if (sticky) { pin.style.position = 'absolute'; }
+      (sticky ? sticky : sc).appendChild(pin);
+      if (sticky) { const sr = sticky.getBoundingClientRect(); pin.style.left = (Math.min(r.right, b.right - 4) - sr.left - 4) + 'px'; pin.style.top = (r.top - sr.top + 2) + 'px'; }
+    });
+  });
+}
+
+/* ---------- live token audit ---------- */
+const mode = () => root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+const norm = c => { const m = String(c).match(/[\d.]+/g); if (!m) return null; const [r, g, b, a = 1] = m.map(Number); return a === 0 ? null : `${r},${g},${b},${Math.round(a * 100) / 100}`; };
+const hexNorm = h => `${parseInt(h.slice(1, 3), 16)},${parseInt(h.slice(3, 5), 16)},${parseInt(h.slice(5, 7), 16)},1`;
+function tokenIndex() {
+  const m = mode(), idx = {};
+  Object.entries(T.semantic).forEach(([p, v]) => { const k = hexNorm(v[m]); (idx[k] = idx[k] || []).push(p); });
+  T.overlay.forEach(o => { const k = norm(o[m]); if (k) (idx[k] = idx[k] || []).push(o.path); });
+  return idx;
+}
+const PREF = { text: ['color/text/', 'color/finance/', 'color/status/', 'color/action/on-'], bg: ['color/surface/', 'color/action/', 'color/finance/', 'color/status/', 'color/overlay/', 'color/chart/'], border: ['color/border/', 'color/action/', 'color/status/'], fill: ['color/chart/', 'color/finance/', 'color/action/', 'color/surface/', 'color/text/'], stroke: ['color/finance/', 'color/chart/', 'color/action/', 'color/border/', 'color/text/', 'color/surface/'] };
+const pick = (names, kind) => { for (const pre of PREF[kind] || []) { const n = names.find(x => x.startsWith(pre) && !/hover|pressed/.test(x)); if (n) return n; } return names[0]; };
+const SIZES = new Set([...T.type, ...T.numeric].map(t => t.size));
+function audit(ph) {
+  const idx = tokenIndex(), used = new Map(), stray = new Map(), sizes = new Map(), offSize = new Map();
+  ph.querySelectorAll('*').forEach(el => {
+    if (el.classList.contains('pin') || el.closest('.pin')) return;
+    const cs = getComputedStyle(el); if (cs.display === 'none' || cs.visibility === 'hidden') return;
+    const isSvg = el instanceof SVGElement;
+    const hasText = [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim());
+    const props = [];
+    if (hasText) props.push(['text', cs.color]);
+    if (!isSvg) { props.push(['bg', cs.backgroundColor]); ['Top', 'Right', 'Bottom', 'Left'].forEach(s => { if (parseFloat(cs['border' + s + 'Width']) > 0) props.push(['border', cs['border' + s + 'Color']]); }); }
+    if (isSvg && el.tagName !== 'svg') { if (cs.fill !== 'none' && !['line', 'polyline'].includes(el.tagName)) props.push(['fill', cs.fill]); if (cs.stroke !== 'none') props.push(['stroke', cs.stroke]); }
+    if (el.tagName === 'svg' && el.classList.contains('lucide')) props.push(['text', cs.color]);
+    props.forEach(([kind, c]) => { const k = norm(c); if (!k) return; if (idx[k]) used.set(pick(idx[k], kind), k); else stray.set(k, (stray.get(k) || 0) + 1); });
+    if (hasText && !el.classList.contains('rs')) { const fz = Math.round(parseFloat(cs.fontSize) * 10) / 10; if (SIZES.has(fz)) sizes.set(fz, 1); else offSize.set(fz, el.textContent.trim().slice(0, 24)); }
+  });
+  return { used, stray, sizes, offSize };
+}
+const toCss = k => { const [r, g, b, a] = k.split(','); return `rgba(${r},${g},${b},${a})`; };
+let totals = {};
+function runAudits() {
+  totals = { colors: 0, stray: 0, sizes: new Set(), off: 0 };
+  document.querySelectorAll('[data-screen]').forEach(ph => {
+    const r = audit(ph), box = $(`[data-audit="${ph.dataset.screen}"]`);
+    totals.colors += r.used.size; totals.stray += r.stray.size; r.sizes.forEach((_, k) => totals.sizes.add(k)); totals.off += r.offSize.size;
+    box.innerHTML = `<h4>${I('scan-search')}Token audit · ${mode()} mode</h4>
+      <div class="row"><span>Colours</span><span>${r.stray.size ? `<span class="bad">${r.stray.size} not from tokens</span> · ` : `<span class="ok">All ${r.used.size} from tokens</span>`}<div class="chips2">${[...r.used].sort().map(([p, k]) => `<code><i style="background:${toCss(k)}"></i>${p.replace('color/', '')}</code>`).join('')}${[...r.stray].map(([k]) => `<code style="color:var(--color-status-danger)"><i style="background:${toCss(k)}"></i>${toCss(k)}</code>`).join('')}</div></span></div>
+      <div class="row"><span>Type sizes</span><span>${r.offSize.size ? `<span class="bad">${r.offSize.size} off-scale: ${[...r.offSize].map(([s, t]) => `${s}px “${esc(t)}”`).join(', ')}</span>` : `<span class="ok">All ${r.sizes.size} on the type scale</span>`} <span class="muted">(${[...r.sizes.keys()].sort((a, b) => a - b).join(', ')}px)</span></span></div>`;
+  });
+  $('#score').innerHTML = `<div><b>4</b><span>screens built only from the library</span></div><div><b>${totals.stray === 0 ? '100%' : totals.stray + ' stray'}</b><span>of rendered colours resolve to tokens (${mode()} mode)</span></div><div><b>${totals.off === 0 ? '100%' : totals.off + ' off'}</b><span>of font sizes on the type scale</span></div><div><b>${T.proof.gaps.length}</b><span>gaps found and specified as new components</span></div>`;
+  window.hrAudit = totals;
+  if (window.lucide) lucide.createIcons();
+  placePins();
+}
+window.addEventListener('resize', placePins);
+document.addEventListener('hr:theme', () => setTimeout(runAudits, 450));
+document.fonts && document.fonts.ready.then(() => setTimeout(runAudits, 900)); // after first-view fills (motion/duration/slow + delay) settle
+</script>
+<script src="nav.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

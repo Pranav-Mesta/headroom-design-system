@@ -1,0 +1,1622 @@
+[
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 13.82,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 18.35,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.74,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.66,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/link",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 4.71,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/link",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.66,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.38,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 12.16,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.04,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.47,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.33,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.3,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 14.43,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/income",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.38,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/income",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 12.16,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/expense",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 13.82,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/expense",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 18.35,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/over-budget",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.33,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/over-budget",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.3,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/near-limit",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.04,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/near-limit",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.47,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/savings",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.55,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/savings",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 12.04,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/neutral-change",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.74,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/neutral-change",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.66,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.61,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 5.77,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/focus",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.71,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/focus",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 11.66,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/primary",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.71,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/primary",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 11.66,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 13.82,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 16.78,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 14.87,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 17.21,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.25,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/link",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 5.07,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/link",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.86,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.4,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.81,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.75,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.88,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.59,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.46,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 13.53,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/income",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.86,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/income",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.4,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/expense",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 14.87,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/expense",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 17.21,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/over-budget",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.88,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/over-budget",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.59,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/near-limit",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.81,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/near-limit",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.75,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/savings",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.04,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/savings",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.29,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/neutral-change",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.25,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/neutral-change",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.96,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 5.41,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/focus",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 5.07,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/focus",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 10.94,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/primary",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 5.07,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/primary",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 10.94,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 14.87,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 15.73,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 14.87,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 13.82,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.25,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.78,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/link",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 5.07,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/link",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.78,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.86,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 9.16,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.81,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.64,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.88,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.51,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.46,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.87,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/income",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.86,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/income",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 9.16,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/expense",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 14.87,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/expense",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 13.82,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/over-budget",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.88,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/over-budget",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.51,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/near-limit",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.81,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/near-limit",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.64,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/savings",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.04,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/savings",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 9.07,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/neutral-change",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.25,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/neutral-change",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.78,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.96,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 4.35,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/focus",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 5.07,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/focus",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.78,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/primary",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 5.07,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/primary",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.78,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 14.87,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 12.64,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/sunken",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 12.64,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/surface/sunken",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 18.35,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/sunken",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.16,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/surface/sunken",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.66,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/sunken",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.22,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/border/default",
+    "bg": "color/surface/sunken",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 5.77,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/action/primary",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 5.07,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/action/primary",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.66,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/action/primary-hover",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.46,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/action/primary-hover",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 14.43,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/action/primary-pressed",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 10.86,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/action/primary-pressed",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 16.83,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-secondary",
+    "bg": "color/action/secondary",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.36,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-secondary",
+    "bg": "color/action/secondary",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 12.74,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-inverse",
+    "bg": "color/surface/inverse",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 8.78,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-inverse",
+    "bg": "color/surface/inverse",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 6.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/status/danger",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.88,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/action/on-primary",
+    "bg": "color/status/danger",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 11.3,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/inverse",
+    "bg": "color/surface/inverse",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 13.82,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/inverse",
+    "bg": "color/surface/inverse",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 13.82,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/status/success-bg",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.42,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/success",
+    "bg": "color/status/success-bg",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/status/warning-bg",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 9.15,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/warning",
+    "bg": "color/status/warning-bg",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.69,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/status/danger-bg",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 7.31,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/danger",
+    "bg": "color/status/danger-bg",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.86,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/status/info-bg",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.95,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/status/info",
+    "bg": "color/status/info-bg",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 10.92,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/headroom",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 12.68,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/headroom",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 13.89,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/finance/headroom",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 6.18,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/secondary",
+    "bg": "color/finance/headroom",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 8.83,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/spent",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 8.78,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/spent",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 6.94,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/near-fill",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 8.64,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/near-fill",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 4.71,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/over-fill",
+    "mode": "light",
+    "kind": "text",
+    "ratio": 5.93,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/text/primary",
+    "bg": "color/finance/over-fill",
+    "mode": "dark",
+    "kind": "text",
+    "ratio": 7.33,
+    "target": 4.5,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/finance/headroom",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 12.68,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/finance/headroom",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 12.7,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/finance/spent",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 8.78,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/finance/clearance-line",
+    "bg": "color/finance/spent",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 6.34,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/1",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.5,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/1",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 7.83,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/1",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.5,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/1",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 6.29,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/1",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.26,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/1",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.35,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/2",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.74,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/2",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.2,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/2",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.74,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/2",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 6.59,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/2",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.41,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/2",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.75,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/3",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.54,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/3",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 10.75,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/3",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.54,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/3",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.64,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/3",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.29,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/3",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 11.47,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/4",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.72,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/4",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 7.39,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/4",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.72,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/4",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 5.93,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/4",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.46,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/4",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 7.88,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/5",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.63,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/5",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.33,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/5",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.63,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/5",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 6.69,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/5",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 4.31,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/5",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 8.89,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/other",
+    "bg": "color/surface/default",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.42,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/other",
+    "bg": "color/surface/default",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 5.41,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/other",
+    "bg": "color/surface/raised",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.42,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/other",
+    "bg": "color/surface/raised",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 4.35,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/other",
+    "bg": "color/surface/canvas",
+    "mode": "light",
+    "kind": "ui",
+    "ratio": 3.18,
+    "target": 3.0,
+    "pass": true
+  },
+  {
+    "fg": "color/chart/other",
+    "bg": "color/surface/canvas",
+    "mode": "dark",
+    "kind": "ui",
+    "ratio": 5.77,
+    "target": 3.0,
+    "pass": true
+  }
+]

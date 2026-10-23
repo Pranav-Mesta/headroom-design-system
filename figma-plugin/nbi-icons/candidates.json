@@ -1,0 +1,3049 @@
+{
+ "arrow-down-left": [
+  {
+   "name": "arrow-down-left",
+   "category": "Arrows",
+   "tags": "direction pointer",
+   "q": "arrow down left"
+  },
+  {
+   "name": "arrow-circle-down-left",
+   "category": "Arrows",
+   "tags": "direction pointer status",
+   "q": "arrow down left"
+  },
+  {
+   "name": "arrow-square-down-left",
+   "category": "Arrows",
+   "tags": "direction pointer checkbox button",
+   "q": "arrow down left"
+  },
+  {
+   "name": "corner-down-left",
+   "category": "Arrows",
+   "tags": "",
+   "q": "arrow down left"
+  },
+  {
+   "name": "corner-left-down",
+   "category": "Arrows",
+   "tags": "",
+   "q": "arrow down left"
+  }
+ ],
+ "arrow-left-right": [
+  {
+   "name": "arrows-left-right",
+   "category": "Arrows",
+   "tags": "migration transfer",
+   "q": "arrows left right"
+  },
+  {
+   "name": "chevrons-left-right",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "arrows left right"
+  },
+  {
+   "name": "chevrons-right-left",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "arrows left right"
+  }
+ ],
+ "arrow-right": [
+  {
+   "name": "arrow-right",
+   "category": "Essentials",
+   "tags": "direction pointer",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrow-up-right",
+   "category": "Essentials",
+   "tags": "direction pointer",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrow-big-right",
+   "category": "Arrows",
+   "tags": "direction pointer bold large thick",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrow-down-right",
+   "category": "Arrows",
+   "tags": "direction pointer",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrows-left-right",
+   "category": "Arrows",
+   "tags": "migration transfer",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrow-circle-right",
+   "category": "Arrows",
+   "tags": "direction pointer status",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrow-square-right",
+   "category": "Arrows",
+   "tags": "direction pointer checkbox button",
+   "q": "arrow right"
+  },
+  {
+   "name": "arrow-right-to-line",
+   "category": "Arrows",
+   "tags": "direction pointer",
+   "q": "arrow right"
+  }
+ ],
+ "arrow-up-right": [
+  {
+   "name": "arrow-up-right",
+   "category": "Essentials",
+   "tags": "direction pointer",
+   "q": "arrow up right"
+  },
+  {
+   "name": "arrow-circle-up-right",
+   "category": "Communication",
+   "tags": "direction pointer status",
+   "q": "arrow up right"
+  },
+  {
+   "name": "arrow-square-up-right",
+   "category": "Communication",
+   "tags": "direction pointer checkbox button",
+   "q": "arrow up right"
+  },
+  {
+   "name": "corner-right-up",
+   "category": "Arrows",
+   "tags": "",
+   "q": "arrow up right"
+  },
+  {
+   "name": "corner-up-right",
+   "category": "Arrows",
+   "tags": "",
+   "q": "arrow up right"
+  }
+ ],
+ "ban": [
+  {
+   "name": "ban",
+   "category": "Communication",
+   "tags": "blocked",
+   "q": "ban"
+  },
+  {
+   "name": "bank",
+   "category": "Commerce",
+   "tags": "finance building money",
+   "q": "ban"
+  },
+  {
+   "name": "bandage",
+   "category": "Health",
+   "tags": "",
+   "q": "ban"
+  },
+  {
+   "name": "banknote",
+   "category": "Commerce",
+   "tags": "revenue income payout cash profit",
+   "q": "ban"
+  },
+  {
+   "name": "shield-ban",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit blocked",
+   "q": "ban"
+  },
+  {
+   "name": "piggy-bank",
+   "category": "Commerce",
+   "tags": "finance building money",
+   "q": "ban"
+  },
+  {
+   "name": "blocks",
+   "category": "Development",
+   "tags": "modules apps building integration extension",
+   "q": "block"
+  },
+  {
+   "name": "blocks-02",
+   "category": "Development",
+   "tags": "modules apps building integration extension",
+   "q": "block"
+  },
+  {
+   "name": "blocks-03",
+   "category": "Development",
+   "tags": "modules apps building integration extension",
+   "q": "block"
+  },
+  {
+   "name": "blocks-04",
+   "category": "Development",
+   "tags": "modules apps building integration extension",
+   "q": "block"
+  },
+  {
+   "name": "blockchain",
+   "category": "Interface",
+   "tags": "",
+   "q": "block"
+  },
+  {
+   "name": "quote",
+   "category": "UI & Text",
+   "tags": "citation blockquote",
+   "q": "block"
+  }
+ ],
+ "battery-full": [
+  {
+   "name": "battery-full",
+   "category": "Devices & Media",
+   "tags": "charge energy power",
+   "q": "battery full"
+  },
+  {
+   "name": "battery",
+   "category": "System",
+   "tags": "charge energy power",
+   "q": "battery"
+  },
+  {
+   "name": "battery-low",
+   "category": "Devices & Media",
+   "tags": "charge energy power",
+   "q": "battery"
+  },
+  {
+   "name": "battery-empty",
+   "category": "Devices & Media",
+   "tags": "charge energy power",
+   "q": "battery"
+  },
+  {
+   "name": "battery-warning",
+   "category": "Devices & Media",
+   "tags": "charge energy power",
+   "q": "battery"
+  },
+  {
+   "name": "battery-charging",
+   "category": "Media & Connectivity",
+   "tags": "charge energy power",
+   "q": "battery"
+  }
+ ],
+ "bell": [
+  {
+   "name": "bell-x",
+   "category": "Communication",
+   "tags": "notification alert alarm toast close cancel remove rejected error failed",
+   "q": "bell"
+  },
+  {
+   "name": "bell-01",
+   "category": "Communication",
+   "tags": "notification alert alarm toast",
+   "q": "bell"
+  },
+  {
+   "name": "bell-02",
+   "category": "Communication",
+   "tags": "notification alert alarm toast",
+   "q": "bell"
+  },
+  {
+   "name": "bell-03",
+   "category": "Communication",
+   "tags": "notification alert alarm toast",
+   "q": "bell"
+  },
+  {
+   "name": "bell-04",
+   "category": "Communication",
+   "tags": "notification alert alarm toast",
+   "q": "bell"
+  },
+  {
+   "name": "bell-dot",
+   "category": "Communication",
+   "tags": "notification alert alarm toast",
+   "q": "bell"
+  },
+  {
+   "name": "bell-off",
+   "category": "Communication",
+   "tags": "notification alert alarm toast disabled disable slash muted",
+   "q": "bell"
+  },
+  {
+   "name": "bell-plus",
+   "category": "Communication",
+   "tags": "notification alert alarm toast add new create",
+   "q": "bell"
+  }
+ ],
+ "briefcase": [
+  {
+   "name": "briefcase",
+   "category": "Dashboard",
+   "tags": "work job business portfolio workspace project deal account",
+   "q": "briefcase"
+  },
+  {
+   "name": "workflow",
+   "category": "Development",
+   "tags": "automation pipeline trigger integration webhook",
+   "q": "work"
+  },
+  {
+   "name": "server",
+   "category": "System",
+   "tags": "hosting backend data environment staging production worker queue",
+   "q": "work"
+  },
+  {
+   "name": "building",
+   "category": "Places",
+   "tags": "office company city org organization workspace",
+   "q": "work"
+  },
+  {
+   "name": "dumbbell",
+   "category": "Health",
+   "tags": "gym fitness workout",
+   "q": "work"
+  },
+  {
+   "name": "server-off",
+   "category": "System",
+   "tags": "hosting backend data environment staging production worker queue disabled disable slash muted",
+   "q": "work"
+  }
+ ],
+ "bus": [
+  {
+   "name": "bus",
+   "category": "Travel, Nature & Sport",
+   "tags": "transport travel",
+   "q": "bus"
+  },
+  {
+   "name": "briefcase",
+   "category": "Dashboard",
+   "tags": "work job business portfolio workspace project deal account",
+   "q": "bus"
+  },
+  {
+   "name": "car",
+   "category": "Places",
+   "tags": "vehicle auto drive transport",
+   "q": "transport"
+  },
+  {
+   "name": "train",
+   "category": "Travel, Nature & Sport",
+   "tags": "transport railway travel",
+   "q": "transport"
+  },
+  {
+   "name": "truck",
+   "category": "Commerce",
+   "tags": "delivery shipping transport shipment supplier logistics",
+   "q": "transport"
+  }
+ ],
+ "calendar": [
+  {
+   "name": "calendar-x",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting close cancel remove rejected error failed",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-01",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-02",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-03",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-04",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-05",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-06",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting",
+   "q": "calendar"
+  },
+  {
+   "name": "calendar-off",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting disabled disable slash muted",
+   "q": "calendar"
+  }
+ ],
+ "calendar-check": [
+  {
+   "name": "calendar-check",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting done tick confirm success ok approved published",
+   "q": "calendar check"
+  }
+ ],
+ "check": [
+  {
+   "name": "check",
+   "category": "Essentials",
+   "tags": "done tick confirm success ok approved published",
+   "q": "check"
+  },
+  {
+   "name": "check-circle",
+   "category": "Essentials",
+   "tags": "done tick confirm success ok approved published status",
+   "q": "check"
+  },
+  {
+   "name": "check-square",
+   "category": "Communication",
+   "tags": "done tick confirm success ok approved published checkbox button",
+   "q": "check"
+  },
+  {
+   "name": "bell-check",
+   "category": "Communication",
+   "tags": "notification alert alarm toast done tick confirm success ok approved published",
+   "q": "check"
+  },
+  {
+   "name": "cart-check",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order done tick confirm success ok approved published",
+   "q": "check"
+  },
+  {
+   "name": "copy-check",
+   "category": "Essentials",
+   "tags": "duplicate clone template done tick confirm success ok approved published",
+   "q": "check"
+  },
+  {
+   "name": "file-check",
+   "category": "Files & Editing",
+   "tags": "document page paper done tick confirm success ok approved published",
+   "q": "check"
+  },
+  {
+   "name": "list-check",
+   "category": "Files & Editing",
+   "tags": "done tick confirm success ok approved published",
+   "q": "check"
+  },
+  {
+   "name": "ticket",
+   "category": "Commerce",
+   "tags": "pass event coupon",
+   "q": "tick"
+  },
+  {
+   "name": "ticket-x",
+   "category": "Commerce",
+   "tags": "pass event coupon close cancel remove rejected error failed",
+   "q": "tick"
+  },
+  {
+   "name": "ticket-plus",
+   "category": "Commerce",
+   "tags": "pass event coupon add new create",
+   "q": "tick"
+  },
+  {
+   "name": "ticket-check",
+   "category": "Commerce",
+   "tags": "pass event coupon done tick confirm success ok approved published",
+   "q": "tick"
+  },
+  {
+   "name": "ticket-minus",
+   "category": "Commerce",
+   "tags": "pass event coupon remove subtract",
+   "q": "tick"
+  }
+ ],
+ "chevron-down": [
+  {
+   "name": "chevron-down",
+   "category": "Essentials",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "chevron down"
+  },
+  {
+   "name": "chevrons-down",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron down"
+  },
+  {
+   "name": "chevrons-down-up",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron down"
+  },
+  {
+   "name": "chevrons-up-down",
+   "category": "Interface",
+   "tags": "expand collapse pagination",
+   "q": "chevron down"
+  },
+  {
+   "name": "chevron-circle-down",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb status",
+   "q": "chevron down"
+  },
+  {
+   "name": "chevron-square-down",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb checkbox button",
+   "q": "chevron down"
+  }
+ ],
+ "chevron-left": [
+  {
+   "name": "chevron-left",
+   "category": "Arrows",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "chevron left"
+  },
+  {
+   "name": "chevrons-left",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron left"
+  },
+  {
+   "name": "chevron-circle-left",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb status",
+   "q": "chevron left"
+  },
+  {
+   "name": "chevron-square-left",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb checkbox button",
+   "q": "chevron left"
+  },
+  {
+   "name": "chevrons-left-right",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron left"
+  },
+  {
+   "name": "chevrons-right-left",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron left"
+  },
+  {
+   "name": "backpack",
+   "category": "Education & Science",
+   "tags": "bag school travel",
+   "q": "back"
+  },
+  {
+   "name": "skip-back",
+   "category": "Devices & Media",
+   "tags": "",
+   "q": "back"
+  },
+  {
+   "name": "undo",
+   "category": "Arrows",
+   "tags": "back revert",
+   "q": "back"
+  },
+  {
+   "name": "delete",
+   "category": "UI & Text",
+   "tags": "backspace erase remove",
+   "q": "back"
+  },
+  {
+   "name": "kanban",
+   "category": "Dashboard",
+   "tags": "board columns tasks project backlog sprint pipeline",
+   "q": "back"
+  },
+  {
+   "name": "layers",
+   "category": "Files & Editing",
+   "tags": "stack levels environment queue backlog",
+   "q": "back"
+  },
+  {
+   "name": "server",
+   "category": "System",
+   "tags": "hosting backend data environment staging production worker queue",
+   "q": "back"
+  },
+  {
+   "name": "history",
+   "category": "Time & Weather",
+   "tags": "audit backup restore version",
+   "q": "back"
+  }
+ ],
+ "chevron-right": [
+  {
+   "name": "chevron-right",
+   "category": "Essentials",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "chevron right"
+  },
+  {
+   "name": "chevrons-right",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron right"
+  },
+  {
+   "name": "chevrons-left-right",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron right"
+  },
+  {
+   "name": "chevrons-right-left",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron right"
+  },
+  {
+   "name": "chevron-circle-right",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb status",
+   "q": "chevron right"
+  },
+  {
+   "name": "chevron-square-right",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb checkbox button",
+   "q": "chevron right"
+  }
+ ],
+ "chevron-up": [
+  {
+   "name": "chevron-up",
+   "category": "Arrows",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "chevron up"
+  },
+  {
+   "name": "chevrons-up",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron up"
+  },
+  {
+   "name": "chevrons-down-up",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevron up"
+  },
+  {
+   "name": "chevrons-up-down",
+   "category": "Interface",
+   "tags": "expand collapse pagination",
+   "q": "chevron up"
+  },
+  {
+   "name": "chevron-circle-up",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb status",
+   "q": "chevron up"
+  },
+  {
+   "name": "chevron-square-up",
+   "category": "Communication",
+   "tags": "arrow caret direction breadcrumb checkbox button",
+   "q": "chevron up"
+  }
+ ],
+ "chevrons-up": [
+  {
+   "name": "chevrons-up",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevrons up"
+  },
+  {
+   "name": "chevrons-down-up",
+   "category": "Arrows",
+   "tags": "expand collapse pagination",
+   "q": "chevrons up"
+  },
+  {
+   "name": "chevrons-up-down",
+   "category": "Interface",
+   "tags": "expand collapse pagination",
+   "q": "chevrons up"
+  }
+ ],
+ "circle-alert": [
+  {
+   "name": "alert-circle",
+   "category": "Communication",
+   "tags": "warning error caution rejected overdue status",
+   "q": "alert circle"
+  },
+  {
+   "name": "loader-circle",
+   "category": "Alerts & Status",
+   "tags": "loading spinner progress wait status",
+   "q": "alert circle"
+  },
+  {
+   "name": "x-circle",
+   "category": "Communication",
+   "tags": "close cancel remove rejected error failed status",
+   "q": "error circle"
+  }
+ ],
+ "circle-check": [
+  {
+   "name": "check-circle",
+   "category": "Essentials",
+   "tags": "done tick confirm success ok approved published status",
+   "q": "check circle"
+  },
+  {
+   "name": "check",
+   "category": "Essentials",
+   "tags": "done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "bell-check",
+   "category": "Communication",
+   "tags": "notification alert alarm toast done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "cart-check",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "copy-check",
+   "category": "Essentials",
+   "tags": "duplicate clone template done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "file-check",
+   "category": "Files & Editing",
+   "tags": "document page paper done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "list-check",
+   "category": "Files & Editing",
+   "tags": "done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "mail-check",
+   "category": "Communication",
+   "tags": "email envelope inbox message invite done tick confirm success ok approved published",
+   "q": "success"
+  },
+  {
+   "name": "user-check",
+   "category": "Communication",
+   "tags": "person profile account avatar customer member assignee done tick confirm success ok approved published",
+   "q": "success"
+  }
+ ],
+ "circle-x": [
+  {
+   "name": "x-circle",
+   "category": "Communication",
+   "tags": "close cancel remove rejected error failed status",
+   "q": "x circle"
+  },
+  {
+   "name": "circle",
+   "category": "UI & Text",
+   "tags": "status",
+   "q": "x circle"
+  },
+  {
+   "name": "circle-code",
+   "category": "UI & Text",
+   "tags": "status developer programming brackets api endpoint",
+   "q": "x circle"
+  },
+  {
+   "name": "circle-power",
+   "category": "UI & Text",
+   "tags": "status on off shutdown",
+   "q": "x circle"
+  },
+  {
+   "name": "circle-slash",
+   "category": "UI & Text",
+   "tags": "status divide disabled",
+   "q": "x circle"
+  },
+  {
+   "name": "circle-small",
+   "category": "UI & Text",
+   "tags": "status",
+   "q": "x circle"
+  },
+  {
+   "name": "circle-dashed",
+   "category": "UI & Text",
+   "tags": "status draft pending template",
+   "q": "x circle"
+  },
+  {
+   "name": "circle-asterisk",
+   "category": "UI & Text",
+   "tags": "status star required wildcard",
+   "q": "x circle"
+  }
+ ],
+ "clapperboard": [
+  {
+   "name": "clapperboard",
+   "category": "Games & Entertainment",
+   "tags": "film movie action",
+   "q": "clapperboard"
+  },
+  {
+   "name": "film",
+   "category": "Media & Connectivity",
+   "tags": "movie cinema video",
+   "q": "movie"
+  },
+  {
+   "name": "video",
+   "category": "Devices & Media",
+   "tags": "film movie camera record meeting recording",
+   "q": "movie"
+  },
+  {
+   "name": "popcorn",
+   "category": "Games & Entertainment",
+   "tags": "movie cinema snack",
+   "q": "movie"
+  },
+  {
+   "name": "ai-video",
+   "category": "AI",
+   "tags": "artificial intelligence magic smart llm gpt film movie camera record meeting recording",
+   "q": "movie"
+  },
+  {
+   "name": "video-off",
+   "category": "Interface",
+   "tags": "film movie camera record meeting recording disabled disable slash muted",
+   "q": "movie"
+  },
+  {
+   "name": "file-video",
+   "category": "Files & Editing",
+   "tags": "document page paper film movie camera record meeting recording",
+   "q": "movie"
+  }
+ ],
+ "clock": [
+  {
+   "name": "clock",
+   "category": "Essentials",
+   "tags": "time watch hour pending due schedule cron timezone overdue",
+   "q": "clock"
+  },
+  {
+   "name": "clock-x",
+   "category": "Time & Weather",
+   "tags": "time watch hour pending due schedule cron timezone overdue close cancel remove rejected error failed",
+   "q": "clock"
+  },
+  {
+   "name": "clock-plus",
+   "category": "Time & Weather",
+   "tags": "time watch hour pending due schedule cron timezone overdue add new create",
+   "q": "clock"
+  },
+  {
+   "name": "clock-check",
+   "category": "Time & Weather",
+   "tags": "time watch hour pending due schedule cron timezone overdue done tick confirm success ok approved published",
+   "q": "clock"
+  },
+  {
+   "name": "clock-minus",
+   "category": "Time & Weather",
+   "tags": "time watch hour pending due schedule cron timezone overdue remove subtract",
+   "q": "clock"
+  },
+  {
+   "name": "file-clock",
+   "category": "Files & Editing",
+   "tags": "document page paper time watch hour pending due schedule cron timezone overdue",
+   "q": "clock"
+  },
+  {
+   "name": "user-clock",
+   "category": "Communication",
+   "tags": "person profile account avatar customer member assignee time watch hour pending due schedule cron timezone overdue",
+   "q": "clock"
+  },
+  {
+   "name": "calendar-clock",
+   "category": "Communication",
+   "tags": "date schedule event booking agenda availability due meeting time watch hour pending cron timezone overdue",
+   "q": "clock"
+  },
+  {
+   "name": "timer",
+   "category": "Time & Weather",
+   "tags": "",
+   "q": "time"
+  },
+  {
+   "name": "timer-off",
+   "category": "Time & Weather",
+   "tags": "disabled disable slash muted",
+   "q": "time"
+  },
+  {
+   "name": "watch",
+   "category": "Devices & Media",
+   "tags": "smartwatch wearable time",
+   "q": "time"
+  }
+ ],
+ "cloud-off": [
+  {
+   "name": "cloud-off",
+   "category": "System",
+   "tags": "storage weather disabled disable slash muted",
+   "q": "cloud off"
+  }
+ ],
+ "coffee": [
+  {
+   "name": "coffee",
+   "category": "Places",
+   "tags": "cafe drink cup tea",
+   "q": "coffee"
+  }
+ ],
+ "contrast": [
+  {
+   "name": "contrast",
+   "category": "Design",
+   "tags": "theme appearance",
+   "q": "contrast"
+  }
+ ],
+ "credit-card": [
+  {
+   "name": "credit-card",
+   "category": "Dashboard",
+   "tags": "payment money billing subscription checkout plan",
+   "q": "credit card"
+  },
+  {
+   "name": "credit-card-x",
+   "category": "Dashboard",
+   "tags": "payment money billing subscription checkout plan close cancel remove rejected error failed",
+   "q": "credit card"
+  },
+  {
+   "name": "credit-card-plus",
+   "category": "Commerce",
+   "tags": "payment money billing subscription checkout plan add new create",
+   "q": "credit card"
+  },
+  {
+   "name": "credit-card-check",
+   "category": "Dashboard",
+   "tags": "payment money billing subscription checkout plan done tick confirm success ok approved published",
+   "q": "credit card"
+  },
+  {
+   "name": "credit-card-minus",
+   "category": "Dashboard",
+   "tags": "payment money billing subscription checkout plan remove subtract",
+   "q": "credit card"
+  },
+  {
+   "name": "id-card",
+   "category": "Security",
+   "tags": "billing payment subscription checkout plan",
+   "q": "card"
+  },
+  {
+   "name": "sim-card",
+   "category": "Devices & Media",
+   "tags": "mobile billing payment subscription checkout plan",
+   "q": "card"
+  },
+  {
+   "name": "wallet",
+   "category": "Dashboard",
+   "tags": "money payment card finance budget billing payout",
+   "q": "card"
+  }
+ ],
+ "delete": [
+  {
+   "name": "delete",
+   "category": "UI & Text",
+   "tags": "backspace erase remove",
+   "q": "backspace"
+  }
+ ],
+ "download": [
+  {
+   "name": "download",
+   "category": "Essentials",
+   "tags": "save get arrow export",
+   "q": "download"
+  },
+  {
+   "name": "file-download",
+   "category": "Files & Editing",
+   "tags": "document page paper save get arrow export",
+   "q": "download"
+  },
+  {
+   "name": "cloud-download",
+   "category": "Development",
+   "tags": "storage weather save get arrow export",
+   "q": "download"
+  },
+  {
+   "name": "app-store",
+   "category": "Development",
+   "tags": "application apps ios mobile download listing shop market retail",
+   "q": "download"
+  }
+ ],
+ "ellipsis": [
+  {
+   "name": "grip-horizontal",
+   "category": "Essentials",
+   "tags": "drag handle dots",
+   "q": "dots horizontal"
+  },
+  {
+   "name": "circle-ellipsis",
+   "category": "UI & Text",
+   "tags": "status more dots options overflow",
+   "q": "ellipsis"
+  },
+  {
+   "name": "shield-ellipsis",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit more dots options overflow",
+   "q": "ellipsis"
+  },
+  {
+   "name": "square-ellipsis",
+   "category": "UI & Text",
+   "tags": "checkbox button more dots options overflow",
+   "q": "ellipsis"
+  },
+  {
+   "name": "rectangle-ellipsis",
+   "category": "UI & Text",
+   "tags": "shape box more dots options overflow",
+   "q": "ellipsis"
+  },
+  {
+   "name": "more",
+   "category": "Essentials",
+   "tags": "ellipsis options dots overflow",
+   "q": "ellipsis"
+  },
+  {
+   "name": "message-dots",
+   "category": "Communication",
+   "tags": "chat comment bubble conversation feedback thread mention more ellipsis typing",
+   "q": "ellipsis"
+  },
+  {
+   "name": "more-vertical",
+   "category": "UI & Text",
+   "tags": "ellipsis options dots overflow",
+   "q": "ellipsis"
+  }
+ ],
+ "ellipsis-vertical": [
+  {
+   "name": "more-vertical",
+   "category": "UI & Text",
+   "tags": "ellipsis options dots overflow",
+   "q": "more vertical"
+  },
+  {
+   "name": "grip-vertical",
+   "category": "UI & Text",
+   "tags": "drag handle dots",
+   "q": "dots vertical"
+  }
+ ],
+ "equal": [
+  {
+   "name": "equal",
+   "category": "Math",
+   "tags": "",
+   "q": "equal"
+  },
+  {
+   "name": "equal-circle",
+   "category": "Commerce",
+   "tags": "status",
+   "q": "equal"
+  },
+  {
+   "name": "equal-square",
+   "category": "Communication",
+   "tags": "checkbox button",
+   "q": "equal"
+  },
+  {
+   "name": "not-equal",
+   "category": "Math",
+   "tags": "",
+   "q": "equal"
+  }
+ ],
+ "eye": [
+  {
+   "name": "eye",
+   "category": "System",
+   "tags": "view visible show pageview impression",
+   "q": "eye"
+  },
+  {
+   "name": "eye-off",
+   "category": "System",
+   "tags": "view visible show pageview impression disabled disable slash muted",
+   "q": "eye"
+  },
+  {
+   "name": "eye-closed",
+   "category": "System",
+   "tags": "view visible show pageview impression",
+   "q": "eye"
+  },
+  {
+   "name": "glasses",
+   "category": "Web3 & AR",
+   "tags": "eyewear spectacles read",
+   "q": "eye"
+  },
+  {
+   "name": "book-open",
+   "category": "Media & Connectivity",
+   "tags": "read library learn wiki knowledge guide tutorial docs expand show",
+   "q": "show"
+  },
+  {
+   "name": "mail-open",
+   "category": "Communication",
+   "tags": "email envelope inbox message invite expand show",
+   "q": "show"
+  },
+  {
+   "name": "folder-open",
+   "category": "Files & Editing",
+   "tags": "directory files project asset expand show",
+   "q": "show"
+  },
+  {
+   "name": "panel-top-open",
+   "category": "Layout",
+   "tags": "sidebar drawer pane split modal expand show",
+   "q": "show"
+  },
+  {
+   "name": "panel-left-open",
+   "category": "Layout",
+   "tags": "sidebar drawer pane split modal expand show",
+   "q": "show"
+  }
+ ],
+ "eye-off": [
+  {
+   "name": "eye-off",
+   "category": "System",
+   "tags": "view visible show pageview impression disabled disable slash muted",
+   "q": "eye off"
+  }
+ ],
+ "gauge": [
+  {
+   "name": "gauge",
+   "category": "Dashboard",
+   "tags": "speed meter performance speedometer kpi score usage quota limit latency",
+   "q": "gauge"
+  }
+ ],
+ "gift": [
+  {
+   "name": "gift",
+   "category": "Commerce",
+   "tags": "present reward",
+   "q": "gift"
+  },
+  {
+   "name": "presentation",
+   "category": "Dashboard",
+   "tags": "",
+   "q": "present"
+  }
+ ],
+ "graduation-cap": [
+  {
+   "name": "graduation-cap",
+   "category": "Media & Connectivity",
+   "tags": "",
+   "q": "graduation cap"
+  },
+  {
+   "name": "school",
+   "category": "Mobility & Places",
+   "tags": "education building learn",
+   "q": "education"
+  },
+  {
+   "name": "dna",
+   "category": "Education & Science",
+   "tags": "biology science genetics",
+   "q": "education"
+  },
+  {
+   "name": "atom",
+   "category": "Education & Science",
+   "tags": "science physics react",
+   "q": "education"
+  },
+  {
+   "name": "flask",
+   "category": "Education & Science",
+   "tags": "science lab chemistry",
+   "q": "education"
+  },
+  {
+   "name": "puzzle",
+   "category": "Education & Science",
+   "tags": "piece plugin extension game",
+   "q": "education"
+  },
+  {
+   "name": "backpack",
+   "category": "Education & Science",
+   "tags": "bag school travel",
+   "q": "education"
+  },
+  {
+   "name": "notebook",
+   "category": "Education & Science",
+   "tags": "journal notes",
+   "q": "education"
+  },
+  {
+   "name": "test-tube",
+   "category": "Education & Science",
+   "tags": "",
+   "q": "education"
+  }
+ ],
+ "hand-heart": [
+  {
+   "name": "caret-up",
+   "category": "Arrows",
+   "tags": "dropdown delta",
+   "q": "care"
+  },
+  {
+   "name": "caret-down",
+   "category": "Arrows",
+   "tags": "dropdown delta",
+   "q": "care"
+  },
+  {
+   "name": "caret-left",
+   "category": "Arrows",
+   "tags": "dropdown delta",
+   "q": "care"
+  },
+  {
+   "name": "caret-right",
+   "category": "Arrows",
+   "tags": "dropdown delta",
+   "q": "care"
+  },
+  {
+   "name": "chevron-up",
+   "category": "Arrows",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "care"
+  },
+  {
+   "name": "chevron-down",
+   "category": "Essentials",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "care"
+  },
+  {
+   "name": "chevron-last",
+   "category": "Arrows",
+   "tags": "arrow caret direction breadcrumb end skip",
+   "q": "care"
+  },
+  {
+   "name": "chevron-left",
+   "category": "Arrows",
+   "tags": "arrow caret direction breadcrumb",
+   "q": "care"
+  },
+  {
+   "name": "help",
+   "category": "System",
+   "tags": "question support faq",
+   "q": "support"
+  },
+  {
+   "name": "headset",
+   "category": "Devices & Media",
+   "tags": "support helpdesk agent",
+   "q": "support"
+  },
+  {
+   "name": "life-buoy",
+   "category": "Places",
+   "tags": "lifebuoy rescue help support",
+   "q": "support"
+  },
+  {
+   "name": "vr-headset",
+   "category": "Web3 & AR",
+   "tags": "virtual reality support helpdesk agent",
+   "q": "support"
+  }
+ ],
+ "heart-pulse": [
+  {
+   "name": "heart-pulse",
+   "category": "Health",
+   "tags": "like love favorite heartbeat ecg vitals rate",
+   "q": "heart pulse"
+  },
+  {
+   "name": "file-pulse",
+   "category": "Health",
+   "tags": "document page paper heartbeat ecg vitals heart rate",
+   "q": "heart pulse"
+  },
+  {
+   "name": "monitor-pulse",
+   "category": "Health",
+   "tags": "screen display desktop computer heartbeat ecg vitals heart rate",
+   "q": "heart pulse"
+  },
+  {
+   "name": "clipboard-pulse",
+   "category": "Health",
+   "tags": "paste copy board survey poll checklist template heartbeat ecg vitals heart rate",
+   "q": "heart pulse"
+  },
+  {
+   "name": "activity",
+   "category": "Dashboard",
+   "tags": "pulse heartbeat monitor uptime health incident session status",
+   "q": "heart pulse"
+  },
+  {
+   "name": "activity-circle",
+   "category": "Health",
+   "tags": "pulse heartbeat monitor uptime health incident session status",
+   "q": "heart pulse"
+  },
+  {
+   "name": "activity-square",
+   "category": "Health",
+   "tags": "pulse heartbeat monitor uptime health incident session status checkbox button",
+   "q": "heart pulse"
+  },
+  {
+   "name": "pill",
+   "category": "Health",
+   "tags": "medicine drug health",
+   "q": "health"
+  },
+  {
+   "name": "hospital",
+   "category": "Health",
+   "tags": "medical clinic health",
+   "q": "health"
+  },
+  {
+   "name": "pill-bottle",
+   "category": "Health",
+   "tags": "medicine drug health",
+   "q": "health"
+  },
+  {
+   "name": "hospital-sign",
+   "category": "Health",
+   "tags": "medical clinic health signage",
+   "q": "health"
+  },
+  {
+   "name": "rx",
+   "category": "Health",
+   "tags": "",
+   "q": "health"
+  }
+ ],
+ "history": [
+  {
+   "name": "history",
+   "category": "Time & Weather",
+   "tags": "audit backup restore version",
+   "q": "history"
+  }
+ ],
+ "house": [
+  {
+   "name": "home-01",
+   "category": "Essentials",
+   "tags": "house main start",
+   "q": "home"
+  },
+  {
+   "name": "home-02",
+   "category": "Essentials",
+   "tags": "house main start",
+   "q": "home"
+  },
+  {
+   "name": "home-03",
+   "category": "Essentials",
+   "tags": "house main start",
+   "q": "home"
+  },
+  {
+   "name": "fan",
+   "category": "Home & Living",
+   "tags": "air cooling",
+   "q": "home"
+  },
+  {
+   "name": "bath",
+   "category": "Home & Living",
+   "tags": "bathtub bathroom",
+   "q": "home"
+  },
+  {
+   "name": "door",
+   "category": "Home & Living",
+   "tags": "entrance exit room",
+   "q": "home"
+  },
+  {
+   "name": "lamp",
+   "category": "Home & Living",
+   "tags": "light furniture",
+   "q": "home"
+  },
+  {
+   "name": "sofa",
+   "category": "Home & Living",
+   "tags": "couch furniture living",
+   "q": "home"
+  }
+ ],
+ "indian-rupee": [
+  {
+   "name": "rupee",
+   "category": "Commerce",
+   "tags": "",
+   "q": "rupee"
+  },
+  {
+   "name": "coins",
+   "category": "Commerce",
+   "tags": "money cash currency",
+   "q": "currency"
+  },
+  {
+   "name": "bitcoin",
+   "category": "Web3 & AR",
+   "tags": "crypto btc currency",
+   "q": "currency"
+  },
+  {
+   "name": "ethereum",
+   "category": "Web3 & AR",
+   "tags": "crypto eth currency",
+   "q": "currency"
+  }
+ ],
+ "info": [
+  {
+   "name": "info",
+   "category": "System",
+   "tags": "information about details",
+   "q": "info"
+  },
+  {
+   "name": "info-square",
+   "category": "Alerts & Status",
+   "tags": "information about details checkbox button",
+   "q": "info"
+  }
+ ],
+ "landmark": [
+  {
+   "name": "bank",
+   "category": "Commerce",
+   "tags": "finance building money",
+   "q": "bank"
+  },
+  {
+   "name": "banknote",
+   "category": "Commerce",
+   "tags": "revenue income payout cash profit",
+   "q": "bank"
+  },
+  {
+   "name": "piggy-bank",
+   "category": "Commerce",
+   "tags": "finance building money",
+   "q": "bank"
+  }
+ ],
+ "lightbulb": [
+  {
+   "name": "lightbulb",
+   "category": "Tools",
+   "tags": "guide tip",
+   "q": "lightbulb"
+  },
+  {
+   "name": "lightbulb-off",
+   "category": "Tools",
+   "tags": "guide tip disabled disable slash muted",
+   "q": "lightbulb"
+  },
+  {
+   "name": "ai-idea",
+   "category": "AI",
+   "tags": "artificial intelligence magic smart llm gpt",
+   "q": "idea"
+  },
+  {
+   "name": "brain",
+   "category": "AI",
+   "tags": "mind ai think idea",
+   "q": "idea"
+  }
+ ],
+ "link-2-off": [
+  {
+   "name": "link-off",
+   "category": "System",
+   "tags": "url chain hyperlink disabled disable slash muted",
+   "q": "link off"
+  }
+ ],
+ "list": [
+  {
+   "name": "list",
+   "category": "Dashboard",
+   "tags": "",
+   "q": "list"
+  },
+  {
+   "name": "list-x",
+   "category": "UI & Text",
+   "tags": "close cancel remove rejected error failed",
+   "q": "list"
+  },
+  {
+   "name": "list-plus",
+   "category": "UI & Text",
+   "tags": "add new create",
+   "q": "list"
+  },
+  {
+   "name": "list-todo",
+   "category": "Dashboard",
+   "tags": "task subtask checklist",
+   "q": "list"
+  },
+  {
+   "name": "list-tree",
+   "category": "Dashboard",
+   "tags": "nature forest pine subtask hierarchy nested",
+   "q": "list"
+  },
+  {
+   "name": "list-check",
+   "category": "Files & Editing",
+   "tags": "done tick confirm success ok approved published",
+   "q": "list"
+  },
+  {
+   "name": "list-minus",
+   "category": "UI & Text",
+   "tags": "remove subtract",
+   "q": "list"
+  },
+  {
+   "name": "list-music",
+   "category": "Devices & Media",
+   "tags": "song audio note",
+   "q": "list"
+  }
+ ],
+ "list-checks": [
+  {
+   "name": "clipboard",
+   "category": "Essentials",
+   "tags": "paste copy board survey poll checklist template",
+   "q": "checklist"
+  },
+  {
+   "name": "list-todo",
+   "category": "Dashboard",
+   "tags": "task subtask checklist",
+   "q": "checklist"
+  },
+  {
+   "name": "clipboard-x",
+   "category": "Essentials",
+   "tags": "paste copy board survey poll checklist template close cancel remove rejected error failed",
+   "q": "checklist"
+  },
+  {
+   "name": "clipboard-plus",
+   "category": "Health",
+   "tags": "paste copy board survey poll checklist template add new create",
+   "q": "checklist"
+  },
+  {
+   "name": "clipboard-check",
+   "category": "Files & Editing",
+   "tags": "paste copy board survey poll checklist template done tick confirm success ok approved published",
+   "q": "checklist"
+  },
+  {
+   "name": "clipboard-minus",
+   "category": "Essentials",
+   "tags": "paste copy board survey poll checklist template remove subtract",
+   "q": "checklist"
+  },
+  {
+   "name": "clipboard-pulse",
+   "category": "Health",
+   "tags": "paste copy board survey poll checklist template heartbeat ecg vitals heart rate",
+   "q": "checklist"
+  },
+  {
+   "name": "cursor",
+   "category": "UI & Text",
+   "tags": "pointer mouse select click session",
+   "q": "select"
+  },
+  {
+   "name": "dropdown",
+   "category": "System",
+   "tags": "select menu",
+   "q": "select"
+  },
+  {
+   "name": "text-cursor",
+   "category": "UI & Text",
+   "tags": "pointer mouse select click session",
+   "q": "select"
+  }
+ ],
+ "lock": [
+  {
+   "name": "lock-01",
+   "category": "Security",
+   "tags": "secure private password closed",
+   "q": "lock"
+  },
+  {
+   "name": "lock-02",
+   "category": "Security",
+   "tags": "secure private password closed",
+   "q": "lock"
+  },
+  {
+   "name": "lock-03",
+   "category": "Security",
+   "tags": "secure private password closed",
+   "q": "lock"
+  },
+  {
+   "name": "file-lock",
+   "category": "Files & Editing",
+   "tags": "document page paper secure private password closed",
+   "q": "lock"
+  },
+  {
+   "name": "user-lock",
+   "category": "Security",
+   "tags": "person profile account avatar customer member assignee secure private password closed",
+   "q": "lock"
+  },
+  {
+   "name": "folder-lock",
+   "category": "Files & Editing",
+   "tags": "directory files project asset secure private password closed",
+   "q": "lock"
+  }
+ ],
+ "log-in": [
+  {
+   "name": "login",
+   "category": "Arrows",
+   "tags": "sign in enter",
+   "q": "log in"
+  },
+  {
+   "name": "wifi",
+   "category": "System",
+   "tags": "wireless internet network signal online offline",
+   "q": "sign in"
+  },
+  {
+   "name": "wifi-low",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "sign in"
+  },
+  {
+   "name": "wifi-off",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline disabled disable slash muted",
+   "q": "sign in"
+  },
+  {
+   "name": "wifi-high",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "sign in"
+  },
+  {
+   "name": "ghost",
+   "category": "Games & Entertainment",
+   "tags": "spooky halloween",
+   "q": "enter"
+  },
+  {
+   "name": "spade",
+   "category": "Games & Entertainment",
+   "tags": "cards casino",
+   "q": "enter"
+  },
+  {
+   "name": "sword",
+   "category": "Games & Entertainment",
+   "tags": "game weapon fight",
+   "q": "enter"
+  },
+  {
+   "name": "dice-1",
+   "category": "Games & Entertainment",
+   "tags": "game random roll",
+   "q": "enter"
+  },
+  {
+   "name": "dice-2",
+   "category": "Games & Entertainment",
+   "tags": "game random roll",
+   "q": "enter"
+  },
+  {
+   "name": "dice-3",
+   "category": "Games & Entertainment",
+   "tags": "game random roll",
+   "q": "enter"
+  },
+  {
+   "name": "dice-4",
+   "category": "Games & Entertainment",
+   "tags": "game random roll",
+   "q": "enter"
+  }
+ ],
+ "menu": [
+  {
+   "name": "menu",
+   "category": "Essentials",
+   "tags": "hamburger navigation list",
+   "q": "menu"
+  },
+  {
+   "name": "square-menu",
+   "category": "UI & Text",
+   "tags": "checkbox button hamburger navigation list",
+   "q": "menu"
+  },
+  {
+   "name": "dropdown",
+   "category": "System",
+   "tags": "select menu",
+   "q": "menu"
+  },
+  {
+   "name": "burger",
+   "category": "Food",
+   "tags": "food fast hamburger",
+   "q": "hamburger"
+  }
+ ],
+ "party-popper": [
+  {
+   "name": "party-popper",
+   "category": "Social",
+   "tags": "",
+   "q": "party popper"
+  }
+ ],
+ "pencil": [
+  {
+   "name": "pencil",
+   "category": "Files & Editing",
+   "tags": "edit write",
+   "q": "pencil"
+  },
+  {
+   "name": "edit",
+   "category": "Essentials",
+   "tags": "pencil write modify",
+   "q": "pencil"
+  },
+  {
+   "name": "ai-edit",
+   "category": "AI",
+   "tags": "artificial intelligence magic smart llm gpt pencil write modify",
+   "q": "pencil"
+  },
+  {
+   "name": "crop",
+   "category": "Files & Editing",
+   "tags": "trim resize",
+   "q": "edit"
+  },
+  {
+   "name": "hash",
+   "category": "Files & Editing",
+   "tags": "hashtag number pound",
+   "q": "edit"
+  },
+  {
+   "name": "type",
+   "category": "Files & Editing",
+   "tags": "text font typography",
+   "q": "edit"
+  },
+  {
+   "name": "files",
+   "category": "Files & Editing",
+   "tags": "",
+   "q": "edit"
+  },
+  {
+   "name": "file-x",
+   "category": "Files & Editing",
+   "tags": "document page paper close cancel remove rejected error failed",
+   "q": "edit"
+  }
+ ],
+ "piggy-bank": [
+  {
+   "name": "piggy-bank",
+   "category": "Commerce",
+   "tags": "finance building money",
+   "q": "piggy bank"
+  }
+ ],
+ "plane": [
+  {
+   "name": "plane",
+   "category": "Places",
+   "tags": "flight travel airport airplane",
+   "q": "plane"
+  },
+  {
+   "name": "planet",
+   "category": "Web3 & AR",
+   "tags": "space saturn orbit",
+   "q": "plane"
+  },
+  {
+   "name": "plane-landing",
+   "category": "Places",
+   "tags": "flight travel airport airplane",
+   "q": "plane"
+  },
+  {
+   "name": "plane-takeoff",
+   "category": "Places",
+   "tags": "flight travel airport airplane",
+   "q": "plane"
+  },
+  {
+   "name": "send",
+   "category": "Essentials",
+   "tags": "paper plane share submit",
+   "q": "plane"
+  },
+  {
+   "name": "bus",
+   "category": "Travel, Nature & Sport",
+   "tags": "transport travel",
+   "q": "travel"
+  },
+  {
+   "name": "ship",
+   "category": "Travel, Nature & Sport",
+   "tags": "boat travel sea",
+   "q": "travel"
+  },
+  {
+   "name": "train",
+   "category": "Travel, Nature & Sport",
+   "tags": "transport railway travel",
+   "q": "travel"
+  },
+  {
+   "name": "backpack",
+   "category": "Education & Science",
+   "tags": "bag school travel",
+   "q": "travel"
+  },
+  {
+   "name": "paw",
+   "category": "Travel, Nature & Sport",
+   "tags": "pet animal dog cat",
+   "q": "travel"
+  }
+ ],
+ "play": [
+  {
+   "name": "play",
+   "category": "Essentials",
+   "tags": "start video media",
+   "q": "play"
+  },
+  {
+   "name": "play-circle",
+   "category": "Devices & Media",
+   "tags": "start video media status",
+   "q": "play"
+  },
+  {
+   "name": "play-square",
+   "category": "Communication",
+   "tags": "start video media checkbox button",
+   "q": "play"
+  },
+  {
+   "name": "file-play",
+   "category": "Files & Editing",
+   "tags": "document page paper start video media",
+   "q": "play"
+  },
+  {
+   "name": "monitor-play",
+   "category": "System",
+   "tags": "screen display desktop computer start video media",
+   "q": "play"
+  },
+  {
+   "name": "gamepad",
+   "category": "Devices & Media",
+   "tags": "game controller console play",
+   "q": "play"
+  }
+ ],
+ "plus": [
+  {
+   "name": "plus",
+   "category": "Essentials",
+   "tags": "add new create",
+   "q": "plus"
+  },
+  {
+   "name": "plus-minus",
+   "category": "Math",
+   "tags": "add new create remove subtract",
+   "q": "plus"
+  },
+  {
+   "name": "plus-circle",
+   "category": "Communication",
+   "tags": "add new create status",
+   "q": "plus"
+  },
+  {
+   "name": "bell-plus",
+   "category": "Communication",
+   "tags": "notification alert alarm toast add new create",
+   "q": "plus"
+  },
+  {
+   "name": "cart-plus",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order add new create",
+   "q": "plus"
+  },
+  {
+   "name": "copy-plus",
+   "category": "Essentials",
+   "tags": "duplicate clone template add new create",
+   "q": "plus"
+  },
+  {
+   "name": "file-plus",
+   "category": "Files & Editing",
+   "tags": "document page paper add new create",
+   "q": "plus"
+  },
+  {
+   "name": "grid-plus",
+   "category": "Dashboard",
+   "tags": "layout tiles apps widget add new create",
+   "q": "plus"
+  },
+  {
+   "name": "add-square",
+   "category": "Essentials",
+   "tags": "checkbox button",
+   "q": "add"
+  },
+  {
+   "name": "list-plus",
+   "category": "UI & Text",
+   "tags": "add new create",
+   "q": "add"
+  }
+ ],
+ "receipt": [
+  {
+   "name": "receipt",
+   "category": "Dashboard",
+   "tags": "bill invoice payment expense refund tax",
+   "q": "receipt"
+  },
+  {
+   "name": "dollar",
+   "category": "Commerce",
+   "tags": "revenue price billing income",
+   "q": "bill"
+  },
+  {
+   "name": "wallet",
+   "category": "Dashboard",
+   "tags": "money payment card finance budget billing payout",
+   "q": "bill"
+  },
+  {
+   "name": "id-card",
+   "category": "Security",
+   "tags": "billing payment subscription checkout plan",
+   "q": "bill"
+  },
+  {
+   "name": "sim-card",
+   "category": "Devices & Media",
+   "tags": "mobile billing payment subscription checkout plan",
+   "q": "bill"
+  },
+  {
+   "name": "credit-card",
+   "category": "Dashboard",
+   "tags": "payment money billing subscription checkout plan",
+   "q": "bill"
+  },
+  {
+   "name": "credit-card-x",
+   "category": "Dashboard",
+   "tags": "payment money billing subscription checkout plan close cancel remove rejected error failed",
+   "q": "bill"
+  },
+  {
+   "name": "dollar-circle",
+   "category": "Commerce",
+   "tags": "revenue price billing income status",
+   "q": "bill"
+  }
+ ],
+ "refresh-cw": [
+  {
+   "name": "refresh",
+   "category": "System",
+   "tags": "reload sync rotate update",
+   "q": "refresh"
+  }
+ ],
+ "repeat": [
+  {
+   "name": "repeat",
+   "category": "Devices & Media",
+   "tags": "",
+   "q": "repeat"
+  },
+  {
+   "name": "redo",
+   "category": "Arrows",
+   "tags": "forward repeat",
+   "q": "repeat"
+  }
+ ],
+ "rotate-ccw": [
+  {
+   "name": "undo",
+   "category": "Arrows",
+   "tags": "back revert",
+   "q": "undo"
+  },
+  {
+   "name": "receipt",
+   "category": "Dashboard",
+   "tags": "bill invoice payment expense refund tax",
+   "q": "refund"
+  }
+ ],
+ "ruler": [
+  {
+   "name": "ruler",
+   "category": "Tools",
+   "tags": "measure size",
+   "q": "ruler"
+  }
+ ],
+ "scan-face": [
+  {
+   "name": "scan-face",
+   "category": "Security",
+   "tags": "qr camera capture",
+   "q": "scan face"
+  }
+ ],
+ "scan-search": [
+  {
+   "name": "scan-search",
+   "category": "Essentials",
+   "tags": "qr camera capture find magnifier lookup",
+   "q": "scan search"
+  },
+  {
+   "name": "shield",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit",
+   "q": "audit"
+  },
+  {
+   "name": "history",
+   "category": "Time & Weather",
+   "tags": "audit backup restore version",
+   "q": "audit"
+  },
+  {
+   "name": "shield-x",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit close cancel remove rejected error failed",
+   "q": "audit"
+  },
+  {
+   "name": "ai-shield",
+   "category": "AI",
+   "tags": "artificial intelligence magic smart llm gpt security protection safe permission role compliance audit",
+   "q": "audit"
+  },
+  {
+   "name": "shield-ban",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit blocked",
+   "q": "audit"
+  },
+  {
+   "name": "shield-off",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit disabled disable slash muted",
+   "q": "audit"
+  },
+  {
+   "name": "shield-plus",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit add new create",
+   "q": "audit"
+  },
+  {
+   "name": "shield-alert",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit warning error caution rejected overdue",
+   "q": "audit"
+  }
+ ],
+ "search": [
+  {
+   "name": "search-x",
+   "category": "Essentials",
+   "tags": "find magnifier lookup close cancel remove rejected error failed",
+   "q": "search"
+  },
+  {
+   "name": "search-01",
+   "category": "Essentials",
+   "tags": "find magnifier lookup",
+   "q": "search"
+  },
+  {
+   "name": "search-02",
+   "category": "Essentials",
+   "tags": "find magnifier lookup",
+   "q": "search"
+  },
+  {
+   "name": "search-03",
+   "category": "Essentials",
+   "tags": "find magnifier lookup",
+   "q": "search"
+  },
+  {
+   "name": "search-code",
+   "category": "Essentials",
+   "tags": "find magnifier lookup developer programming brackets api endpoint",
+   "q": "search"
+  },
+  {
+   "name": "search-check",
+   "category": "Essentials",
+   "tags": "find magnifier lookup done tick confirm success ok approved published",
+   "q": "search"
+  },
+  {
+   "name": "search-slash",
+   "category": "Essentials",
+   "tags": "find magnifier lookup divide disabled",
+   "q": "search"
+  },
+  {
+   "name": "ai-search",
+   "category": "AI",
+   "tags": "artificial intelligence magic smart llm gpt find magnifier lookup",
+   "q": "search"
+  },
+  {
+   "name": "file-search",
+   "category": "Files & Editing",
+   "tags": "document page paper find magnifier lookup",
+   "q": "magnifier"
+  },
+  {
+   "name": "scan-search",
+   "category": "Essentials",
+   "tags": "qr camera capture find magnifier lookup",
+   "q": "magnifier"
+  }
+ ],
+ "search-x": [
+  {
+   "name": "search-x",
+   "category": "Essentials",
+   "tags": "find magnifier lookup close cancel remove rejected error failed",
+   "q": "search x"
+  }
+ ],
+ "share-2": [
+  {
+   "name": "share",
+   "category": "System",
+   "tags": "social send network",
+   "q": "share"
+  },
+  {
+   "name": "share-2",
+   "category": "Social",
+   "tags": "social send network",
+   "q": "share"
+  },
+  {
+   "name": "send",
+   "category": "Essentials",
+   "tags": "paper plane share submit",
+   "q": "share"
+  }
+ ],
+ "shield": [
+  {
+   "name": "shield",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit",
+   "q": "shield"
+  },
+  {
+   "name": "shield-x",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit close cancel remove rejected error failed",
+   "q": "shield"
+  },
+  {
+   "name": "shield-ban",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit blocked",
+   "q": "shield"
+  },
+  {
+   "name": "shield-off",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit disabled disable slash muted",
+   "q": "shield"
+  },
+  {
+   "name": "shield-plus",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit add new create",
+   "q": "shield"
+  },
+  {
+   "name": "shield-alert",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit warning error caution rejected overdue",
+   "q": "shield"
+  },
+  {
+   "name": "shield-check",
+   "category": "System",
+   "tags": "security protection safe permission role compliance audit done tick confirm success ok approved published",
+   "q": "shield"
+  },
+  {
+   "name": "shield-heart",
+   "category": "Health",
+   "tags": "security protection safe permission role compliance audit like love favorite",
+   "q": "shield"
+  },
+  {
+   "name": "cctv",
+   "category": "Security",
+   "tags": "camera security surveillance",
+   "q": "security"
+  },
+  {
+   "name": "ai-shield",
+   "category": "AI",
+   "tags": "artificial intelligence magic smart llm gpt security protection safe permission role compliance audit",
+   "q": "security"
+  },
+  {
+   "name": "umbrella",
+   "category": "Time & Weather",
+   "tags": "rain protection insurance",
+   "q": "protection"
+  }
+ ],
+ "shopping-bag": [
+  {
+   "name": "shopping-bag",
+   "category": "Essentials",
+   "tags": "cart buy",
+   "q": "shopping bag"
+  },
+  {
+   "name": "shopping-cart",
+   "category": "Commerce",
+   "tags": "basket buy checkout order",
+   "q": "shopping"
+  },
+  {
+   "name": "basket",
+   "category": "Commerce",
+   "tags": "shopping cart buy",
+   "q": "shopping"
+  },
+  {
+   "name": "cart-plus",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order add new create",
+   "q": "shopping"
+  },
+  {
+   "name": "cart-check",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order done tick confirm success ok approved published",
+   "q": "shopping"
+  }
+ ],
+ "shopping-basket": [
+  {
+   "name": "basket",
+   "category": "Commerce",
+   "tags": "shopping cart buy",
+   "q": "basket"
+  },
+  {
+   "name": "basketball",
+   "category": "Travel, Nature & Sport",
+   "tags": "",
+   "q": "basket"
+  },
+  {
+   "name": "cart-plus",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order add new create",
+   "q": "basket"
+  },
+  {
+   "name": "cart-check",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order done tick confirm success ok approved published",
+   "q": "basket"
+  },
+  {
+   "name": "shopping-cart",
+   "category": "Commerce",
+   "tags": "basket buy checkout order",
+   "q": "basket"
+  }
+ ],
+ "signal": [
+  {
+   "name": "signal",
+   "category": "Media & Connectivity",
+   "tags": "",
+   "q": "signal"
+  },
+  {
+   "name": "wifi",
+   "category": "System",
+   "tags": "wireless internet network signal online offline",
+   "q": "signal"
+  },
+  {
+   "name": "wifi-low",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "signal"
+  },
+  {
+   "name": "wifi-off",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline disabled disable slash muted",
+   "q": "signal"
+  },
+  {
+   "name": "wifi-high",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "signal"
+  }
+ ],
+ "signal-low": [
+  {
+   "name": "wifi-low",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "signal low"
+  }
+ ],
+ "sliders-horizontal": [
+  {
+   "name": "sliders-vertical",
+   "category": "Interface",
+   "tags": "settings controls adjust filter",
+   "q": "sliders"
+  },
+  {
+   "name": "sliders-horizontal",
+   "category": "Interface",
+   "tags": "settings controls adjust filter",
+   "q": "sliders"
+  }
+ ],
+ "split": [
+  {
+   "name": "rows",
+   "category": "UI & Text",
+   "tags": "split layout stack",
+   "q": "split"
+  },
+  {
+   "name": "rows-2",
+   "category": "Layout",
+   "tags": "split layout stack",
+   "q": "split"
+  },
+  {
+   "name": "rows-3",
+   "category": "Layout",
+   "tags": "split layout stack",
+   "q": "split"
+  },
+  {
+   "name": "columns",
+   "category": "UI & Text",
+   "tags": "split layout grid",
+   "q": "split"
+  },
+  {
+   "name": "columns-2",
+   "category": "Layout",
+   "tags": "split layout grid",
+   "q": "split"
+  },
+  {
+   "name": "columns-3",
+   "category": "Layout",
+   "tags": "split layout grid",
+   "q": "split"
+  },
+  {
+   "name": "panel-top",
+   "category": "Interface",
+   "tags": "sidebar drawer pane split modal",
+   "q": "split"
+  },
+  {
+   "name": "panel-bottom",
+   "category": "UI & Text",
+   "tags": "sidebar drawer pane split modal",
+   "q": "split"
+  },
+  {
+   "name": "divide",
+   "category": "Math",
+   "tags": "",
+   "q": "divide"
+  },
+  {
+   "name": "divide-circle",
+   "category": "Commerce",
+   "tags": "status",
+   "q": "divide"
+  },
+  {
+   "name": "divide-square",
+   "category": "Commerce",
+   "tags": "checkbox button",
+   "q": "divide"
+  },
+  {
+   "name": "circle-slash",
+   "category": "UI & Text",
+   "tags": "status divide disabled",
+   "q": "divide"
+  },
+  {
+   "name": "search-slash",
+   "category": "Essentials",
+   "tags": "find magnifier lookup divide disabled",
+   "q": "divide"
+  },
+  {
+   "name": "square-slash",
+   "category": "UI & Text",
+   "tags": "checkbox button divide disabled",
+   "q": "divide"
+  }
+ ],
+ "store": [
+  {
+   "name": "store",
+   "category": "Commerce",
+   "tags": "shop market retail",
+   "q": "store"
+  },
+  {
+   "name": "app-store",
+   "category": "Development",
+   "tags": "application apps ios mobile download listing shop market retail",
+   "q": "store"
+  },
+  {
+   "name": "shopping-bag",
+   "category": "Essentials",
+   "tags": "cart buy",
+   "q": "shop"
+  },
+  {
+   "name": "shopping-cart",
+   "category": "Commerce",
+   "tags": "basket buy checkout order",
+   "q": "shop"
+  },
+  {
+   "name": "basket",
+   "category": "Commerce",
+   "tags": "shopping cart buy",
+   "q": "shop"
+  },
+  {
+   "name": "cart-plus",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order add new create",
+   "q": "shop"
+  },
+  {
+   "name": "cart-check",
+   "category": "Commerce",
+   "tags": "shopping basket buy checkout order done tick confirm success ok approved published",
+   "q": "shop"
+  }
+ ],
+ "table": [
+  {
+   "name": "table",
+   "category": "Dashboard",
+   "tags": "cell pivot",
+   "q": "table"
+  },
+  {
+   "name": "tablet",
+   "category": "Devices & Media",
+   "tags": "ipad device",
+   "q": "table"
+  }
+ ],
+ "tag": [
+  {
+   "name": "tag",
+   "category": "Essentials",
+   "tags": "label price",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark",
+   "category": "Essentials",
+   "tags": "save tag favorite",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark-x",
+   "category": "Files & Editing",
+   "tags": "save tag favorite close cancel remove rejected error failed",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark-off",
+   "category": "Files & Editing",
+   "tags": "save tag favorite disabled disable slash muted",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark-plus",
+   "category": "Files & Editing",
+   "tags": "save tag favorite add new create",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark-check",
+   "category": "Security",
+   "tags": "save tag favorite done tick confirm success ok approved published",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark-heart",
+   "category": "Files & Editing",
+   "tags": "save tag favorite like love",
+   "q": "tag"
+  },
+  {
+   "name": "bookmark-minus",
+   "category": "Files & Editing",
+   "tags": "save tag favorite remove subtract",
+   "q": "tag"
+  }
+ ],
+ "target": [
+  {
+   "name": "target",
+   "category": "Dashboard",
+   "tags": "goal aim focus okr kpi objective",
+   "q": "target"
+  },
+  {
+   "name": "focus",
+   "category": "Essentials",
+   "tags": "target camera",
+   "q": "target"
+  },
+  {
+   "name": "crosshair",
+   "category": "Places",
+   "tags": "aim target precision",
+   "q": "target"
+  },
+  {
+   "name": "goal",
+   "category": "Charts",
+   "tags": "",
+   "q": "goal"
+  }
+ ],
+ "trash-2": [
+  {
+   "name": "trash",
+   "category": "Essentials",
+   "tags": "delete remove bin garbage",
+   "q": "trash"
+  },
+  {
+   "name": "delete",
+   "category": "UI & Text",
+   "tags": "backspace erase remove",
+   "q": "delete"
+  }
+ ],
+ "tree-palm": [],
+ "triangle-alert": [
+  {
+   "name": "file-warning",
+   "category": "Files & Editing",
+   "tags": "document page paper",
+   "q": "warning"
+  },
+  {
+   "name": "battery-warning",
+   "category": "Devices & Media",
+   "tags": "charge energy power",
+   "q": "warning"
+  },
+  {
+   "name": "message-warning",
+   "category": "Communication",
+   "tags": "chat comment bubble conversation feedback thread mention",
+   "q": "warning"
+  },
+  {
+   "name": "alert",
+   "category": "System",
+   "tags": "warning error caution rejected overdue",
+   "q": "warning"
+  },
+  {
+   "name": "cloud-alert",
+   "category": "Time & Weather",
+   "tags": "storage weather warning error caution rejected overdue",
+   "q": "warning"
+  },
+  {
+   "name": "alert-circle",
+   "category": "Communication",
+   "tags": "warning error caution rejected overdue status",
+   "q": "warning"
+  },
+  {
+   "name": "alert-square",
+   "category": "Alerts & Status",
+   "tags": "warning error caution rejected overdue checkbox button",
+   "q": "warning"
+  },
+  {
+   "name": "shield-alert",
+   "category": "Security",
+   "tags": "security protection safe permission role compliance audit warning error caution rejected overdue",
+   "q": "warning"
+  }
+ ],
+ "users": [
+  {
+   "name": "users",
+   "category": "Dashboard",
+   "tags": "people team group member customer audience cohort segment guest invite",
+   "q": "users"
+  },
+  {
+   "name": "users-02",
+   "category": "Dashboard",
+   "tags": "people team group member customer audience cohort segment guest invite",
+   "q": "users"
+  }
+ ],
+ "utensils": [
+  {
+   "name": "utensils",
+   "category": "Places",
+   "tags": "food restaurant fork knife eat",
+   "q": "utensils"
+  },
+  {
+   "name": "egg",
+   "category": "Food",
+   "tags": "food breakfast",
+   "q": "food"
+  },
+  {
+   "name": "fish",
+   "category": "Travel, Nature & Sport",
+   "tags": "animal sea food",
+   "q": "food"
+  },
+  {
+   "name": "apple",
+   "category": "Food",
+   "tags": "fruit food",
+   "q": "food"
+  },
+  {
+   "name": "pizza",
+   "category": "Food",
+   "tags": "food slice",
+   "q": "food"
+  },
+  {
+   "name": "burger",
+   "category": "Food",
+   "tags": "food fast hamburger",
+   "q": "food"
+  },
+  {
+   "name": "carrot",
+   "category": "Food",
+   "tags": "vegetable food",
+   "q": "food"
+  },
+  {
+   "name": "cherry",
+   "category": "Food",
+   "tags": "fruit food",
+   "q": "food"
+  }
+ ],
+ "wallet": [
+  {
+   "name": "wallet",
+   "category": "Dashboard",
+   "tags": "money payment card finance budget billing payout",
+   "q": "wallet"
+  }
+ ],
+ "wifi": [
+  {
+   "name": "wifi",
+   "category": "System",
+   "tags": "wireless internet network signal online offline",
+   "q": "wifi"
+  },
+  {
+   "name": "wifi-low",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "wifi"
+  },
+  {
+   "name": "wifi-off",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline disabled disable slash muted",
+   "q": "wifi"
+  },
+  {
+   "name": "wifi-high",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "wifi"
+  },
+  {
+   "name": "router",
+   "category": "Devices & Media",
+   "tags": "wifi network internet",
+   "q": "wifi"
+  }
+ ],
+ "wifi-off": [
+  {
+   "name": "wifi",
+   "category": "System",
+   "tags": "wireless internet network signal online offline",
+   "q": "wifi off"
+  },
+  {
+   "name": "wifi-off",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline disabled disable slash muted",
+   "q": "wifi off"
+  },
+  {
+   "name": "wifi-low",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "wifi off"
+  },
+  {
+   "name": "wifi-high",
+   "category": "Media & Connectivity",
+   "tags": "wireless internet network signal online offline",
+   "q": "wifi off"
+  }
+ ],
+ "x": [
+  {
+   "name": "x-circle",
+   "category": "Communication",
+   "tags": "close cancel remove rejected error failed status",
+   "q": "x"
+  },
+  {
+   "name": "x-square",
+   "category": "Communication",
+   "tags": "close cancel remove rejected error failed checkbox button",
+   "q": "x"
+  },
+  {
+   "name": "bell-x",
+   "category": "Communication",
+   "tags": "notification alert alarm toast close cancel remove rejected error failed",
+   "q": "x"
+  },
+  {
+   "name": "copy-x",
+   "category": "Essentials",
+   "tags": "duplicate clone template close cancel remove rejected error failed",
+   "q": "x"
+  },
+  {
+   "name": "file-x",
+   "category": "Files & Editing",
+   "tags": "document page paper close cancel remove rejected error failed",
+   "q": "x"
+  },
+  {
+   "name": "list-x",
+   "category": "UI & Text",
+   "tags": "close cancel remove rejected error failed",
+   "q": "x"
+  },
+  {
+   "name": "mail-x",
+   "category": "Communication",
+   "tags": "email envelope inbox message invite close cancel remove rejected error failed",
+   "q": "x"
+  },
+  {
+   "name": "user-x",
+   "category": "Communication",
+   "tags": "person profile account avatar customer member assignee close cancel remove rejected error failed",
+   "q": "x"
+  },
+  {
+   "name": "close",
+   "category": "Essentials",
+   "tags": "x cancel dismiss exit",
+   "q": "close"
+  },
+  {
+   "name": "panel-top-close",
+   "category": "Layout",
+   "tags": "sidebar drawer pane split modal x cancel dismiss exit",
+   "q": "close"
+  },
+  {
+   "name": "panel-left-close",
+   "category": "Layout",
+   "tags": "sidebar drawer pane split modal x cancel dismiss exit",
+   "q": "close"
+  },
+  {
+   "name": "panel-right-close",
+   "category": "Layout",
+   "tags": "sidebar drawer pane split modal x cancel dismiss exit",
+   "q": "close"
+  },
+  {
+   "name": "panel-bottom-close",
+   "category": "Layout",
+   "tags": "sidebar drawer pane split modal x cancel dismiss exit",
+   "q": "close"
+  },
+  {
+   "name": "eye-closed",
+   "category": "System",
+   "tags": "view visible show pageview impression",
+   "q": "close"
+  },
+  {
+   "name": "crosshair",
+   "category": "Places",
+   "tags": "aim target precision",
+   "q": "cross"
+  },
+  {
+   "name": "medical-cross",
+   "category": "Health",
+   "tags": "",
+   "q": "cross"
+  }
+ ],
+ "zap": [
+  {
+   "name": "zap",
+   "category": "Time & Weather",
+   "tags": "lightning bolt power flash electric automation trigger",
+   "q": "zap"
+  },
+  {
+   "name": "zap-off",
+   "category": "Time & Weather",
+   "tags": "lightning bolt power flash electric automation trigger disabled disable slash muted",
+   "q": "zap"
+  },
+  {
+   "name": "cloud-lightning",
+   "category": "Time & Weather",
+   "tags": "storage weather storm thunder",
+   "q": "lightning"
+  }
+ ]
+}

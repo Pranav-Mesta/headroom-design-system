@@ -1,0 +1,8 @@
+# secrets
+.env
+.env.local
+.env.*.local
+
+# design-tool working files and scratch
+.impeccable/
+figma-plugin/nbi-icons/raw/

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headroom Components</title>
+<meta name="description" content="Stage 2 of the Headroom design system: 35 components with every state, built only from Stage 1 tokens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shell.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="headroom.css">
+<style>
+/*__CSSVARS__*/
+footer{margin-top:var(--space-1600);padding-top:var(--space-600);border-top:1px solid var(--color-border-subtle);font-size:13px;color:var(--color-text-secondary);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-300)}
+.dec{display:flex;flex-direction:column;border-top:2px solid var(--color-text-primary);margin-top:var(--space-600)}
+.dec > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--space-800);padding:var(--space-600) 0;border-bottom:1px solid var(--color-border-subtle)}
+.dec h3{font-size:22px;line-height:28px}
+.dec p{color:var(--color-text-secondary);font-size:16px;line-height:24px}
+.gaps{display:flex;flex-direction:column;margin-top:var(--space-500)}
+.gaps > div{display:grid;grid-template-columns:240px minmax(0,1fr);gap:var(--space-500);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle)}
+.gaps b{font-weight:600}.gaps span{color:var(--color-text-secondary)}
+
+@media (max-width:1199px){main{padding:0 var(--space-800) var(--space-1600)}}
+@media (max-width:839px){
+  main{padding:0 var(--space-400) var(--space-1200)}
+  .intro h1{font-size:40px;line-height:44px}
+  .rules3,.specbody,.dd,.dec > div,.gaps > div{grid-template-columns:minmax(0,1fr)}
+  .stage{padding:var(--space-400);gap:var(--space-500)}
+  .grp{font-size:30px;line-height:34px;padding-top:var(--space-1200)}
+  .donut-wrap{grid-template-columns:minmax(0,1fr);justify-items:center}
+  .hcomp{grid-template-columns:minmax(0,1fr)}
+  .st td:first-child{white-space:normal}
+}
+:root[data-motion=reduce] *,:root[data-motion=reduce] *::before,:root[data-motion=reduce] *::after{transition-duration:0ms!important}
+
+</style>
+<style>
+.life{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-300);margin:var(--space-400) 0}
+.life div{border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:var(--space-300) var(--space-400);font-size:13px;line-height:18px;color:var(--color-text-secondary);display:flex;flex-direction:column;gap:var(--space-150)}
+.stp{display:inline-flex;align-items:center;gap:var(--space-100);font-size:12px;line-height:16px;font-weight:600;padding:var(--space-50) var(--space-200);border-radius:var(--radius-full);width:max-content}
+.stp.Stable{background:var(--color-status-success-bg);color:var(--color-status-success)}
+.stp.Beta{background:var(--color-status-info-bg);color:var(--color-status-info)}
+.stp.Proposed{background:var(--color-status-warning-bg);color:var(--color-status-warning)}
+.stp.Deprecated{background:var(--color-status-danger-bg);color:var(--color-status-danger)}
+.tools{display:flex;flex-wrap:wrap;gap:var(--space-200);margin-bottom:var(--space-300)}
+.tools button{all:unset;cursor:pointer;font-size:14px;font-weight:600;padding:var(--space-200) var(--space-300);border-radius:var(--radius-full);border:1px solid var(--color-border-default);color:var(--color-text-primary);min-height:20px}
+.tools button[aria-pressed=true]{background:var(--color-action-secondary);color:var(--color-action-on-secondary);border-color:var(--color-action-primary)}
+.tools button:focus-visible{outline:2px solid var(--color-border-focus);outline-offset:2px}
+.stbl{width:100%;border-collapse:collapse;font-size:14px;line-height:20px}
+.stbl th{text-align:left;font-size:12px;font-weight:600;color:var(--color-text-secondary);padding:var(--space-200) var(--space-300) var(--space-200) 0;border-bottom:1px solid var(--color-border-subtle)}
+.stbl td{padding:var(--space-300) var(--space-300) var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);vertical-align:top}
+.stbl td:last-child{color:var(--color-text-secondary)}
+.stbl a{color:var(--color-text-link)}
+.chz{border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-600);margin-top:var(--space-400);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--space-600)}
+.chz h3{grid-column:1/-1;font-size:18px;line-height:24px}
+.chz>p{grid-column:1/-1;color:var(--color-text-secondary);font-size:14px;line-height:20px;max-width:70ch;margin-top:calc(-1 * var(--space-400))}
+.chz ol{display:flex;flex-direction:column;gap:var(--space-200);counter-reset:q;list-style:none;padding:0}
+.chz ol li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:var(--space-200);font-size:14px;line-height:20px;color:var(--color-text-secondary)}
+.chz ol li::before{counter-increment:q;content:counter(q);width:24px;height:24px;border-radius:var(--radius-full);background:var(--color-surface-sunken);display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--color-text-primary)}
+.chz ol b{display:block;color:var(--color-action-on-secondary)}
+.chz dl{display:flex;flex-direction:column;gap:var(--space-300);font-size:14px;line-height:20px}
+.chz dt{font-weight:600;color:var(--color-text-primary)}.chz dd{color:var(--color-text-secondary);margin:0}
+@media (max-width:839px){.chz{grid-template-columns:minmax(0,1fr);padding:var(--space-400)}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" data-page="components.html"></aside>
+<main>
+<div class="wrap">
+  <header class="intro">
+    <h1>Components</h1>
+    <p>35 components built only from the foundations. Every specimen below is the real coded component in its real states, so toggle dark mode and it all follows. Open any spec for anatomy, variants, sizes, the full state table, accessibility, and do's and don'ts.</p>
+    <div class="rules3">
+      <div><b>48×48 targets</b>Every tappable thing, even when the visible control is 32.</div>
+      <div><b>Visible focus</b>2px focus ring with 2px offset, keyboard only, following the radius.</div>
+      <div><b>Never color alone</b>Every state that changes color also changes an icon, sign or word.</div>
+    </div>
+  </header>
+  <div id="comps"></div>
+
+  <h2 class="grp" id="status" data-toc-link="Component status">Component status</h2>
+  <p class="muted" style="max-width:70ch">Where each component is in its life. Stable changes only through governance; Beta may still change in a minor release; Proposed is specced but not built.</p>
+  <div class="life" id="life"></div>
+  <div class="tools" role="group" aria-label="Filter by status" id="stfilter"></div>
+  <div class="scroll"><table class="stbl" id="sttable"><thead><tr><th>Component</th><th>Status</th><th>Platforms</th><th>Since</th><th>Note</th></tr></thead><tbody></tbody></table></div>
+
+  <h2 class="grp" id="choose" data-toc-link="Which component?">Which component should I use?</h2>
+  <div id="choosers"></div>
+
+  <h2 class="grp" id="gaps" data-toc-link="Gaps and decisions">Review</h2>
+  <p class="muted" style="max-width:70ch">Components the four key screens will probably need that this stage doesn't cover yet. Stage 5 confirms or closes them.</p>
+  <div class="gaps" id="gaplist"></div>
+  <div class="dec" id="declist"></div>
+  <footer><span>Headroom design system · Stage 2 components · all data synthetic</span><span>Specs generated from tools/components_spec.py</span><span>Icons by <a href="https://www.notboringicons.com" target="_blank" rel="noopener">Not Boring Icons</a></span></footer>
+</div>
+</main>
+</div>
+
+<script src="icons.js"></script>
+<script>
+const T = /*__TOKENS__*/null;
+const $ = (s, r = document) => r.querySelector(s);
+const inr = n => new Intl.NumberFormat('en-IN').format(n);
+const I = (n, a = '') => `<i data-lucide="${n}" ${a}></i>`;
+const cell = (cap, html, cls = '') => `<div class="cell ${cls}"><span class="cap">${cap}</span>${html}</div>`;
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+const root = document.documentElement;
+
+/* ---------- specimens ---------- */
+const gauge = (pct, opts = {}) => {
+  const LIM = 52000, spent = Math.round(LIM * pct), room = LIM - spent;
+  const s = pct > 1 ? 'over' : pct >= .8 ? 'near' : 'ok';
+  const fillC = s === 'over' ? 'var(--color-finance-over-fill)' : s === 'near' ? 'var(--color-finance-near-fill)' : 'var(--color-finance-spent)';
+  const h = Math.min(pct, 1.16) * 84;
+  const hide = opts.hidden;
+  const amt = v => hide ? '•••••' : inr(v);
+  const st = s === 'over' ? `${I('chevrons-up')}₹${inr(-room)} over · Transport and Bills still have room` : s === 'near' ? `${I('triangle-alert')}Close to limit · about ₹${inr(Math.round(room / 13))} a day` : `${I('circle-check')}On track · about ₹${inr(Math.round(room / 13))} a day`;
+  return `<div class="gcard"><div class="gtop"><span>October · 13 days left</span><button class="hr-ibtn" aria-label="${hide ? 'Show' : 'Hide'} balances" aria-pressed="${!!hide}">${I(hide ? 'eye-off' : 'eye')}</button></div>
+    <div class="gg"><div class="line dash"></div><span class="lim">Limit ₹${amt(LIM)}</span>
+    <div class="room"><p>${s === 'over' ? 'Over the limit by' : 'Headroom'}</p><b class="${s === 'over' ? 'over' : ''}"><span class="rs">₹</span>${amt(Math.abs(room))}</b></div>
+    <div class="fill" style="height:${h}%;background:${fillC}"></div><div class="spent">Spent so far<b>₹${amt(spent)}</b></div></div>
+    <p class="gstat ${s}">${st}</p></div>`;
+};
+const budget = (name, spent, limit, opts = {}) => {
+  if (!limit) return `<div class="bud"><div class="bud-h"><span>${name}</span><span>₹${inr(spent)} spent</span></div><p class="bud-s muted" style="margin-top:6px">${I('plus')}No limit set · <a href="#" onclick="return false">Set limit</a></p></div>`;
+  const p = spent / limit, s = p > 1 ? 'over' : p >= .8 ? 'near' : 'ok';
+  const fill = s === 'over' ? 'var(--color-finance-over-fill)' : s === 'near' ? 'var(--color-finance-near-fill)' : 'var(--color-finance-spent)';
+  const trackW = s === 'over' ? 100 / Math.min(p, 1.3) * .98 : 100;
+  const msg = s === 'over' ? `${I('chevrons-up')}₹${inr(spent - limit)} over` : s === 'near' ? `${I('triangle-alert')}Close to limit · ₹${inr(limit - spent)} left` : `${I('circle-check')}On track · ₹${inr(limit - spent)} left`;
+  return `<div class="bud" role="meter" aria-valuemin="0" aria-valuemax="${limit}" aria-valuenow="${spent}" aria-valuetext="${name}, ${inr(spent)} of ${inr(limit)} rupees, ${s === 'over' ? 'over budget' : s === 'near' ? 'close to limit' : 'on track'}">
+    <div class="bud-h"><span>${name}</span><span>₹${inr(spent)} of ₹${inr(limit)}</span></div>
+    <div class="track ${opts.mini ? 'mini' : ''}" style="width:${trackW}%"><div class="f" style="width:${Math.min(p, 1.3) * 100}%;background:${opts.loading ? 'transparent' : fill}"></div>${opts.pace ? `<div class="pace" style="left:${opts.pace}%"></div>` : ''}<div class="lim" style="left:calc(100% - 1px)"></div></div>
+    ${opts.mini ? '' : `<p class="bud-s ${s}">${opts.loading ? '' : msg}</p>`}</div>`;
+};
+const row = (icon, title, sub, amt, cls = '', extra = '', rcls = '') =>
+  `<div class="hr-row two ${rcls}"><span class="tile">${I(icon)}</span><span><b>${title}</b><small>${sub}</small></span><span class="tr"><span class="a ${cls}">${amt}</span>${extra}</span></div>`;
+
+function donut() {
+  const data = [['Food and dining', 12400], ['Rent', 22000], ['Shopping', 6740], ['Transport', 2150], ['Bills', 3860], ['Other', 1900]].sort((a, b) => a[0] === 'Other' ? 1 : b[0] === 'Other' ? -1 : b[1] - a[1]);
+  const colors = ['chart-1', 'chart-2', 'chart-3', 'chart-4', 'chart-5', 'chart-other'];
+  const total = data.reduce((a, d) => a + d[1], 0); let a0 = -Math.PI / 2; const R = 76, r = 50, gap = .02;
+  const arcs = data.map((d, i) => { const a1 = a0 + d[1] / total * Math.PI * 2; const s = a0 + gap, e = a1 - gap; const L = e - s > Math.PI ? 1 : 0;
+    const p = `M${80 + R * Math.cos(s)} ${80 + R * Math.sin(s)} A${R} ${R} 0 ${L} 1 ${80 + R * Math.cos(e)} ${80 + R * Math.sin(e)} L${80 + r * Math.cos(e)} ${80 + r * Math.sin(e)} A${r} ${r} 0 ${L} 0 ${80 + r * Math.cos(s)} ${80 + r * Math.sin(s)}Z`; a0 = a1;
+    return `<path d="${p}" fill="var(--color-${colors[i]})" data-i="${i}" tabindex="-1"></path>`; }).join('');
+  const lg = data.map((d, i) => `<li><button type="button" data-i="${i}" aria-pressed="false"><i style="background:var(--color-${colors[i]})"></i><span>${d[0]}</span><span>₹${inr(d[1])} · ${Math.round(d[1] / total * 100)}%</span></button></li>`).join('');
+  const tbl = `<table class="ctable" hidden><thead><tr><th>Category</th><th>Spent</th><th>Share</th></tr></thead><tbody>${data.map(d => `<tr><td>${d[0]}</td><td>₹${inr(d[1])}</td><td>${Math.round(d[1] / total * 100)}%</td></tr>`).join('')}</tbody></table>`;
+  return `<div class="chart" data-chart="donut"><h5>Rent and food are 70% of October</h5><div class="donut-wrap"><svg class="donut" viewBox="0 0 160 160" width="160" height="160" aria-hidden="true">${arcs}<text x="80" y="76" text-anchor="middle" font-size="12" fill="var(--color-text-secondary)">Spent</text><text x="80" y="96" text-anchor="middle" font-size="19" font-weight="700" fill="var(--color-text-primary)">₹${inr(total)}</text></svg><ul class="legend">${lg}</ul></div>${tbl}<button class="linkbtn" type="button" data-tbl>${I('table')}View as table</button></div>`;
+}
+function bars() {
+  const d = [['Jul', 46200], ['Aug', 51800], ['Sep', 57400], ['Oct', 33550]], lim = 52000, max = 60000, H = 150, W = 360, bw = 52;
+  const y = v => 10 + H - v / max * H;
+  const b = d.map((x, i) => { const cx = 40 + i * ((W - 60) / d.length) + 10; const over = x[1] > lim; const cur = i === d.length - 1;
+    return `<rect x="${cx}" y="${y(x[1])}" width="${bw}" height="${H + 10 - y(x[1])}" rx="4" fill="${cur ? 'var(--color-action-primary)' : 'var(--color-finance-spent)'}"/>${over ? `<rect x="${cx}" y="${y(x[1])}" width="${bw}" height="${y(lim) - y(x[1])}" rx="4" fill="var(--color-finance-over-fill)"/>` : ''}
+    <text x="${cx + bw / 2}" y="${H + 28}" text-anchor="middle" font-size="12" fill="var(--color-text-secondary)">${x[0]}</text><text x="${cx + bw / 2}" y="${H + 44}" text-anchor="middle" font-size="12" font-weight="600" fill="${over ? 'var(--color-finance-over-budget)' : 'var(--color-text-primary)'}" style="font-stretch:85%">₹${(x[1] / 1000).toFixed(1)}k</text>`; }).join('');
+  const ticks = [0, 20000, 40000, 60000].map(v => `<line x1="34" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="var(--color-border-subtle)"/><text x="28" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="var(--color-text-secondary)">${v / 1000}k</text>`).join('');
+  return `<div class="chart"><h5>September went ₹5,400 over the limit</h5><svg viewBox="0 0 ${W} ${H + 52}" width="100%" aria-hidden="true">${ticks}${b}<line x1="34" x2="${W}" y1="${y(lim)}" y2="${y(lim)}" stroke="var(--color-finance-clearance-line)" stroke-width="2" stroke-dasharray="6 4"/><text x="${W}" y="${y(lim) - 6}" text-anchor="end" font-size="12" font-weight="700" fill="var(--color-text-primary)">Limit ₹52k</text></svg>
+  <table class="ctable" hidden><thead><tr><th>Month</th><th>Spent</th><th>vs limit</th></tr></thead><tbody>${d.map(x => `<tr><td>${x[0]}</td><td>₹${inr(x[1])}</td><td>${x[1] > lim ? '₹' + inr(x[1] - lim) + ' over' : '₹' + inr(lim - x[1]) + ' left'}</td></tr>`).join('')}</tbody></table><button class="linkbtn" type="button" data-tbl>${I('table')}View as table</button></div>`;
+}
+function line() {
+  const W = 360, H = 150, lim = 52000, max = 60000, days = 31, today = 18;
+  const pts = [0, 22000, 23400, 24100, 25300, 25800, 26900, 27400, 28800, 29100, 29600, 30400, 30900, 31400, 32000, 32400, 33000, 33200, 33550];
+  const x = dd => 34 + dd / days * (W - 40), y = v => 10 + H - v / max * H;
+  const path = pts.map((v, i) => `${i ? 'L' : 'M'}${x(i)} ${y(v)}`).join(' ');
+  const proj = 33550 + (33550 - 22000) / 17 * (days - today);
+  const ticks = [0, 20000, 40000, 60000].map(v => `<line x1="34" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="var(--color-border-subtle)"/><text x="28" y="${y(v) + 4}" text-anchor="end" font-size="12" fill="var(--color-text-secondary)">${v / 1000}k</text>`).join('');
+  return `<div class="chart"><h5>On pace to finish ₹${inr(Math.round((lim - proj) / 100) * 100)} under</h5><svg viewBox="0 0 ${W} ${H + 36}" width="100%" aria-hidden="true">${ticks}
+  <line x1="34" x2="${W}" y1="${y(lim)}" y2="${y(lim)}" stroke="var(--color-finance-clearance-line)" stroke-width="2" stroke-dasharray="6 4"/><text x="${W}" y="${y(lim) - 6}" text-anchor="end" font-size="12" font-weight="700" fill="var(--color-text-primary)">Limit ₹52k</text>
+  <path d="${path}" fill="none" stroke="var(--color-finance-spent)" stroke-width="3" stroke-linejoin="round"/><path d="M${x(today)} ${y(33550)} L${x(days)} ${y(proj)}" stroke="var(--color-text-secondary)" stroke-width="2" stroke-dasharray="2 4" fill="none"/>
+  <line x1="${x(today)}" x2="${x(today)}" y1="10" y2="${H + 10}" stroke="var(--color-action-primary)" stroke-width="2"/><circle cx="${x(today)}" cy="${y(33550)}" r="5" fill="var(--color-action-primary)" stroke="var(--color-surface-raised)" stroke-width="2"/>
+  <text x="${x(today)}" y="${H + 28}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--color-action-primary)">Today</text><text x="34" y="${H + 28}" font-size="12" fill="var(--color-text-secondary)">1 Oct</text><text x="${W}" y="${H + 28}" text-anchor="end" font-size="12" fill="var(--color-text-secondary)">31 Oct</text></svg>
+  <table class="ctable" hidden><thead><tr><th>Point</th><th>Spent</th><th>Room left</th></tr></thead><tbody><tr><td>Today (18 Oct)</td><td>₹33,550</td><td>₹18,450</td></tr><tr><td>Projected 31 Oct</td><td>₹${inr(Math.round(proj))}</td><td>₹${inr(Math.round(lim - proj))}</td></tr></tbody></table><button class="linkbtn" type="button" data-tbl>${I('table')}View as table</button></div>`;
+}
+function cal() {
+  let h = ['M', 'T', 'W', 'T', 'F', 'S', 'S'].map(d => `<span class="dow">${d}</span>`).join('') + '<span></span>'.repeat(3); // 1 Oct 2026 is a Thursday
+  for (let d = 1; d <= 31; d++) { const c = d === 6 ? 's' : d === 18 ? 't e' : d > 6 && d < 18 ? 'r' : d > 18 ? 'f' : ''; h += `<span class="d ${c}">${/[se]/.test(c) || c.includes('t') ? `<b>${d}</b>` : d}</span>`; }
+  return `<div class="cal"><div class="cal-h"><button class="hr-ibtn" aria-label="Previous month">${I('chevron-left')}</button><span>October 2026</span><button class="hr-ibtn" aria-label="Next month">${I('chevron-right')}</button></div><div class="cal-g">${h}</div><button class="hr-btn block" style="margin-top:12px">Show 6–18 Oct</button></div>`;
+}
+
+const SPEC = {
+ 'button': () =>
+  cell('Primary', '<button class="hr-btn">Add expense</button>') + cell('Tonal', `<button class="hr-btn tonal">${I('split')}Split</button>`) + cell('Outline', '<button class="hr-btn outline">Cancel</button>') + cell('Ghost', '<button class="hr-btn ghost">Skip for now</button>') + cell('Destructive', '<button class="hr-btn danger">Delete account</button>') +
+  cell('Hover', '<button class="hr-btn is-hover">Add expense</button>') + cell('Focus', '<button class="hr-btn is-focus">Add expense</button>') + cell('Pressed', '<button class="hr-btn is-pressed">Add expense</button>') + cell('Loading', '<button class="hr-btn is-loading" aria-busy="true"><span class="spin"></span>Saving…</button>') + cell('Disabled (only with a reason)', `<button class="hr-btn" disabled>Connect bank</button><span class="reason">${I('info')}Available after you verify your email</span>`) +
+  cell('Sizes: sm · md · lg', '<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="hr-btn sm">Small</button><button class="hr-btn tonal">Medium</button><button class="hr-btn lg outline">Large</button></div>'),
+ 'icon-button': () =>
+  cell('Standard', `<button class="hr-ibtn" aria-label="More options">${I('ellipsis-vertical')}</button>`) + cell('Tonal', `<button class="hr-ibtn tonal" aria-label="Add">${I('plus')}</button>`) + cell('Toggle: hide balances', `<button class="hr-ibtn" aria-pressed="false" aria-label="Hide balances" data-toggle-eye>${I('eye')}</button>`) + cell('With badge', `<button class="hr-ibtn" aria-label="Insights, new">${I('bell')}<span class="dotb"></span></button>`) +
+  cell('Hover', `<button class="hr-ibtn is-hover" aria-label="Close">${I('x')}</button>`) + cell('Focus', `<button class="hr-ibtn is-focus" aria-label="Close">${I('x')}</button>`) + cell('Pressed', `<button class="hr-ibtn is-pressed" aria-label="Close">${I('x')}</button>`) + cell('Loading', `<button class="hr-ibtn" aria-busy="true" aria-label="Refreshing"><span class="spin" style="width:20px;height:20px"></span></button>`) + cell('Disabled', `<button class="hr-ibtn" disabled aria-label="Share">${I('share-2')}</button>`),
+ 'text-input': () =>
+  cell('Default (empty)', `<div class="hr-field"><label for="m1">Merchant</label><div class="hr-input">${I('store')}<input id="m1" placeholder="Swiggy"></div><span class="help">As it appears on your statement</span></div>`) +
+  cell('Hover', `<div class="hr-field"><span class="lab">Merchant</span><div class="hr-input is-hover">${I('store')}<input value="Blue Tokai" aria-label="Merchant"></div></div>`) +
+  cell('Focus', `<div class="hr-field is-focus"><label>Goal name</label><div class="hr-input is-focus"><input value="Goa trip" aria-label="Goal name"><button class="hr-ibtn" style="width:32px;height:32px" aria-label="Clear">${I('circle-x')}</button></div></div>`) +
+  cell('Error', `<div class="hr-field"><label>Goal name</label><div class="hr-input is-error"><input aria-invalid="true" aria-label="Goal name"></div><span class="err">${I('circle-alert')}Add a name so you can find this goal later</span></div>`) +
+  cell('Loading', `<div class="hr-field"><label>UPI ID</label><div class="hr-input"><input value="ira@okaxis" aria-label="UPI ID"><span class="spin"></span></div><span class="help">Checking…</span></div>`) +
+  cell('Disabled', `<div class="hr-field"><label style="color:var(--color-text-disabled)">Account</label><div class="hr-input is-disabled"><input value="HDFC ••4821" disabled aria-label="Account"></div><span class="help">Imported from your bank, can't be edited</span></div>`) +
+  cell('Multiline', `<div class="hr-field"><label for="n1">Note</label><textarea class="hr-ta" id="n1" placeholder="Dinner with Kabir, split later"></textarea></div>`),
+ 'amount-input': () =>
+  cell('Hero, empty', `<div class="hr-amount"><span class="v num zero"><span class="rs">₹</span>0<span class="caret"></span></span><span class="ctx">Food and dining · ₹1,800 left</span></div>`) +
+  cell('Hero, typing', `<div class="hr-amount"><span class="v num"><span class="rs">₹</span>1,24,500<span class="caret"></span></span><span class="ctx">Live Indian grouping as you type</span></div>`) +
+  cell('Inline (try typing or pasting)', `<div class="hr-field"><label for="amt">Monthly limit</label><div class="hr-input amount"><span class="pre" aria-hidden="true">₹</span><input id="amt" inputmode="decimal" autocomplete="off" value="10,000" data-amount></div><span class="help" id="amt-h">Food and dining · last month you spent ₹9,140</span></div>`) +
+  cell('Error', `<div class="hr-field"><label>Amount</label><div class="hr-input amount is-error"><span class="pre">₹</span><input value="0" aria-invalid="true" aria-label="Amount"></div><span class="err">${I('circle-alert')}Enter an amount above ₹0</span></div>`) +
+  cell('Soft warning', `<div class="hr-field"><label>Amount</label><div class="hr-input amount"><span class="pre">₹</span><input value="12,00,000" aria-label="Amount"></div><span class="err" style="color:var(--color-status-warning)">${I('triangle-alert')}That's more than ₹10,00,000. Check the number?</span></div>`) +
+  cell('Locked (imported)', `<div class="hr-field"><label style="color:var(--color-text-disabled)">Amount</label><div class="hr-input amount is-disabled"><span class="pre">₹</span><input value="22,000" disabled aria-label="Amount"><i data-lucide="lock"></i></div><span class="help">Matches your bank record</span></div>`),
+ 'select': () =>
+  cell('Default', `<div class="hr-field hr-select"><span class="lab">Account</span><div class="hr-input" role="combobox" tabindex="0" aria-expanded="false"><span>HDFC Savings ••4821</span>${I('chevron-down')}</div></div>`) +
+  cell('Open (web menu)', `<div class="hr-field hr-select"><span class="lab">Repeats</span><div class="hr-input is-focus"><span>Monthly</span>${I('chevron-up')}</div><div class="hr-menu" role="listbox"><div role="option" aria-selected="false">Never</div><div role="option" aria-selected="false" class="hl">Weekly</div><div role="option" aria-selected="true">Monthly${I('check')}</div><div role="option" aria-selected="false">Yearly</div></div></div>`) +
+  cell('Error', `<div class="hr-field hr-select"><span class="lab">Account</span><div class="hr-input is-error"><span class="muted">Choose an account</span>${I('chevron-down')}</div><span class="err">${I('circle-alert')}Choose where this money came from</span></div>`) +
+  cell('Empty options', `<div class="hr-menu" style="padding:16px;display:flex;flex-direction:column;gap:12px;align-items:flex-start"><span>No accounts yet</span><button class="hr-btn tonal sm">${I('plus')}Add account</button></div>`),
+ 'checkbox': () =>
+  cell('States', `<div><label class="hr-check"><input type="checkbox">Food and dining</label><label class="hr-check"><input type="checkbox" checked>Transport</label><label class="hr-check"><input type="checkbox" data-indet>Select all (2 of 5)</label><label class="hr-check is-disabled"><input type="checkbox" disabled>Rent (fixed, always tracked)</label></div>`) +
+  cell('Error', `<div><label class="hr-check is-error"><input type="checkbox" aria-invalid="true">I agree to the terms</label><span class="err">${I('circle-alert')}Accept the terms to continue</span></div>`),
+ 'radio': () =>
+  cell('List', `<div role="radiogroup" aria-label="Rounding"><label class="hr-radio"><input type="radio" name="rr" checked>Round to the rupee</label><label class="hr-radio"><input type="radio" name="rr">Show paise</label><label class="hr-radio is-disabled"><input type="radio" name="rr" disabled>Round to ₹10 (coming soon)</label></div>`) +
+  cell('Card (onboarding)', `<div role="radiogroup" aria-label="Month starts" style="display:flex;flex-direction:column;gap:8px"><label class="rcard"><input type="radio" name="mm" checked class="sr"><span class="tile brand">${I('briefcase')}</span><span><b>From payday</b><small>Your month runs 1 Oct → 31 Oct, starting when salary lands</small></span></label><label class="rcard"><input type="radio" name="mm" class="sr"><span class="tile">${I('calendar')}</span><span><b>Calendar month</b><small>1st to the last day</small></span></label></div>`),
+ 'toggle': () =>
+  cell('Off / on (try it)', `<div><label class="hr-switch">Budget alerts<input type="checkbox" role="switch"></label><label class="hr-switch">Hide balances<input type="checkbox" role="switch" checked></label></div>`) +
+  cell('Disabled with reason', `<div><label class="hr-switch is-disabled">Push notifications<input type="checkbox" role="switch" disabled></label><span class="reason">${I('info')}Turn on notifications in your phone's Settings</span></div>`) +
+  cell('Error (reverted)', `<div class="hr-snack" style="width:300px">${I('wifi-off')}<span>Couldn't turn on alerts. You're offline.</span></div>`),
+ 'segmented': () =>
+  cell('Text', `<div class="hr-seg" role="tablist" data-seg><button aria-pressed="false">Week</button><button aria-pressed="true">Month</button><button aria-pressed="false">Year</button></div>`) +
+  cell('Icon + text', `<div class="hr-seg" data-seg><button aria-pressed="true">${I('arrow-up-right')}Expense</button><button aria-pressed="false">${I('arrow-down-left')}Income</button></div>`),
+ 'tabs': () =>
+  cell('Fixed (try it)', `<div class="hr-tabs" role="tablist" data-tabs><button role="tab" aria-selected="true">Overview</button><button role="tab" aria-selected="false">Transactions</button><button role="tab" aria-selected="false">History</button></div>`),
+ 'chip': () =>
+  cell('Filter (try it)', `<div class="chips" data-chips><button class="hr-chip" aria-pressed="true">${I('check')}This month</button><button class="hr-chip" aria-pressed="false"><span class="cdot" style="background:var(--color-chart-1)"></span>Food</button><button class="hr-chip" aria-pressed="false"><span class="cdot" style="background:var(--color-chart-2)"></span>Rent</button><button class="hr-chip" aria-pressed="false"><span class="cdot" style="background:var(--color-chart-3)"></span>Shopping</button></div>`, 'half') +
+  cell('Choice', `<div class="chips"><button class="hr-chip">₹100</button><button class="hr-chip" aria-pressed="true">₹500</button><button class="hr-chip">₹1,000</button></div>`) +
+  cell('Input (removable)', `<div class="chips"><span class="hr-chip" style="cursor:default">Travel<button class="hr-ibtn" style="width:24px;height:24px;margin-right:-6px" aria-label="Remove tag Travel">${I('x', 'style="width:14px;height:14px"')}</button></span></div>`) +
+  cell('Tags', `<div class="chips" style="gap:6px"><span class="hr-tag">${I('repeat')}Recurring</span><span class="hr-tag">${I('users')}Split</span><span class="hr-tag">${I('clock')}Pending</span></div>`),
+ 'avatar': () =>
+  cell('Person · sm md lg', '<div style="display:flex;gap:12px;align-items:center"><span class="hr-av sm">KM</span><span class="hr-av md">IR</span><span class="hr-av lg">IR</span></div>') +
+  cell('Merchant fallback', `<span class="hr-av md merchant">${I('coffee')}</span>`) + cell('Group', '<div class="avgrp"><span class="hr-av sm">IR</span><span class="hr-av sm">KM</span><span class="hr-av sm">AS</span><span class="hr-av sm" style="background:var(--color-surface-sunken);color:var(--color-text-secondary)">+2</span></div>') +
+  cell('Loading', '<span class="sk" style="width:40px;height:40px;border-radius:50%;display:block"></span>'),
+ 'badge': () =>
+  cell('Dot', `<span class="withbadge" aria-label="Insights, new">${I('lightbulb')}<span class="hr-badge dot"></span></span>`) + cell('Count', `<span class="withbadge" aria-label="Activity, 3 new">${I('list')}<span class="hr-badge count">3</span></span>`) +
+  cell('Status', `<div class="chips" style="gap:8px"><span class="hr-badge over">${I('chevrons-up')}Over</span><span class="hr-badge near">${I('triangle-alert')}Close</span><span class="hr-badge paid">${I('check')}Paid</span></div>`),
+ 'tooltip': () =>
+  cell('Plain', '<div style="padding-bottom:8px"><span class="hr-tip">Hide balances</span></div>') + cell('Rich (chart point)', '<div style="padding-bottom:8px"><span class="hr-tip">September<b>₹57,400 · ₹5,400 over</b></span></div>'),
+ 'card': () =>
+  cell('Static', `<div class="hr-card"><div class="ch">This week</div><p class="muted" style="font-size:15px">You spent <b style="color:var(--color-text-primary)">₹2,100 less</b> on food than last week.</p></div>`) +
+  cell('Interactive', `<div class="hr-card interactive" tabindex="0" role="link"><div class="ch">Budgets ${I('chevron-right')}</div>${budget('Food and dining', 8200, 10000, { mini: true })}${budget('Transport', 2150, 4000, { mini: true })}</div>`) +
+  cell('Loading', `<div class="hr-card"><span class="sk" style="height:20px;width:40%"></span><span class="sk" style="height:14px;width:90%"></span><span class="sk" style="height:14px;width:70%"></span></div>`) +
+  cell('Error', `<div class="hr-card"><div class="ch">Budgets</div><div class="hr-alert danger" style="width:auto">${I('cloud-off')}<div><p>Couldn't load budgets.</p><a href="#" onclick="return false">Retry</a></div></div></div>`),
+ 'list-item': () =>
+  cell('One-line, two-line, control, states', `<div class="hr-list"><div class="hr-row"><span class="tile">${I('bell')}</span><span><b>Budget alerts</b></span><label class="hr-switch" style="width:auto"><span class="sr">Budget alerts</span><input type="checkbox" role="switch" checked></label></div><div class="hr-row two"><span class="tile">${I('landmark')}</span><span><b>HDFC Savings</b><small>••4821 · synced 5 min ago</small></span><span class="tr">${I('chevron-right')}</span></div><div class="hr-row two is-hover"><span class="tile">${I('credit-card')}</span><span><b>ICICI Amazon Pay card</b><small>Hover</small></span><span class="tr">${I('chevron-right')}</span></div><div class="hr-row two is-pressed"><span class="tile">${I('wallet')}</span><span><b>Cash</b><small>Pressed</small></span><span class="tr">${I('chevron-right')}</span></div><div class="hr-row two"><span class="tile">${I('landmark')}</span><span><b>SBI Salary</b><small style="color:var(--color-status-danger);display:flex;gap:4px;align-items:center">${I('circle-alert', 'style="width:14px;height:14px"')}Connection expired · reconnect</small></span><span class="tr">${I('chevron-right')}</span></div></div>`),
+ 'bottom-sheet': () =>
+  cell('Add expense sheet', `<div class="phone"><div class="bg"><i></i><i></i><i></i><i></i></div><div class="scrim"></div><div class="hr-sheet" role="dialog" aria-modal="true" aria-label="Add expense"><div class="handle"></div><div class="sh-h"><h4>Add expense</h4><button class="hr-ibtn" aria-label="Close">${I('x')}</button></div><div class="hr-amount" style="padding:4px 0"><span class="v num"><span class="rs">₹</span>386</span><span class="ctx">Food and dining · ₹1,414 left after this</span></div><div class="chips"><button class="hr-chip" aria-pressed="true">${I('utensils')}Food</button><button class="hr-chip">${I('bus')}Transport</button><button class="hr-chip">${I('ellipsis')}More</button></div><button class="hr-btn lg block">Add ₹386 expense</button></div></div>`),
+ 'modal': () =>
+  cell('Destructive confirm', `<div class="phone" style="height:440px"><div class="bg"><i></i><i></i><i></i></div><div class="scrim"></div><div class="hr-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dl1"><span class="ico">${I('trash-2')}</span><h4 id="dl1">Delete the Goa trip goal?</h4><p>Your ₹38,000 stays in your account. Only the goal and its history are deleted. This can't be undone.</p><div class="acts"><button class="hr-btn danger block">Delete goal</button><button class="hr-btn outline block">Keep goal</button></div></div></div>`),
+ 'snackbar': () =>
+  cell('Info', `<div class="hr-snack" role="status"><span>Expense added</span></div>`) + cell('With Undo', `<div class="hr-snack" role="status"><span>Transaction deleted</span><button>Undo</button></div>`) + cell('Error', `<div class="hr-snack" role="alert">${I('cloud-off')}<span>Couldn't sync</span><button>Retry</button></div>`),
+ 'inline-alert': () =>
+  cell('Info', `<div class="hr-alert info">${I('info')}<div><b>Salary usually lands on the 1st</b><p>Your month resets then.</p></div></div>`) + cell('Success', `<div class="hr-alert success">${I('circle-check')}<div><p>Bank connected. 142 transactions imported.</p></div></div>`) +
+  cell('Warning', `<div class="hr-alert warning">${I('triangle-alert')}<div><b>Food is close to its limit</b><p>₹1,800 left for 13 days, about ₹138 a day.</p><a href="#" onclick="return false">Adjust limit</a></div></div>`) + cell('Danger', `<div class="hr-alert danger">${I('circle-alert')}<div><b>Couldn't save this expense</b><p>It's kept on your phone and will retry when you're online.</p></div></div>`),
+ 'banner': () =>
+  cell('Neutral (offline)', `<div class="hr-banner" role="status">${I('wifi-off')}<span>You're offline. Changes will sync when you're back.</span></div>`, 'wide') + cell('Warning', `<div class="hr-banner warning" role="status">${I('link-2-off')}<span>HDFC connection expired. New transactions aren't coming in.</span><button class="hr-btn sm tonal">Reconnect</button></div>`, 'wide'),
+ 'skeleton': () =>
+  cell('Rows', `<div class="hr-list" aria-busy="true" aria-label="Loading transactions">${[1, 2, 3].map(() => `<div class="hr-row two"><span class="sk" style="width:40px;height:40px;border-radius:var(--radius-md)"></span><span style="display:flex;flex-direction:column;gap:8px"><span class="sk" style="height:14px;width:70%"></span><span class="sk" style="height:12px;width:45%"></span></span><span class="sk" style="width:56px;height:16px"></span></div>`).join('')}</div>`) +
+  cell('Gauge', `<div class="gcard" aria-busy="true"><span class="sk" style="height:18px;width:50%"></span><div class="gg" style="background:var(--color-surface-sunken)"><div class="line dash"></div></div><span class="sk" style="height:14px;width:60%"></span></div>`),
+ 'empty-state': () =>
+  cell('First use', `<div class="hr-empty"><span class="big">${I('receipt')}</span><h4>Add your first expense</h4><p>Track one thing you bought today. It takes about five seconds.</p><button class="hr-btn">Add expense</button></div>`) +
+  cell('No results', `<div class="hr-empty"><span class="big">${I('search-x')}</span><h4>No transactions match</h4><p>Try a different category or a longer date range.</p><button class="hr-btn tonal">Clear filters</button></div>`) +
+  cell('Cleared (positive)', `<div class="hr-empty"><span class="big" style="background:var(--color-status-success-bg);color:var(--color-status-success)">${I('calendar-check')}</span><h4>No bills due this week</h4><p>Next up: rent on 1 Nov.</p></div>`),
+ 'bottom-nav': () =>
+  cell('Compact', `<nav class="hr-nav" aria-label="Main"><a href="#" aria-current="page"><span>${I('house')}</span>Home</a><a href="#"><span>${I('arrow-left-right')}</span>Activity</a><a href="#"><span>${I('gauge')}</span>Budgets</a><a href="#"><span style="position:relative">${I('target')}<span class="hr-badge dot" style="position:absolute;top:4px;right:14px"></span></span>Goals</a></nav>`),
+ 'app-bar': () =>
+  cell('Large (top level)', `<div class="hr-appbar"><div class="ab-row"><span style="flex:1"></span><button class="hr-ibtn" aria-label="Hide balances">${I('eye')}</button><button class="hr-ibtn" aria-label="More">${I('ellipsis-vertical')}</button></div><div class="ab-large">Budgets</div></div>`) +
+  cell('Compact (detail) + refreshing', `<div class="hr-appbar"><div class="ab-row"><button class="hr-ibtn" aria-label="Back to Budgets">${I('chevron-left')}</button><h4>Food and dining</h4><button class="hr-ibtn" aria-label="Edit budget">${I('pencil')}</button></div><div class="prog"></div></div>`) +
+  cell('Contextual (multi-select)', `<div class="hr-appbar ctx"><div class="ab-row"><button class="hr-ibtn" aria-label="Cancel selection">${I('x')}</button><h4>3 selected</h4><button class="hr-ibtn" aria-label="Change category">${I('tag')}</button><button class="hr-ibtn" aria-label="Delete">${I('trash-2')}</button></div></div>`),
+ 'back-close': () =>
+  cell('Push screen: back', `<div class="hr-appbar"><div class="ab-row"><button class="hr-ibtn" aria-label="Back">${I('chevron-left')}</button><h4>Transaction</h4></div></div>`) +
+  cell('Modal task: close', `<div class="hr-appbar"><div class="ab-row"><button class="hr-ibtn" aria-label="Close">${I('x')}</button><h4>New budget</h4><button class="hr-btn ghost sm">Save</button></div></div>`) +
+  cell('Discard guard', `<div class="hr-card" style="width:300px"><b style="font-size:18px">Discard this expense?</b><p class="muted" style="font-size:15px">₹386 at Swiggy won't be saved.</p><div style="display:flex;gap:8px;justify-content:flex-end"><button class="hr-btn ghost sm">Discard</button><button class="hr-btn sm">Keep editing</button></div></div>`),
+ 'search': () =>
+  cell('Default', `<div class="hr-search" role="search">${I('search')}<input placeholder="Search merchants, notes, amounts" aria-label="Search transactions"></div>`) +
+  cell('Results with highlight', `<div style="display:flex;flex-direction:column;gap:8px"><div class="hr-search" role="search">${I('search')}<input value="swig" aria-label="Search transactions"><button class="hr-ibtn" aria-label="Clear search" style="width:40px;height:40px">${I('circle-x')}</button></div><span class="help" role="status">2 results</span><div class="hr-list">${row('utensils', '<mark>Swig</mark>gy', 'Food · Today', '−₹386')}${row('utensils', '<mark>Swig</mark>gy Instamart', 'Groceries · 14 Oct', '−₹1,112')}</div></div>`) +
+  cell('Empty', `<div class="hr-empty" style="padding:24px"><span class="big">${I('search-x')}</span><h4>No results for “zomatto”</h4><p>Check the spelling or search all time.</p></div>`),
+ 'balance-card': () =>
+  cell('On track', gauge(.645)) + cell('Near limit', gauge(.88)) + cell('Over limit', gauge(1.09)) + cell('Hidden balances', gauge(.645, { hidden: true })) +
+  cell('Empty (no limit yet)', `<div class="gcard"><div class="gtop"><span>October</span></div><div class="gg"><div class="line dash"></div><div class="room" style="right:16px"><p style="color:var(--color-text-primary);font-size:16px;line-height:22px">Set a monthly limit to see your headroom</p></div></div><button class="hr-btn block">Set a limit</button></div>`) +
+  cell('Horizontal (web)', `<div class="hcomp"><div><span class="muted" style="font-size:13px;font-weight:600">Headroom</span><div style="font-size:28px;line-height:32px;font-weight:700" class="num"><span class="rs">₹</span>18,450</div></div><div><div class="hbar"><div class="fill" style="width:55%"></div><div class="vline"></div></div><p class="gstat ok" style="margin-top:6px">${I('circle-check')}On track · ₹33,550 of ₹52,000 spent</p></div></div>`, 'wide'),
+ 'transaction-row': () =>
+  cell('Variants', `<div class="hr-list"><div class="dhead"><span>Today</span><span class="num">−₹386</span></div>${row('utensils', 'Swiggy', 'Food and dining · 1:42 pm', '−₹386')}<div class="dhead"><span>15 Oct</span><span class="num">−₹1,899</span></div>${row('shopping-bag', 'Myntra', 'Shopping · 8:10 pm', '−₹1,899', '', '<span class="hr-tag">' + I('clock') + 'Pending</span>')}${row('piggy-bank', 'Goa trip', 'Moved to goal', '₹5,000', 'sv', '<span class="hr-tag">' + I('target') + 'Saved</span>')}${row('rotate-ccw', 'Amazon', 'Refund · Shopping', '+₹499', 'in', '<span class="hr-tag">Refund</span>')}<div class="dhead"><span>1 Oct</span><span class="num">+₹62,500</span></div>${row('briefcase', 'Acme Ltd', 'Salary · Received', '+₹84,500', 'in')}${row('house', 'Rent', 'Housing · Paid', '−₹22,000', '', '<span class="hr-tag">' + I('repeat') + 'Recurring</span>')}</div>`) +
+  cell('Selected · not synced', `<div class="hr-list"><div class="hr-row two is-selected"><label class="hr-check" style="min-height:40px;justify-content:center"><input type="checkbox" checked aria-label="Select Swiggy"></label><span><b>Swiggy</b><small>Food and dining · 1:42 pm</small></span><span class="tr"><span class="a">−₹386</span></span></div>${row('coffee', 'Blue Tokai', 'Food and dining · 9:05 am', '−₹280', '', `<span class="hr-tag" style="color:var(--color-status-danger)">${I('cloud-off')}Not synced</span>`)}</div>`),
+ 'category-picker': () =>
+  cell('Sheet content (try it)', `<div class="cpick"><span class="cap" style="font-size:13px;font-weight:600;color:var(--color-text-secondary)">Suggested for Swiggy</span><div class="chips"><button class="hr-chip" aria-pressed="true">${I('utensils')}Food and dining</button><button class="hr-chip">${I('shopping-basket')}Groceries</button></div><div class="cgrid" role="radiogroup" aria-label="Category" data-cgrid>${[['utensils', 'Food'], ['shopping-basket', 'Groceries'], ['bus', 'Transport'], ['shopping-bag', 'Shopping'], ['house', 'Rent'], ['zap', 'Bills'], ['heart-pulse', 'Health'], ['clapperboard', 'Fun'], ['plane', 'Travel'], ['graduation-cap', 'Learning'], ['gift', 'Gifts'], ['plus', 'Create']].map(([i, n], k) => `<button class="ctile" role="radio" aria-checked="${k === 0}"><span class="tile">${I(i)}</span>${n}</button>`).join('')}</div></div>`),
+ 'budget-bar': () =>
+  cell('Under', budget('Transport', 2150, 4000, { pace: 58 })) + cell('Near', budget('Food and dining', 8200, 10000, { pace: 58 })) + cell('Over', budget('Shopping', 6740, 6000)) + cell('No limit', budget('Gifts', 1200, 0)) + cell('Loading', budget('Bills', 0, 5000, { loading: true })),
+ 'goal-card': () =>
+  cell('In progress', `<div class="goal" role="meter" aria-valuenow="38000" aria-valuemax="60000" aria-valuetext="Goa trip, 38,000 of 60,000 rupees saved"><div class="gh"><span class="tile">${I('tree-palm')}</span><span><h5>Goa trip</h5><span class="muted" style="font-size:13px">By March 2027</span></span></div><span class="gamt"><span class="rs">₹</span>38,000 <small>of ₹60,000</small></span><div class="track" style="width:96%"><div class="f" style="width:63%;background:var(--color-finance-savings-fill)"></div><div class="lim" style="left:calc(100% - 1px)"></div></div><p class="proj">At ₹5,000 a month you'll reach it by Feb 2027.</p><button class="hr-btn tonal sm" style="align-self:flex-start">${I('plus')}Add money</button></div>`) +
+  cell('Behind (neutral wording)', `<div class="goal"><div class="gh"><span class="tile">${I('shield')}</span><span><h5>Emergency fund</h5><span class="muted" style="font-size:13px">By December</span></span></div><span class="gamt"><span class="rs">₹</span>41,000 <small>of ₹1,50,000</small></span><div class="track" style="width:96%"><div class="f" style="width:27%;background:var(--color-finance-savings-fill)"></div><div class="lim" style="left:calc(100% - 1px)"></div></div><p class="proj">Add ₹2,000 more a month to make it by December, or move the date to March.</p></div>`) +
+  cell('Reached', `<div class="goal"><div class="gh"><span class="tile" style="background:var(--color-status-success-bg);color:var(--color-status-success)">${I('party-popper')}</span><span><h5>New phone</h5><span class="ok" style="font-size:13px;font-weight:600;display:flex;gap:4px;align-items:center">${I('circle-check', 'style="width:14px;height:14px"')}Goal reached</span></span></div><span class="gamt"><span class="rs">₹</span>45,000 <small>of ₹45,000</small></span><div class="track" style="width:96%"><div class="f" style="width:100%;background:var(--color-finance-savings-fill)"></div><div class="lim" style="left:calc(100% - 1px)"></div></div></div>`),
+ 'charts': () => cell('Donut (select a category)', donut(), 'half') + cell('Bar (shared scale, limit line)', bars(), 'half') + cell('Line (pace vs limit)', line(), 'half'),
+ 'date-range': () =>
+  cell('Presets', `<div class="presets" role="radiogroup" aria-label="Date range"><button role="radio" aria-checked="true">This month${I('check')}</button><button role="radio" aria-checked="false">Last month</button><button role="radio" aria-checked="false">Last 3 months</button><button role="radio" aria-checked="false">This year</button><button role="radio" aria-checked="false">Custom${I('chevron-right')}</button></div>`) +
+  cell('Custom range', cal()) + cell('Month stepper', `<div class="stepper"><button class="hr-ibtn" aria-label="Previous month">${I('chevron-left')}</button>October 2026<button class="hr-ibtn" aria-label="Next month">${I('chevron-right')}</button></div>`),
+ 'keypad': () =>
+  cell('Working keypad (tap or type)', `<div class="kp" data-kp><div class="disp" aria-live="polite"><div class="v zero"><span class="rs">₹</span><span data-v>0</span></div><div class="ctx" data-ctx>Food and dining · ₹1,800 left</div></div><div class="keys">${['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0'].map(k => `<button type="button" data-k="${k}">${k}</button>`).join('')}<button type="button" data-k="del" aria-label="Delete">${I('delete')}</button></div><button class="hr-btn lg block" data-kp-save>Add expense</button></div>`),
+};
+
+/* ---------- render ---------- */
+const comps = $('#comps');
+let g = '';
+T.components.forEach(c => {
+  if (c.group !== g) { g = c.group; const gid = 'g-' + g.toLowerCase().replace(/\W+/g, '-'); comps.insertAdjacentHTML('beforeend', `<h2 class="grp" id="${gid}">${g}</h2>`); }
+  const states = c.states.map(([s, t]) => `<tr><td>${s}</td><td class="${t === 'n/a' ? 'na' : ''}">${t === 'n/a' ? '—' : esc(t)}</td></tr>`).join('');
+  const dd = `<div class="dd"><div class="y"><b>${I('check', 'style="width:16px;height:16px"')}Do</b>${c.do.map(x => `<span>${esc(x)}</span>`).join('')}</div><div class="n"><b>${I('x', 'style="width:16px;height:16px"')}Don't</b>${c.dont.map(x => `<span>${esc(x)}</span>`).join('')}</div></div>`;
+  comps.insertAdjacentHTML('beforeend', `<section class="comp" id="${c.id}" aria-labelledby="h-${c.id}">
+    <h3 id="h-${c.id}">${c.name}</h3><p class="purpose">${esc(c.purpose)}</p>
+    <div class="stage">${SPEC[c.id] ? SPEC[c.id]() : ''}</div>
+    <details class="spec"><summary>${I('chevron-right', 'style="width:18px;height:18px"')}Spec: anatomy, variants, states, accessibility</summary><div class="specbody">
+      <div><h4>Anatomy</h4><ol>${c.anatomy.map(a => `<li>${esc(a)}</li>`).join('')}</ol></div>
+      <div><h4>Variants</h4><table class="st"><tbody>${c.variants.map(([a, b]) => `<tr><td>${a}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table><h4 style="margin-top:16px">Sizes</h4><table class="st"><tbody>${c.sizes.map(([a, b]) => `<tr><td>${a}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div>
+      <div class="full"><h4>States</h4><table class="st"><tbody>${states}</tbody></table></div>
+      ${c.decimal ? `<div class="full"><h4>Decimal handling and validation</h4><ul>${c.decimal.map(a => `<li>${esc(a)}</li>`).join('')}</ul></div>` : ''}
+      <div><h4>Accessibility</h4><ul>${c.a11y.map(a => `<li>${esc(a)}</li>`).join('')}</ul></div>
+      <div><h4>Do and don't</h4>${dd}</div>
+      <div class="full"><h4>Tokens</h4><div class="toks">${c.tokens.map(t => `<code>${t}</code>`).join('')}</div></div>
+    </div></details></section>`);
+});
+
+/* ---------- interactions ---------- */
+document.querySelectorAll('[data-indet]').forEach(i => i.indeterminate = true);
+document.querySelectorAll('[data-toggle-eye]').forEach(b => b.addEventListener('click', () => { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); b.setAttribute('aria-label', on ? 'Show balances' : 'Hide balances'); b.innerHTML = `<i data-lucide="${on ? 'eye-off' : 'eye'}"></i>`; lucide.createIcons(); }));
+document.querySelectorAll('[data-seg]').forEach(s => s.querySelectorAll('button').forEach(b => b.addEventListener('click', () => s.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)))));
+document.querySelectorAll('[data-tabs]').forEach(s => s.querySelectorAll('button').forEach(b => b.addEventListener('click', () => s.querySelectorAll('button').forEach(x => x.setAttribute('aria-selected', x === b)))));
+document.querySelectorAll('[data-chips] .hr-chip').forEach(b => b.addEventListener('click', () => b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true')));
+document.querySelectorAll('[data-cgrid]').forEach(gr => gr.querySelectorAll('.ctile').forEach(b => b.addEventListener('click', () => gr.querySelectorAll('.ctile').forEach(x => x.setAttribute('aria-checked', x === b)))));
+document.querySelectorAll('[data-tbl]').forEach(b => b.addEventListener('click', () => { const t = b.parentElement.querySelector('.ctable'); t.hidden = !t.hidden; b.lastChild.textContent = t.hidden ? 'View as table' : 'Hide table'; }));
+document.querySelectorAll('[data-chart=donut]').forEach(ch => {
+  const svg = ch.querySelector('.donut'), lg = ch.querySelector('.legend'); let cur = null;
+  const pick = i => { cur = cur === i ? null : i; svg.classList.toggle('focus', cur !== null); lg.classList.toggle('focus', cur !== null);
+    svg.querySelectorAll('path').forEach(p => p.classList.toggle('on', +p.dataset.i === cur)); lg.querySelectorAll('button').forEach(b => { b.classList.toggle('on', +b.dataset.i === cur); b.setAttribute('aria-pressed', +b.dataset.i === cur); }); };
+  svg.querySelectorAll('path').forEach(p => p.addEventListener('click', () => pick(+p.dataset.i)));
+  lg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => pick(+b.dataset.i)));
+});
+/* amount sanitising (inline amount input) */
+function fmtAmount(raw) {
+  let s = String(raw).replace(/rs\.?|inr|₹|\/-|,|\s/gi, '');
+  s = s.replace(/[^\d.]/g, ''); const dot = s.indexOf('.');
+  if (dot >= 0) s = s.slice(0, dot + 1) + s.slice(dot + 1).replace(/\./g, '').slice(0, 2);
+  let [i, d] = s.split('.'); i = (i || '').replace(/^0+(?=\d)/, ''); if (s.startsWith('.')) i = '0';
+  const g = i ? inr(+i) : ''; return d !== undefined ? `${g || '0'}.${d}` : g;
+}
+document.querySelectorAll('[data-amount]').forEach(inp => inp.addEventListener('input', () => { const before = inp.value.length - inp.selectionStart; inp.value = fmtAmount(inp.value); const pos = Math.max(0, inp.value.length - before); inp.setSelectionRange(pos, pos); }));
+/* keypad */
+document.querySelectorAll('[data-kp]').forEach(kp => {
+  let v = ''; const out = kp.querySelector('[data-v]'), box = kp.querySelector('.v'), ctx = kp.querySelector('[data-ctx]'), MAX = 9999999999;
+  const render = () => { out.textContent = v ? fmtAmount(v) : '0'; box.classList.toggle('zero', !v); const n = parseFloat(v || '0'); ctx.className = 'ctx'; ctx.textContent = n ? (n > 1800 ? `₹${inr(Math.round(n - 1800))} over the Food limit after this` : `Food and dining · ₹${inr(Math.round(1800 - n))} left after this`) : 'Food and dining · ₹1,800 left'; };
+  const press = k => {
+    if (k === 'del') v = v.slice(0, -1);
+    else if (k === '.') { if (!v.includes('.')) v = (v || '0') + '.'; }
+    else { const nv = v + k; const [, d] = nv.split('.'); if (d && d.length > 2) { ctx.className = 'ctx warn'; ctx.textContent = 'Up to 2 decimals'; return; } if (parseFloat(nv) > MAX) { box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); ctx.className = 'ctx warn'; ctx.textContent = `That's above the ₹99,99,99,999 limit`; return; } v = nv.replace(/^0(?=\d)/, ''); }
+    render(); };
+  kp.querySelectorAll('[data-k]').forEach(b => b.addEventListener('click', () => press(b.dataset.k)));
+  kp.addEventListener('keydown', e => { if (/^[0-9.]$/.test(e.key)) press(e.key); else if (e.key === 'Backspace') press('del'); });
+  kp.querySelector('[data-kp-save]').addEventListener('click', () => { if (!v || !parseFloat(v)) { ctx.className = 'ctx warn'; ctx.textContent = 'Enter an amount first'; } });
+});
+
+/* gaps + decisions */
+$('#gaplist').innerHTML = (T.gaps || []).map(([a, b]) => `<div><b>${a}</b><span>${b}</span></div>`).join('');
+$('#declist').innerHTML = '<h3 style="padding:24px 0 0;font-size:28px;line-height:34px">Decisions to defend</h3>' + (T.decisions || []).map(([a, b]) => `<div><h3>${a}</h3><p>${b}</p></div>`).join('');
+
+if (window.lucide) lucide.createIcons();
+
+/* status + choosers */
+(() => {
+  const G = T.guides;
+  G.lifecycle.forEach(([st, d]) => $('#life').insertAdjacentHTML('beforeend', `<div><span class="stp ${st}">${st}</span>${d}</div>`));
+  const counts = G.status.reduce((m, r) => (m[r.status] = (m[r.status] || 0) + 1, m), {});
+  const filters = ['All', ...G.lifecycle.map(l => l[0]).filter(s => counts[s])];
+  const draw = f => { const tb = $('#sttable tbody'); tb.innerHTML = '';
+    G.status.filter(r => f === 'All' || r.status === f).forEach(r => tb.insertAdjacentHTML('beforeend',
+      `<tr><td>${r.id ? `<a href="#${r.id}">${r.name}</a>` : r.name}</td><td><span class="stp ${r.status}">${r.status}</span></td><td>${r.platforms}</td><td>${r.since}</td><td>${r.note || '—'}</td></tr>`)); };
+  filters.forEach(f => { const b = document.createElement('button'); b.type = 'button'; b.textContent = f === 'All' ? `All ${G.status.length}` : `${f} ${counts[f]}`;
+    b.setAttribute('aria-pressed', String(f === 'All'));
+    b.addEventListener('click', () => { document.querySelectorAll('#stfilter button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); draw(f); });
+    $('#stfilter').append(b); });
+  draw('All');
+  G.choosers.forEach(c => $('#choosers').insertAdjacentHTML('beforeend',
+    `<section class="chz" id="${c.id}" data-toc-label="${c.title}"><h3>${c.title}</h3><p>${c.intro}</p>
+      <ol>${c.steps.map(([q, a]) => `<li><span>${q}<b>→ ${a}</b></span></li>`).join('')}</ol>
+      <dl>${c.reference.map(([n, d]) => `<div><dt>${n}</dt><dd>${d}</dd></div>`).join('')}</dl></section>`));
+})();
+</script>
+<script src="nav.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headroom Voice</title>
+<meta name="description" content="Stage 3 of the Headroom design system: voice, tone, writing guides and formatting rules for money, percentages and dates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shell.css">
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="headroom.css">
+<style>
+/*__CSSVARS__*/
+
+section{padding-top:var(--space-1200)}
+section > h2{font-size:36px;line-height:40px;letter-spacing:-.02em;font-weight:800}
+section > .lede{font-size:18px;line-height:27px;color:var(--color-text-secondary);max-width:68ch;margin-top:var(--space-300)}
+.sub{font-size:22px;line-height:28px;font-weight:700;margin:var(--space-1000) 0 var(--space-300)}
+.summary{font-size:26px;line-height:36px;font-weight:500;letter-spacing:-.01em;max-width:34ch;margin-top:var(--space-800);padding-left:var(--space-500);border-left:2px solid var(--color-text-primary)}
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-400);margin-top:var(--space-800)}
+.pillar{background:var(--color-surface-default);border-radius:var(--radius-lg);box-shadow:inset 0 0 0 1px var(--color-border-subtle);padding:var(--space-500);display:flex;flex-direction:column;gap:var(--space-300)}
+.pillar h3{font-size:28px;line-height:32px;font-weight:800;letter-spacing:-.015em}
+.pillar h3 span{font-size:18px;font-weight:500;color:var(--color-text-secondary);letter-spacing:0}
+.pillar p{color:var(--color-text-secondary);font-size:15px;line-height:22px}
+.say{display:grid;grid-template-columns:20px minmax(0,1fr);gap:var(--space-200);padding:var(--space-300);border-radius:var(--radius-md);font-size:15px;line-height:22px}
+.say.y{background:var(--color-status-success-bg)}.say.y svg{color:var(--color-status-success)}
+.say.n{background:var(--color-status-danger-bg)}.say.n svg{color:var(--color-status-danger)}
+.say.n span{text-decoration:line-through;text-decoration-color:var(--color-status-danger);text-decoration-thickness:1px}
+.never{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-200) var(--space-600)}
+.never li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:var(--space-200);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);font-size:15px;line-height:22px}
+.never svg{color:var(--color-status-danger)}
+.tone{display:flex;flex-direction:column;border-top:1px solid var(--color-border-subtle)}
+.tone > div{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1.2fr);gap:var(--space-600);align-items:center;padding:var(--space-400) 0;border-bottom:1px solid var(--color-border-subtle)}
+.tone b{font-weight:600}
+.tone .t{color:var(--color-text-secondary);font-size:15px;line-height:22px}
+.tone .hr-alert,.tone .hr-snack{width:100%}
+.plain{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.guide{margin-top:var(--space-1000)}
+.guide h3{font-size:24px;line-height:30px;font-weight:700}
+.guide ul{margin:var(--space-300) 0 0;padding-left:20px;display:flex;flex-direction:column;gap:var(--space-150);max-width:72ch;color:var(--color-text-secondary)}
+.ex{display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,1fr);gap:var(--space-300) var(--space-400);margin-top:var(--space-500);align-items:stretch}
+.ex .h{font-size:12px;font-weight:700;color:var(--color-text-secondary)}
+.ex .m{font-size:14px;font-weight:600;padding-top:var(--space-300)}
+.ex .say{height:100%}
+.mech{display:flex;flex-direction:column;border-top:1px solid var(--color-border-subtle)}
+.mech > div{display:grid;grid-template-columns:180px minmax(0,1fr);gap:var(--space-500);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);font-size:15px;line-height:22px}
+.mech b{font-weight:600}.mech span{color:var(--color-text-secondary)}
+.fmt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:var(--space-600);margin-top:var(--space-600);background:var(--color-surface-default);border-radius:var(--radius-lg);box-shadow:inset 0 0 0 1px var(--color-border-subtle);padding:var(--space-600)}
+.fmt .ctl{display:flex;flex-direction:column;gap:var(--space-400)}
+.out{display:flex;flex-direction:column}
+.out > div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:var(--space-400);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);align-items:baseline}
+.out > div:last-child{border:0}
+.out span:first-child{font-size:13px;font-weight:600;color:var(--color-text-secondary)}
+.out .v{font-size:17px;font-weight:600;font-variant-numeric:tabular-nums lining-nums slashed-zero;overflow-wrap:anywhere}
+.out .v.hero{font-size:36px;line-height:40px;font-weight:700;letter-spacing:-.02em}
+.out .v.spoken{font-size:15px;font-weight:500;color:var(--color-text-secondary)}
+.out .v.cmp{font-stretch:85%}
+.out .v.in{color:var(--color-finance-income)}
+.date-in{all:unset;box-sizing:border-box;height:48px;padding:0 var(--space-400);border-radius:var(--radius-md);background:var(--color-surface-sunken);box-shadow:inset 0 0 0 1px var(--color-border-default);font:400 17px/24px "Anek Latin",system-ui,sans-serif;color:var(--color-text-primary);width:100%}
+.date-in:focus{box-shadow:inset 0 0 0 2px var(--color-border-focus)}
+.rules{display:flex;flex-direction:column;border-top:1px solid var(--color-border-subtle)}
+.rules > div{display:grid;grid-template-columns:160px minmax(0,1fr);gap:var(--space-500);padding:var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);font-size:15px;line-height:22px}
+.rules b{font-weight:600}.rules span{color:var(--color-text-secondary)}
+.gloss{width:100%;border-collapse:collapse;font-size:15px;line-height:22px}
+.gloss th{text-align:left;font-size:12px;color:var(--color-text-secondary);font-weight:600;padding:var(--space-200) var(--space-400) var(--space-200) 0;border-bottom:1px solid var(--color-border-subtle)}
+.gloss td{padding:var(--space-300) var(--space-400) var(--space-300) 0;border-bottom:1px solid var(--color-border-subtle);vertical-align:top}
+.gloss td:first-child{font-weight:700;white-space:nowrap}
+.gloss td:last-child{color:var(--color-status-danger);text-decoration:line-through;text-decoration-thickness:1px}
+.dec{display:flex;flex-direction:column;border-top:2px solid var(--color-text-primary);margin-top:var(--space-600)}
+.dec > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--space-800);padding:var(--space-600) 0;border-bottom:1px solid var(--color-border-subtle)}
+.dec h3{font-size:22px;line-height:28px}
+.dec p{color:var(--color-text-secondary);font-size:16px;line-height:24px}
+footer{margin-top:var(--space-1600);padding-top:var(--space-600);border-top:1px solid var(--color-border-subtle);font-size:13px;color:var(--color-text-secondary);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-300)}
+@media (max-width:1199px){main{padding:0 var(--space-800) var(--space-1600)}}
+@media (max-width:839px){
+  main{padding:0 var(--space-400) var(--space-1200)}
+  .intro h1{font-size:40px;line-height:44px}
+  .summary{font-size:21px;line-height:30px}
+  .pillars,.never,.fmt,.dec > div{grid-template-columns:minmax(0,1fr)}
+  .tone > div{grid-template-columns:minmax(0,1fr);gap:var(--space-200)}
+  .ex{grid-template-columns:minmax(0,1fr)}
+  .ex .h{display:none}
+  .mech > div,.rules > div,.out > div{grid-template-columns:minmax(0,1fr);gap:var(--space-100)}
+  .fmt{padding:var(--space-400)}
+  .gloss td:first-child{white-space:normal}
+}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" data-page="content.html"></aside>
+<main>
+<div class="wrap">
+  <header class="intro">
+    <h1>Voice and content</h1>
+    <p>How Headroom talks about money. The visual system shows room left instead of money spent; the words do the same thing, in the same order: where you stand, what it means, what you could do.</p>
+  </header>
+
+  <section id="voice" aria-labelledby="h-voice">
+    <h2 id="h-voice">Voice</h2>
+    <p class="summary" id="summary"></p>
+    <div class="pillars" id="pillars"></div>
+    <h3 class="sub">Never write</h3>
+    <ul class="never" id="never"></ul>
+  </section>
+
+  <section id="tone" aria-labelledby="h-tone">
+    <h2 id="h-tone">Tone by moment</h2>
+    <p class="lede">The voice stays the same while the tone moves. The more stressful the moment, the plainer and gentler the words. Only a reached goal turns the warmth up.</p>
+    <div class="tone" id="tonelist" style="margin-top:var(--space-600)"></div>
+  </section>
+
+  <section id="mechanics" aria-labelledby="h-mech">
+    <h2 id="h-mech">Mechanics</h2>
+    <div class="mech" id="mech" style="margin-top:var(--space-600)"></div>
+  </section>
+
+  <div id="guides"></div>
+
+  <section id="formatter" aria-labelledby="h-fmt" data-toc-group="Formatting" data-toc-label="Try the formatter">
+    <h2 id="h-fmt">Try the formatter</h2>
+    <p class="lede">Every number in the product goes through one shared formatter. Type an amount or pick a date to see each rule applied.</p>
+    <div class="fmt">
+      <div class="ctl">
+        <div class="hr-field" style="width:100%"><label for="f-amt">Amount</label><div class="hr-input amount"><span class="pre" aria-hidden="true">₹</span><input id="f-amt" inputmode="decimal" value="1,24,500.50" autocomplete="off"></div><span class="help">Try 386, 84500, 0.75, 12500000 or paste “Rs. 1,250/-”</span></div>
+        <div class="hr-seg" id="f-kind" style="width:100%"><button aria-pressed="true" data-k="expense">Expense</button><button aria-pressed="false" data-k="income">Income</button><button aria-pressed="false" data-k="balance">Balance</button></div>
+        <div class="hr-field" style="width:100%"><label for="f-date">Date</label><input type="date" id="f-date" class="date-in"></div>
+      </div>
+      <div class="out" id="f-out" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="money" aria-labelledby="h-money"><h2 id="h-money">Money</h2><div class="rules" id="r-money" style="margin-top:var(--space-500)"></div></section>
+  <section id="percent" aria-labelledby="h-pct"><h2 id="h-pct">Percentages</h2><div class="rules" id="r-pct" style="margin-top:var(--space-500)"></div></section>
+  <section id="dates" aria-labelledby="h-dates"><h2 id="h-dates">Dates and times</h2><div class="rules" id="r-date" style="margin-top:var(--space-500)"></div></section>
+  <section id="glossary" aria-labelledby="h-glos"><h2 id="h-glos">Glossary</h2><p class="lede">One word per concept, so the same number never has two names.</p>
+    <div class="scroll" style="margin-top:var(--space-500)"><table class="gloss"><thead><tr><th>Term</th><th>Means</th><th>Don't use</th></tr></thead><tbody id="gloss"></tbody></table></div></section>
+
+  <section id="decisions" aria-labelledby="h-dec" data-toc-group="Review"><h2 id="h-dec">Decisions to defend</h2><div class="dec" id="dec"></div></section>
+  <footer><span>Headroom design system · Stage 3 content and voice · all data synthetic</span><span>Generated from tools/content_spec.py</span><span>Icons by <a href="https://www.notboringicons.com" target="_blank" rel="noopener">Not Boring Icons</a></span></footer>
+</div>
+</main>
+</div>
+
+<script src="icons.js"></script>
+<script>
+const T = /*__TOKENS__*/null, C = T.content;
+const $ = s => document.querySelector(s);
+const I = n => `<i data-lucide="${n}"></i>`;
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+const root = document.documentElement;
+
+/* voice */
+$('#summary').textContent = C.VOICE.summary;
+$('#pillars').innerHTML = C.VOICE.pillars.map(([a, b, c, d, e]) => `<div class="pillar"><h3>${a} <span>${b}</span></h3><p>${esc(c)}</p><div class="say y">${I('check')}<span>“${esc(d)}”</span></div><div class="say n">${I('x')}<span>“${esc(e)}”</span></div></div>`).join('');
+$('#never').innerHTML = C.VOICE.never.map(n => `<li>${I('ban')}<span>${esc(n)}</span></li>`).join('');
+
+/* tone: each example rendered in the component it ships in */
+const toneView = [
+  t => `<span class="plain">${esc(t)}</span>`,
+  t => `<div class="hr-snack"><span>${esc(t)}</span></div>`,
+  t => `<div class="hr-alert warning">${I('triangle-alert')}<div><p>${esc(t)}</p></div></div>`,
+  t => `<div class="hr-alert danger">${I('chevrons-up')}<div><p>${esc(t)}</p><a href="#" onclick="return false">Move money</a></div></div>`,
+  t => `<div class="hr-snack" role="alert">${I('cloud-off')}<span>${esc(t)}</span><button>Retry</button></div>`,
+  t => `<span class="err">${I('circle-alert')}${esc(t)}</span>`,
+  t => `<div class="hr-alert info">${I('receipt')}<div><p>${esc(t)}</p></div></div>`,
+  t => `<div class="hr-alert info">${I('hand-heart')}<div><p>${esc(t)}</p><a href="#" onclick="return false">Move ₹2,000</a></div></div>`,
+  t => `<div class="hr-alert success">${I('party-popper')}<div><p>${esc(t)}</p></div></div>`,
+];
+$('#tonelist').innerHTML = C.TONE.map(([m, t, e], i) => `<div><b>${m}</b><span class="t">${esc(t)}</span>${(toneView[i] || toneView[0])(e)}</div>`).join('');
+$('#mech').innerHTML = C.MECHANICS.map(([a, b]) => `<div><b>${a}</b><span>${esc(b)}</span></div>`).join('');
+
+/* guides */
+$('#guides').innerHTML = C.GUIDES.map((g, gi) => `<section ${gi === 0 ? 'data-toc-group="Writing guides"' : ''} id="${g.id}" aria-labelledby="h-${g.id}" class="guide"><h2 id="h-${g.id}" style="font-size:36px;line-height:40px;letter-spacing:-.02em;font-weight:800">${g.title}</h2><ul>${g.rules.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
+  <div class="ex"><span class="h">Moment</span><span class="h">Write</span><span class="h">Not</span>${g.examples.map(([m, a, b]) => `<span class="m">${m}</span><div class="say y">${I('check')}<span>${esc(a)}</span></div><div class="say n">${I('x')}<span>${esc(b)}</span></div>`).join('')}</div></section>`).join('');
+
+/* rules + glossary + decisions */
+const rules = (sel, rows) => $(sel).innerHTML = rows.map(([a, b]) => `<div><b>${a}</b><span>${esc(b)}</span></div>`).join('');
+rules('#r-money', C.FORMAT_MONEY); rules('#r-pct', C.FORMAT_PERCENT); rules('#r-date', C.FORMAT_DATE);
+$('#gloss').innerHTML = C.GLOSSARY.map(([a, b, c]) => `<tr><td>${a}</td><td>${esc(b)}</td><td>${esc(c)}</td></tr>`).join('');
+$('#dec').innerHTML = C.DECISIONS.map(([a, b]) => `<div><h3>${a}</h3><p>${esc(b)}</p></div>`).join('');
+
+/* ---------------- formatter: the reference implementation ---------------- */
+const MINUS = '−';
+const group = n => new Intl.NumberFormat('en-IN').format(n);
+function parseAmount(raw) {
+  let s = String(raw).replace(/rs\.?|inr|₹|\/-|,|\s/gi, '').replace(/[^\d.]/g, '');
+  const d = s.indexOf('.'); if (d >= 0) s = s.slice(0, d + 1) + s.slice(d + 1).replace(/\./g, '').slice(0, 2);
+  const paise = Math.round(parseFloat(s || '0') * 100); return isFinite(paise) ? Math.min(paise, 9999999999999) : 0; // integer paise
+}
+const rupees = p => group(Math.round(p / 100));
+const withPaise = p => group(Math.floor(p / 100)) + '.' + String(p % 100).padStart(2, '0');
+function abbrev(p) {
+  const r = p / 100; const f = (v, u) => '₹' + (Math.round(v * 10) / 10).toString().replace(/\.0$/, '') + u;
+  if (r >= 1e7) return f(r / 1e7, 'Cr'); if (r >= 1e5) return f(r / 1e5, 'L'); if (r >= 1e3) return f(r / 1e3, 'k'); return '₹' + Math.round(r);
+}
+const ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+const TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+const two = n => n < 20 ? ONES[n] : TENS[Math.floor(n / 10)] + (n % 10 ? '-' + ONES[n % 10] : '');
+const three = n => (n >= 100 ? ONES[Math.floor(n / 100)] + ' hundred' + (n % 100 ? ' ' : '') : '') + (n % 100 || n < 100 ? two(n % 100) : '');
+function words(n) { // Indian system: crore, lakh, thousand
+  if (n === 0) return 'zero'; const parts = [];
+  const cr = Math.floor(n / 1e7); if (cr) parts.push(words(cr) + ' crore'); n %= 1e7;
+  const l = Math.floor(n / 1e5); if (l) parts.push(two(l) + ' lakh'); n %= 1e5;
+  const th = Math.floor(n / 1e3); if (th) parts.push(two(th) + ' thousand'); n %= 1e3;
+  if (n) parts.push(three(n)); return parts.join(' ');
+}
+function speak(p, kind) {
+  const r = Math.floor(p / 100), ps = p % 100;
+  const base = r === 0 && ps ? words(ps) + ' paise' : words(r) + (r === 1 ? ' rupee' : ' rupees') + (ps ? ' and ' + words(ps) + ' paise' : '');
+  return (kind === 'expense' && p ? 'minus ' : kind === 'income' && p ? 'plus ' : '') + base;
+}
+const sign = (k, p) => !p ? '' : k === 'expense' ? MINUS : k === 'income' ? '+' : '';
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const TODAY = new Date(2026, 9, 18, 13, 42); // fixed "today" so the examples are reproducible
+function dates(d) {
+  const sameYear = d.getFullYear() === TODAY.getFullYear();
+  const full = `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`, short = `${d.getDate()} ${MONTHS[d.getMonth()]}`;
+  const diff = Math.round((new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate()) - new Date(d.getFullYear(), d.getMonth(), d.getDate())) / 864e5);
+  const rel = diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : diff > 1 && diff < 7 ? DAYS[d.getDay()] : sameYear ? short : full;
+  const end = new Date(d); end.setDate(d.getDate() + 6);
+  const range = end.getMonth() === d.getMonth() ? `${d.getDate()}–${end.getDate()} ${MONTHS[d.getMonth()]}` : `${short} – ${end.getDate()} ${MONTHS[end.getMonth()]}`;
+  return { full, list: sameYear ? short : full, rel, range };
+}
+const kindBtns = [...document.querySelectorAll('#f-kind button')];
+let kind = 'expense';
+kindBtns.forEach(b => b.addEventListener('click', () => { kind = b.dataset.k; kindBtns.forEach(x => x.setAttribute('aria-pressed', x === b)); render(); }));
+const amtIn = $('#f-amt'), dIn = $('#f-date');
+dIn.value = '2026-10-16';
+function render() {
+  const p = parseAmount(amtIn.value), s = sign(kind, p), cls = kind === 'income' && p ? 'in' : '';
+  const d = dates(dIn.value ? new Date(dIn.value + 'T12:00') : TODAY);
+  const rows = [
+    ['List row', `<span class="v ${cls}">${s}₹${rupees(p)}</span>`],
+    ['Detail', `<span class="v ${cls}">${s}₹${withPaise(p)}</span>`],
+    ['Hero', `<span class="v hero ${cls}">${s}<span class="rs">₹</span>${rupees(p)}</span>`],
+    ['Chart axis, chip', `<span class="v cmp">${abbrev(p)}</span>`],
+    ['Hidden', `<span class="v">₹ •••••</span>`],
+    ['Screen reader', `<span class="v spoken">“${speak(p, kind)}”</span>`],
+    ['Date in list', `<span class="v">${d.rel}</span>`],
+    ['Date in detail', `<span class="v">${d.full}, 1:42 pm</span>`],
+    ['Week range', `<span class="v">${d.range}</span>`],
+  ];
+  $('#f-out').innerHTML = rows.map(([a, b]) => `<div><span>${a}</span>${b}</div>`).join('');
+}
+amtIn.addEventListener('input', () => {
+  const before = amtIn.value.length - amtIn.selectionStart;
+  let s = amtIn.value.replace(/rs\.?|inr|₹|\/-|,|\s/gi, '').replace(/[^\d.]/g, ''); const dot = s.indexOf('.');
+  if (dot >= 0) s = s.slice(0, dot + 1) + s.slice(dot + 1).replace(/\./g, '').slice(0, 2);
+  let [i, dd] = s.split('.'); i = (i || '').replace(/^0+(?=\d)/, '');
+  amtIn.value = (i ? group(+i) : (dd !== undefined ? '0' : '')) + (dd !== undefined ? '.' + dd : '');
+  const pos = Math.max(0, amtIn.value.length - before); amtIn.setSelectionRange(pos, pos); render();
+});
+dIn.addEventListener('input', render);
+render();
+window.hrFormat = { parseAmount, rupees, withPaise, abbrev, speak, dates }; // exposed for testing
+
+if (window.lucide) lucide.createIcons();
+</script>
+<script src="nav.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>
