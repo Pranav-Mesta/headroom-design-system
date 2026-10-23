@@ -6,7 +6,7 @@ A complete design system for **Headroom**, a personal finance app for young prof
 
 All example data is synthetic. Icons by [Not Boring Icons](https://www.notboringicons.com).
 
-## The five stages
+## The six stages
 
 | Stage | Read it | See it live |
 |---|---|---|
@@ -15,6 +15,7 @@ All example data is synthetic. Icons by [Not Boring Icons](https://www.notboring
 | 3. Content and voice: tone, writing guides, formatting | [docs/stage-3-content.md](docs/stage-3-content.md) | `site/content.html` (live formatter) |
 | 4. Patterns: add transaction, budgets, onboarding, sensitive data, offline | [docs/stage-4-patterns.md](docs/stage-4-patterns.md) | `site/patterns.html` (storyboards) |
 | 5. Proof: four key screens built only from the system | [docs/stage-5-proof.md](docs/stage-5-proof.md) | `site/proof.html` (live token audit) |
+| 6. Flows: 10 end-to-end flows, 81 screens with edge states, a fully wired Figma prototype with motion | [docs/stage-6-flows.md](docs/stage-6-flows.md) | Figma · *Flows* page |
 
 Each stage ends with the three decisions to defend in a portfolio review.
 

@@ -4,7 +4,7 @@
 
 const FONT = 'Anek Latin';
 const WEIGHT = { 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold' };
-const PAGE_NAMES = ['Cover', 'Guidelines', 'Foundations', 'Icons', 'Components · Basics', 'Components · Containers and feedback', 'Components · Navigation', 'Components · Finance', 'Proof screens'];
+const PAGE_NAMES = ['Cover', 'Guidelines', 'Foundations', 'Icons', 'Components · Basics', 'Components · Containers and feedback', 'Components · Navigation', 'Components · Finance', 'Components · Flows (proposed)', 'Proof screens', 'Flows'];
 const log = [];
 const ctx = { color: {}, dark: {}, prim: {}, num: {}, styles: {}, effects: {}, icons: {} };
 
@@ -758,8 +758,8 @@ async function buildFinance() {
     const h = frame('header', 'HORIZONTAL', 12, { align: 'CENTER' }); const tile = frame('tile', 'HORIZONTAL', 0, { align: 'CENTER', justify: 'CENTER' }); fixed(tile, 40, 40); rad(tile, 'md'); fill(tile, st === 'Reached' ? 'color/status/success-bg' : 'color/finance/headroom'); tile.appendChild(icon(ic, 20, st === 'Reached' ? 'color/status/success' : 'color/finance/savings'));
     add(h, tile, await text(nm, 'type/title-sm', 'color/text/primary', { name: 'name' })); c.appendChild(h);
     const am = frame('amount', 'HORIZONTAL', 6, { align: 'MAX' }); add(am, await text('₹' + inr(saved), 'type/amount/lg', 'color/finance/savings'), await text('of ₹' + inr(target), 'type/body-md', 'color/text/secondary')); c.appendChild(am);
-    const track = figma.createFrame(); track.resize(288, 12); fill(track, 'color/finance/headroom'); rad(track, 'xs'); track.appendChild(rect(288 * pct, 12, 'color/finance/savings-fill', 'xs')); c.appendChild(track);
-    c.appendChild(await text(proj, 'type/body-sm', st === 'Reached' ? 'color/status/success' : 'color/text/secondary', { width: 288 }));
+    const track = figma.createFrame(); track.resize(288, 12); fill(track, 'color/finance/headroom'); rad(track, 'xs'); const tf = rect(288 * pct, 12, 'color/finance/savings-fill', 'xs'); tf.constraints = { horizontal: 'SCALE', vertical: 'MIN' }; track.appendChild(tf); c.appendChild(track); track.layoutSizingHorizontal = 'FILL';
+    { const pt = await text(proj, 'type/body-sm', st === 'Reached' ? 'color/status/success' : 'color/text/secondary', { width: 288 }); c.appendChild(pt); pt.layoutSizingHorizontal = 'FILL'; }
     gc.push(c);
   }
   cs = await setOf(gc, 'Savings goal card'); textProp(cs, 'Name', 'name', 'Goa trip'); await compBoard(col, 'goal-card', cs);
@@ -927,7 +927,7 @@ async function inst(setName, variant) {
 }
 async function setProp(node, prefix, value, layer) { const k = Object.keys(node.componentProperties || {}).find(x => x.startsWith(prefix)); if (k) node.setProperties({ [k]: value }); else if (layer) await setText(node, value, layer); return node; }
 async function replaceText(node, from, to) { for (const t of node.findAll(n => n.type === 'TEXT' && n.characters === from)) { if (t.fontName !== figma.mixed) await figma.loadFontAsync(t.fontName); t.characters = to; } return node; }
-async function txInst(type, merchant, sub, amount, ic) { const i = await inst('Transaction row', 'Type=' + type); if (ic) { const cur = i.findOne(n => n.type === 'INSTANCE' && /^icon\//.test(n.name)); if (cur) { cur.swapComponent(ctx.icons[ic]); for (const v of cur.findAll(n => 'strokes' in n && n.strokes.length)) v.strokes = [paint('color/text/primary')]; } } await setProp(i, 'Merchant', merchant, 'title'); await setProp(i, 'Subtitle', sub, 'subtitle'); await setProp(i, 'Amount', amount, 'amount'); return i; }
+async function txInst(type, merchant, sub, amount, ic) { const i = await inst('Transaction row', 'Type=' + type); i.name = 'Transaction row · ' + merchant; if (ic) { const cur = i.findOne(n => n.type === 'INSTANCE' && /^icon\//.test(n.name)); if (cur) { cur.swapComponent(ctx.icons[ic]); for (const v of cur.findAll(n => 'strokes' in n && n.strokes.length)) v.strokes = [paint('color/text/primary')]; } } await setProp(i, 'Merchant', merchant, 'title'); await setProp(i, 'Subtitle', sub, 'subtitle'); await setProp(i, 'Amount', amount, 'amount'); return i; }
 async function single(name) { return (await libNode(name, 'COMPONENT')).createInstance(); }
 async function setText(node, chars, name) {
   const t = node.findOne(n => n.type === 'TEXT' && (!name || n.name === name)); if (!t) return node;
@@ -949,7 +949,7 @@ function body() {
 }
 async function sectionHead(title, action) {
   const h = frame(title, 'HORIZONTAL', 8, { align: 'CENTER' }); const t = await text(title, 'type/title-sm'); h.appendChild(t); t.layoutGrow = 1;
-  if (action) h.appendChild(await text(action, 'type/label-md', 'color/text/link'));
+  if (action) { const l = await text(action, 'type/label-md', 'color/text/link'); l.name = 'see-all:' + title; h.appendChild(l); }
   return h;
 }
 function group(name, kids, token = 'space/text/section-heading-below') {
@@ -1060,7 +1060,8 @@ async function auditFile() {
       const par = n.parent;
       if (par && par.type !== 'PAGE' && n.absoluteBoundingBox && par.absoluteBoundingBox && n.visible && !skipOverflow(n) && !(n.layoutPositioning === 'ABSOLUTE')) {
         const a = n.absoluteBoundingBox, b = par.absoluteBoundingBox, e = 0.5;
-        if (a.x < b.x - e || a.y < b.y - e || a.x + a.width > b.x + b.width + e || a.y + a.height > b.y + b.height + e)
+        const scrolls = par.overflowDirection && par.overflowDirection !== 'NONE' || (par.parent && par.parent.overflowDirection && par.parent.overflowDirection !== 'NONE' && par.name === 'content');
+        if (!scrolls && (a.x < b.x - e || a.y < b.y - e || a.x + a.width > b.x + b.width + e || a.y + a.height > b.y + b.height + e))
           if (!(par.layoutMode === 'NONE' && /plot|donut|gauge|clearance-gauge|headroom|spent|track|Add expense|Cover/.test(par.name)))
             issues.overflow.push(`${name} › ${par.name} › ${n.name} (${Math.round(a.width)}×${Math.round(a.height)} in ${Math.round(b.width)}×${Math.round(b.height)})`);
       }
@@ -1084,7 +1085,7 @@ async function exportBoards() {
   for (const [pi, name] of PAGE_NAMES.entries()) {
     const pg = figma.root.children.find(x => x.name === name); if (!pg) continue; await pg.loadAsync();
     let nodes = [];
-    for (const top of pg.children) { if (top.type === 'FRAME' && (top.name === 'Column' || top.name === 'Screens')) nodes.push(...top.children); else if (top.type === 'FRAME') nodes.push(top); }
+    for (const top of pg.children) { if (top.type === 'FRAME' && (top.name === 'Column' || top.name === 'Screens')) nodes.push(...top.children); else if (top.type === 'SECTION') nodes.push(...top.children.filter(k => k.type === 'FRAME' && /^\d+\.\d+ ·/.test(k.name))); else if (top.type === 'FRAME') nodes.push(top); }
     for (const [i, n] of nodes.entries()) {
       const bytes = await n.exportAsync({ format: 'PNG', constraint: { type: 'SCALE', value: n.width > 1400 ? 1 : 1.25 } });
       const my = ++id; const done = new Promise(r => (waits[my] = r));
@@ -1094,6 +1095,29 @@ async function exportBoards() {
   }
   log.push(`review export: ${sent} boards sent${failed ? `, ${failed} failed` : ''}`);
 }
+/* ---------------- interactive components (prototype) ---------------- */
+async function makeInteractive() {
+  const sets = {};
+  for (const pg of figma.root.children) { if (pg.name === 'Flows' || pg.name === 'Proof screens') continue; await pg.loadAsync(); for (const n of pg.findAllWithCriteria({ types: ['COMPONENT_SET'] })) sets[n.name] = n; }
+  const swap = (cs, from, to) => { const a = cs.children.find(v => v.name === from), z = cs.children.find(v => v.name === to); return a && z ? [a, z] : null; };
+  const pairs = [];
+  const add2 = (name, list, both = true) => { const cs = sets[name]; if (!cs) return; for (const [f, t] of list) { const p = swap(cs, f, t); if (p) { pairs.push(p); if (both) { const q = swap(cs, t, f); if (q) pairs.push(q); } } } };
+  add2('Toggle', [['On=Off, State=Default', 'On=On, State=Default']]);
+  add2('Checkbox', [['Value=Off, State=Default', 'Value=On, State=Default']]); add2('Checkbox', [['Value=Mixed, State=Default', 'Value=On, State=Default']], false);
+  add2('Radio', [['Selected=Off, State=Default', 'Selected=On, State=Default']], false);
+  add2('Chips and tags', [['Type=Filter, Selected=false', 'Type=Filter, Selected=true'], ['Type=Choice, Selected=false', 'Type=Choice, Selected=true']]);
+  add2('Bank tile', [['Selected=false', 'Selected=true']]);
+  add2('Category tile', [['Selected=false', 'Selected=true']]);
+  add2('Tabs', [['Selected=Overview', 'Selected=Transactions'], ['Selected=Transactions', 'Selected=History'], ['Selected=History', 'Selected=Overview']], false);
+  add2('Segmented control', [['Selected=Week', 'Selected=Month'], ['Selected=Month', 'Selected=Year'], ['Selected=Year', 'Selected=Week']], false);
+  const fast = { type: 'SMART_ANIMATE', easing: { type: 'CUSTOM_CUBIC_BEZIER', easingFunctionCubicBezier: { x1: 0.2, y1: 0, x2: 0, y2: 1 } }, duration: 0.12 };
+  let n = 0;
+  for (const [a, z] of pairs) { try { await a.setReactionsAsync([{ trigger: { type: 'ON_CLICK' }, actions: [{ type: 'NODE', destinationId: z.id, navigation: 'CHANGE_TO', transition: fast }] }]); n++; } catch (e) { log.push('interactive failed: ' + a.parent.name + ' / ' + a.name + ': ' + e.message); } }
+  // buttons respond to hover and press on the web
+  const btn = sets['Button']; if (btn) for (const v of btn.children) { const m = v.name.match(/^Variant=(\w+), Size=Medium, State=Default$/); if (!m) continue; const h = btn.children.find(x => x.name === `Variant=${m[1]}, Size=Medium, State=Hover`), p = btn.children.find(x => x.name === `Variant=${m[1]}, Size=Medium, State=Pressed`); const r = []; if (h) r.push({ trigger: { type: 'ON_HOVER' }, actions: [{ type: 'NODE', destinationId: h.id, navigation: 'CHANGE_TO', transition: fast }] }); if (p) r.push({ trigger: { type: 'ON_PRESS' }, actions: [{ type: 'NODE', destinationId: p.id, navigation: 'CHANGE_TO', transition: fast }] }); try { await v.setReactionsAsync(r); n += r.length; } catch (e) { log.push('button states failed: ' + e.message); } }
+  log.push(`interactive components: ${n} state changes`);
+}
+
 /* ---------------- run ---------------- */
 function report(ok, msg) {
   const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -1115,6 +1139,9 @@ function report(ok, msg) {
     step = 'navigation'; await buildNavigation();
     step = 'finance'; await buildFinance();
     step = 'proof screens'; await buildProof();
+    step = 'flow components'; await buildFlowComponents();
+    step = 'interactive components'; await makeInteractive();
+    step = 'flows'; await buildFlows();
     step = 'audit'; await auditFile();
     step = 'order pages';
     PAGE_NAMES.forEach((n, i) => { const p = figma.root.children.find(x => x.name === n); if (p) figma.root.insertChild(i, p); });

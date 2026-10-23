@@ -701,6 +701,31 @@ if md5_tpl.exists():
         md = md.replace("{{" + k + "}}", v)
     (ROOT / "docs" / "stage-5-proof.md").write_text(md, encoding="utf-8")
 
+# ---------------------------------------------------------------- stage 6 markdown (flows)
+_spec6 = importlib.util.spec_from_file_location("flows_spec", ROOT / "tools" / "flows_spec.py")
+fl = importlib.util.module_from_spec(_spec6); _spec6.loader.exec_module(fl)
+out["flows"] = {"persona": fl.PERSONA, "flows": fl.FLOWS, "proposed": fl.PROPOSED, "decisions": fl.DECISIONS}
+names = {sc[0]: sc[1] for f in fl.FLOWS for sc in f["screens"]}
+def flow_md(f):
+    rows = [(f"**{sid}**", t, k, n, " · ".join(f"{h} → {to} {names[to]}" for h, to in links) or "—") for sid, t, k, n, links in f["screens"]]
+    L = [f"## {f['id']} · {f['name']}", "", f"**Goal:** {f['goal']}", "", f"**How we'll know it works:** {f['measure']}", "",
+         "**Entry points:** " + " · ".join(f["entry"]), "", table(["Screen", "Name", "Type", "Why it looks like this", "Links to"], rows), "",
+         "**Edge cases**", "", table(["When", "What the person sees"], f["edges"]), "",
+         "**Accessibility**", ""] + [f"- {a}" for a in f["a11y"]] + ["", "---", ""]
+    return "\n".join(L)
+MD6 = {"count": str(len(fl.FLOWS)), "screens": str(len(names)),
+       "persona": f"{fl.PERSONA['name']}, {fl.PERSONA['age']}, {fl.PERSONA['job'].lower()} in {fl.PERSONA['city']}. {fl.PERSONA['income']}; {fl.PERSONA['limit']}. Today is {fl.PERSONA['today']}: {fl.PERSONA['spent']}.",
+       "overview": table(["Flow", "Goal", "Screens", "Edge states"], [(f"[{f['id']} · {f['name']}](#{f['id'].lower()}--{f['name'].lower().replace(' ', '-')})", f["goal"], len(f["screens"]), sum(1 for s_ in f["screens"] if s_[2] == "edge")) for f in fl.FLOWS]),
+       "flows": "\n".join(flow_md(f) for f in fl.FLOWS),
+       "proposed": table(["Component", "What it is and where it's used"], [(f"**{a}**", b) for a, b in fl.PROPOSED]),
+       "decisions": "\n".join(f"{i}. **{t}.** {b}" for i, (t, b) in enumerate(fl.DECISIONS, 1))}
+md6_tpl = ROOT / "docs" / "stage-6.template.md"
+if md6_tpl.exists():
+    md = md6_tpl.read_text(encoding="utf-8")
+    for k, v in MD6.items():
+        md = md.replace("{{" + k + "}}", v)
+    (ROOT / "docs" / "stage-6-flows.md").write_text(md, encoding="utf-8")
+
 tpl = ROOT / "site" / "template.html"
 if tpl.exists():
     var = lambda p: "--" + p.replace("/", "-")
